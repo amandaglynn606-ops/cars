@@ -2,10 +2,9 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
-    // Fleet photography is still served from the legacy media library.
-    remotePatterns: [
-      { protocol: 'https', hostname: 'luxmotorsdxb.com', pathname: '/wp-content/uploads/**' },
-    ],
+    // All fleet photography is served from public/fleet, so no remote hosts are
+    // allowed. Adding one here would let the site hotlink again by accident.
+    remotePatterns: [],
     formats: ['image/avif', 'image/webp'],
   },
 }

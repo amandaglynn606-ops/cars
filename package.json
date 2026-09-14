@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "import:fleet": "node scripts/import-fleet.mjs"
+    "import:fleet": "node scripts/import-fleet.mjs",
+    "localise:images": "node scripts/localise-images.mjs",
+    "refresh:fleet": "npm run import:fleet && npm run localise:images"
   },
   "dependencies": {
     "next": "^15.5.4",

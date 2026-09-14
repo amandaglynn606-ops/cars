@@ -150,13 +150,13 @@ data/fleet.json              generated catalogue
 public/fleet/<slug>/         downloaded photography
 scripts/import-fleet.mjs     catalogue importer
 scripts/localise-images.mjs  image downloader
-src/app/                   routes
-src/components/            UI
-src/fonts/                 licensed faces + EULAs
+src/app/                     routes
+src/components/              UI
+src/fonts/                   licensed faces + EULAs
 src/lib/
-  fleet.ts                 data access, filtering, sorting
-  whatsapp.ts              enquiry message + wa.me link
-  format.ts                price, date, duration helpers
-  config.ts                env-backed site settings
-  types.ts                 Car / pricing / enquiry types
+  fleet.ts                   data access, filtering, sorting
+  whatsapp.ts                enquiry message + wa.me link
+  format.ts                  price, date, duration helpers
+  config.ts                  env-backed site settings
+  types.ts                   Car / pricing / enquiry types
 ```

@@ -79,8 +79,6 @@ export default function CarCard({
           />
         )}
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/15 to-transparent" />
-
         {wasRate && (
           <span className="absolute top-4 left-4 rounded-full bg-gold-500 px-3 py-1 text-[10px] tracking-[0.16em] uppercase text-ink-950">
             Offer

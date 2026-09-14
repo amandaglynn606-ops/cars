@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllCars } from '@/lib/fleet'
+import { getAllCars, getBrands, getBodyTypes, categorySlug } from '@/lib/fleet'
 import { siteConfig } from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,5 +17,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...carRoutes]
+  const categoryRoutes = [
+    ...getBrands().map((b) => `/fleet/brand/${categorySlug(b.name)}`),
+    ...getBodyTypes().map((t) => `/fleet/type/${categorySlug(t.name)}`),
+  ].map((route) => ({
+    url: `${siteConfig.url}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticRoutes, ...categoryRoutes, ...carRoutes]
 }

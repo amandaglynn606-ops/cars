@@ -4,7 +4,7 @@ import Link from 'next/link'
 import CarCard from '@/components/CarCard'
 import CarGallery from '@/components/CarGallery'
 import Reveal from '@/components/Reveal'
-import { getAllCars, getCarBySlug, getRelatedCars } from '@/lib/fleet'
+import { getAllCars, getCarBySlug, getRelatedCars, categorySlug } from '@/lib/fleet'
 import { formatPrice } from '@/lib/format'
 import { siteConfig } from '@/lib/config'
 
@@ -87,7 +87,7 @@ export default async function CarPage({ params }: { params: Promise<{ slug: stri
           {car.brand && (
             <>
               <Link
-                href={`/fleet?brand=${encodeURIComponent(car.brand)}`}
+                href={`/fleet/brand/${categorySlug(car.brand)}`}
                 className="transition-colors hover:text-gold-500"
               >
                 {car.brand}

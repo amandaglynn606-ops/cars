@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
-import { getBrands } from '@/lib/fleet'
+import { getBrands, categorySlug } from '@/lib/fleet'
 
 export default function Footer() {
   const brands = getBrands().slice(0, 8)
@@ -58,7 +58,7 @@ export default function Footer() {
               {brands.map((brand) => (
                 <li key={brand.name}>
                   <Link
-                    href={`/fleet?brand=${encodeURIComponent(brand.name)}`}
+                    href={`/fleet/brand/${categorySlug(brand.name)}`}
                     className="transition-colors hover:text-gold-500"
                   >
                     {brand.name}

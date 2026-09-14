@@ -45,9 +45,9 @@ export default function AboutPage() {
               alt=""
               fill
               sizes="100vw"
-              className="object-cover opacity-80"
+              className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink-950 to-transparent" />
           </Reveal>
         )}
 

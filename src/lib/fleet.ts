@@ -95,3 +95,35 @@ export const getRelatedCars = (car: Car, limit = 4): Car[] =>
     .filter((c) => c.slug !== car.slug && (c.brand === car.brand || c.bodyType === car.bodyType))
     .sort((a, b) => (a.brand === car.brand ? -1 : 1) - (b.brand === car.brand ? -1 : 1))
     .slice(0, limit)
+
+/* --- Categories -------------------------------------------------------- */
+
+/** URL-safe form of a brand or body-type name ("Rolls Royce" -> "rolls-royce"). */
+export const categorySlug = (name: string) =>
+  name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+export const findBrandBySlug = (slug: string): string | undefined =>
+  getBrands().find((b) => categorySlug(b.name) === slug)?.name
+
+export const findBodyTypeBySlug = (slug: string): string | undefined =>
+  getBodyTypes().find((t) => categorySlug(t.name) === slug)?.name
+
+export const getCarsByBrand = (brand: string): Car[] =>
+  fleet.filter((car) => car.brand === brand)
+
+export const getCarsByBodyType = (bodyType: string): Car[] =>
+  fleet.filter((car) => car.bodyType === bodyType)
+
+/**
+ * Lowest and highest advertised rate across a set of cars, for the given basis.
+ * Returns null when no car in the set is priced on that basis.
+ */
+export function priceBounds(cars: Car[], period: RentalPeriod): { min: number; max: number } | null {
+  const rates = cars.map((c) => c.pricing[period]).filter((r): r is number => r != null)
+  if (rates.length === 0) return null
+  return { min: Math.min(...rates), max: Math.max(...rates) }
+}
+
+/** A representative photo for a category tile. */
+export const categoryImage = (cars: Car[]): string | undefined =>
+  cars.find((c) => c.images.length > 0)?.images[0].src

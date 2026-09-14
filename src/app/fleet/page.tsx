@@ -8,20 +8,10 @@ export const metadata: Metadata = {
     'Browse every supercar, SUV and luxury saloon available to rent in Dubai, with daily and monthly rates.',
 }
 
-export default async function FleetPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ brand?: string; type?: string }>
-}) {
-  const params = await searchParams
+export default function FleetPage() {
   const cars = getAllCars()
   const brands = getBrands()
   const bodyTypes = getBodyTypes()
-
-  // Only honour a query value that actually exists, so a stale link cannot
-  // leave the browser stuck showing zero results.
-  const initialBrand = brands.some((b) => b.name === params.brand) ? params.brand! : ''
-  const initialBodyType = bodyTypes.some((t) => t.name === params.type) ? params.type! : ''
 
   return (
     <div className="container-lux pt-36 pb-24 md:pt-44">
@@ -34,13 +24,7 @@ export default async function FleetPage({
         </p>
       </header>
 
-      <FleetBrowser
-        cars={cars}
-        brands={brands}
-        bodyTypes={bodyTypes}
-        initialBrand={initialBrand}
-        initialBodyType={initialBodyType}
-      />
+      <FleetBrowser cars={cars} brands={brands} bodyTypes={bodyTypes} />
     </div>
   )
 }

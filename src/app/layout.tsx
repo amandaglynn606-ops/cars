@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
 import { siteConfig } from '@/lib/config'
 import SmoothScroll from '@/components/SmoothScroll'
 import Nav from '@/components/Nav'
@@ -8,21 +6,8 @@ import Footer from '@/components/Footer'
 import WhatsappFab from '@/components/WhatsappFab'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
-
-// Licensed display faces - see src/fonts/*-eula.txt before going live.
-const haymila = localFont({
-  src: './../fonts/Haymila-Regular.woff2',
-  variable: '--font-haymila',
-  display: 'swap',
-  weight: '400',
-})
-const qiswah = localFont({
-  src: './../fonts/Qiswah.woff2',
-  variable: '--font-qiswah',
-  display: 'swap',
-  weight: '400',
-})
+// Fonts are self-hosted through @fontsource and imported in globals.css, so the
+// build makes no network request and nothing depends on Google Fonts at runtime.
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -43,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${haymila.variable} ${qiswah.variable}`}>
+    <html lang="en">
       <body className="bg-ink-950 text-bone antialiased">
         <SmoothScroll />
         <Nav />

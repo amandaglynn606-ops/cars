@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Hero from '@/components/Hero'
 import CarCard from '@/components/CarCard'
 import Reveal from '@/components/Reveal'
-import { getAllCars, getFeaturedCars, getBrands, getBodyTypes } from '@/lib/fleet'
+import { getAllCars, getFeaturedCars, getBrands, getBodyTypes, categorySlug } from '@/lib/fleet'
 import { siteConfig } from '@/lib/config'
 
 const STEPS = [
@@ -102,7 +102,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={type.name}
-                  href={`/fleet?type=${encodeURIComponent(type.name)}`}
+                  href={`/fleet/type/${categorySlug(type.name)}`}
                   className="group relative aspect-[16/10] overflow-hidden rounded-sm bg-ink-800"
                 >
                   {image && (
@@ -111,10 +111,10 @@ export default function HomePage() {
                       alt=""
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover opacity-55 transition-all duration-[900ms] ease-[var(--ease-lux)] group-hover:scale-108 group-hover:opacity-75"
+                      className="object-cover transition-transform duration-[900ms] ease-[var(--ease-lux)] group-hover:scale-105"
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink-950/95 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
                     <p className="font-display text-2xl transition-colors group-hover:text-gold-500">
                       {type.name}
@@ -162,7 +162,7 @@ export default function HomePage() {
             {brands.map((brand) => (
               <Link
                 key={brand.name}
-                href={`/fleet?brand=${encodeURIComponent(brand.name)}`}
+                href={`/fleet/brand/${categorySlug(brand.name)}`}
                 className="font-display text-xl text-bone/45 transition-colors duration-300 hover:text-gold-500 md:text-2xl"
               >
                 {brand.name}

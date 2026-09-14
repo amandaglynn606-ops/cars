@@ -11,9 +11,11 @@ import { formatPrice } from '@/lib/format'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
+const SLIDE_MS = 6000
+
 /**
- * Cinematic hero: the featured cars cross-fade on a timer, the headline reveals
- * line by line, and the whole stage parallaxes and dims as the visitor scrolls on.
+ * Cinematic hero. Featured cars cross-fade behind a headline that reveals line
+ * by line; the whole stage parallaxes and dims as the visitor scrolls past.
  */
 export default function Hero({ cars }: { cars: Car[] }) {
   const root = useRef<HTMLElement>(null)
@@ -25,28 +27,26 @@ export default function Hero({ cars }: { cars: Car[] }) {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       if (!reduced) {
-        // Entrance: headline lines rise, then the supporting furniture fades up.
         gsap
           .timeline({ defaults: { ease: 'power3.out' } })
-          .from('.hero-line > span', { yPercent: 118, duration: 1.25, stagger: 0.12 }, 0.15)
-          .from('.hero-eyebrow', { opacity: 0, y: 16, duration: 0.8 }, 0.1)
-          .from('.hero-sub', { opacity: 0, y: 24, duration: 0.9 }, 0.75)
-          .from('.hero-cta', { opacity: 0, y: 24, duration: 0.9, stagger: 0.1 }, 0.9)
-          .from('.hero-stat', { opacity: 0, y: 20, duration: 0.8, stagger: 0.08 }, 1.0)
-          .from('.hero-scroll', { opacity: 0, duration: 0.8 }, 1.2)
+          .from('.hero-line > span', { yPercent: 115, duration: 1.35, stagger: 0.1 }, 0.2)
+          .from('.hero-eyebrow', { opacity: 0, x: -20, duration: 0.9 }, 0.15)
+          .from('.hero-sub', { opacity: 0, y: 22, duration: 0.9 }, 0.8)
+          .from('.hero-cta', { opacity: 0, y: 22, duration: 0.9, stagger: 0.09 }, 0.95)
+          .from('.hero-meta', { opacity: 0, y: 18, duration: 0.8, stagger: 0.07 }, 1.1)
+          .from('.hero-scroll', { opacity: 0, duration: 0.9 }, 1.35)
 
-        // Slow push-in on the backdrop keeps the frame alive while idle.
-        gsap.to('.hero-media', { scale: 1.12, duration: 14, ease: 'none', repeat: -1, yoyo: true })
+        // Slow drift keeps the frame alive while the visitor reads.
+        gsap.to('.hero-media', { scale: 1.1, duration: 16, ease: 'none', repeat: -1, yoyo: true })
       }
 
-      // Parallax + fade as the hero leaves the viewport.
       gsap.to('.hero-media', {
-        yPercent: 18,
+        yPercent: 16,
         ease: 'none',
         scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom top', scrub: true },
       })
       gsap.to('.hero-content', {
-        yPercent: 42,
+        yPercent: 34,
         opacity: 0,
         ease: 'none',
         scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom top', scrub: true },
@@ -55,28 +55,27 @@ export default function Hero({ cars }: { cars: Car[] }) {
     { scope: root },
   )
 
-  // Advance the backdrop on a timer.
   useGSAP(() => {
     if (slides.length < 2) return
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % slides.length), 5200)
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % slides.length), SLIDE_MS)
     return () => window.clearInterval(id)
   }, [slides.length])
 
   const active = slides[index]
 
   return (
-    <section ref={root} className="relative h-[100svh] min-h-[640px] overflow-hidden">
-      {/* Backdrop stack - all slides mounted, opacity cross-fades between them */}
+    <section ref={root} className="relative h-[100svh] min-h-[660px] overflow-hidden">
       <div className="hero-media absolute inset-0 will-change-transform">
         {slides.map((car, i) => (
           <div
             key={car.slug}
-            className="absolute inset-0 transition-opacity duration-[1600ms] ease-[var(--ease-lux)]"
+            aria-hidden={i !== index}
+            className="absolute inset-0 transition-opacity duration-[1800ms] ease-[var(--ease-lux)]"
             style={{ opacity: i === index ? 1 : 0 }}
           >
             <Image
               src={car.images[0].src}
-              alt={car.name}
+              alt={i === index ? car.name : ''}
               fill
               priority={i === 0}
               sizes="100vw"
@@ -86,75 +85,81 @@ export default function Hero({ cars }: { cars: Car[] }) {
         ))}
       </div>
 
-      {/* Legibility scrims */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/55 to-ink-950/70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink-950/85 via-transparent to-transparent" />
+      {/* No wash over the car itself - only a bottom scrim deep enough to carry
+          the headline, so the upper two-thirds of the photograph stays clean. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-ink-950 via-ink-950/75 to-transparent" />
 
-      <div className="hero-content container-lux relative flex h-full flex-col justify-end pb-20 md:justify-center md:pb-0">
-        <p className="hero-eyebrow eyebrow mb-5">Dubai &middot; United Arab Emirates</p>
+      <div className="hero-content container-lux relative flex h-full flex-col justify-end pb-14 md:pb-20">
+        <p className="hero-eyebrow eyebrow mb-6">Dubai &middot; United Arab Emirates</p>
 
-        <h1 className="font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] tracking-tight">
+        <h1 className="font-display display-xl max-w-[18ch]">
           <span className="hero-line reveal-line">
             <span>Drive the</span>
           </span>
-          <span className="hero-line reveal-line text-gold-500">
-            <span>extraordinary</span>
+          <span className="hero-line reveal-line">
+            <span className="text-gold-500 italic">extraordinary</span>
           </span>
         </h1>
 
-        <p className="hero-sub mt-7 max-w-lg text-base leading-relaxed text-bone/70 md:text-lg">
-          {cars.length}+ supercars and luxury vehicles, delivered anywhere in Dubai. No deposits
-          held, no hidden fees &mdash; confirm your booking in a single WhatsApp message.
-        </p>
+        <div className="mt-9 flex flex-col gap-9 lg:flex-row lg:items-end lg:justify-between">
+          <p className="hero-sub max-w-md text-[0.95rem] leading-relaxed text-bone/65 md:text-base">
+            {cars.length > 0 && `${cars.length} `}supercars and luxury vehicles, delivered anywhere
+            in Dubai. No deposits held online, no hidden fees &mdash; confirm your booking in a
+            single WhatsApp message.
+          </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            href="/fleet"
-            className="hero-cta group relative overflow-hidden rounded-full bg-gold-500 px-9 py-4 text-xs tracking-[0.18em] uppercase text-ink-950 transition-transform duration-300 hover:scale-[1.03]"
-          >
-            <span className="relative z-10">Explore the fleet</span>
-            <span className="absolute inset-0 translate-y-full bg-bone transition-transform duration-400 ease-[var(--ease-lux)] group-hover:translate-y-0" />
-          </Link>
-          <Link
-            href="/book"
-            className="hero-cta rounded-full border border-bone/25 px-9 py-4 text-xs tracking-[0.18em] uppercase transition-colors duration-300 hover:border-gold-500 hover:text-gold-500"
-          >
-            Reserve a car
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/fleet"
+              className="hero-cta group relative overflow-hidden rounded-full bg-bone px-8 py-4 text-[0.7rem] font-medium tracking-[0.16em] text-ink-950 uppercase"
+            >
+              <span className="relative z-10">Explore the fleet</span>
+              <span className="absolute inset-0 -translate-x-full bg-gold-500 transition-transform duration-500 ease-[var(--ease-lux)] group-hover:translate-x-0" />
+            </Link>
+            <Link
+              href="/book"
+              className="hero-cta rounded-full border border-bone/25 px-8 py-4 text-[0.7rem] font-medium tracking-[0.16em] uppercase transition-colors duration-400 hover:border-gold-500 hover:text-gold-500"
+            >
+              Reserve a car
+            </Link>
+          </div>
         </div>
 
-        {/* Live caption for the car currently on screen */}
         {active && (
-          <div className="hairline mt-12 flex flex-wrap items-end gap-x-10 gap-y-4 pt-7">
-            <div className="hero-stat">
-              <p className="eyebrow mb-1.5">Now showing</p>
+          <div className="hairline mt-11 flex flex-wrap items-end gap-x-12 gap-y-5 pt-6">
+            <div className="hero-meta">
+              <p className="mb-2 text-[0.6rem] tracking-[0.22em] text-faint uppercase">
+                Now showing
+              </p>
               <Link
                 href={`/fleet/${active.slug}`}
-                className="font-display text-lg transition-colors hover:text-gold-500"
+                className="link-sweep font-display text-xl transition-colors hover:text-gold-500"
               >
                 {active.name}
               </Link>
             </div>
+
             {active.pricing.daily && (
-              <div className="hero-stat">
-                <p className="eyebrow mb-1.5">From</p>
-                <p className="font-display text-lg">
+              <div className="hero-meta">
+                <p className="mb-2 text-[0.6rem] tracking-[0.22em] text-faint uppercase">From</p>
+                <p className="font-display text-xl">
                   {formatPrice(active.pricing.daily, active.pricing.currency)}
-                  <span className="ml-1 text-xs text-muted">/ day</span>
-                </p>
-              </div>
-            )}
-            {active.specs.horsepower && (
-              <div className="hero-stat">
-                <p className="eyebrow mb-1.5">Power</p>
-                <p className="font-display text-lg">
-                  {active.specs.horsepower} <span className="text-xs text-muted">hp</span>
+                  <span className="ml-1.5 font-sans text-[0.7rem] text-muted">/ day</span>
                 </p>
               </div>
             )}
 
-            {/* Slide selector */}
-            <div className="hero-stat ml-auto flex items-center gap-2.5">
+            {active.specs.horsepower && (
+              <div className="hero-meta hidden sm:block">
+                <p className="mb-2 text-[0.6rem] tracking-[0.22em] text-faint uppercase">Power</p>
+                <p className="font-display text-xl">
+                  {active.specs.horsepower}
+                  <span className="ml-1.5 font-sans text-[0.7rem] text-muted">hp</span>
+                </p>
+              </div>
+            )}
+
+            <div className="hero-meta ml-auto flex items-center gap-3">
               {slides.map((car, i) => (
                 <button
                   key={car.slug}
@@ -162,19 +167,27 @@ export default function Hero({ cars }: { cars: Car[] }) {
                   onClick={() => setIndex(i)}
                   aria-label={`Show ${car.name}`}
                   aria-current={i === index}
-                  className={`h-px transition-all duration-500 ease-[var(--ease-lux)] ${
-                    i === index ? 'w-12 bg-gold-500' : 'w-6 bg-bone/30 hover:bg-bone/60'
-                  }`}
-                />
+                  className="group relative py-3"
+                >
+                  <span
+                    className={`block h-px transition-all duration-600 ease-[var(--ease-lux)] ${
+                      i === index
+                        ? 'w-14 bg-gold-500'
+                        : 'w-7 bg-bone/25 group-hover:w-10 group-hover:bg-bone/60'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
         )}
       </div>
 
-      <div className="hero-scroll absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex">
-        <span className="eyebrow text-bone/40">Scroll</span>
-        <span className="h-12 w-px bg-gradient-to-b from-gold-500 to-transparent" />
+      <div className="hero-scroll pointer-events-none absolute right-8 bottom-16 hidden flex-col items-center gap-3 lg:flex">
+        <span className="text-[0.6rem] tracking-[0.22em] text-bone/35 uppercase [writing-mode:vertical-rl]">
+          Scroll
+        </span>
+        <span className="h-14 w-px bg-gradient-to-b from-gold-500 to-transparent" />
       </div>
     </section>
   )

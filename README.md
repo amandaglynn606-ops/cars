@@ -16,12 +16,18 @@ WhatsApp message.
 | Images | 803 files served from `public/fleet/` - nothing is hotlinked |
 | Booking | `wa.me` deep link — no backend, no payment processor |
 
+## Ports
+
+This project is pinned to **port 3100** in `package.json` (`next dev -p 3100`,
+`next start -p 3100`). It never uses 3000, which is reserved for another site on
+this machine. Do not change this.
+
 ## Getting started
 
 ```bash
 npm install
 cp .env.example .env.local   # then set your WhatsApp number
-npm run dev                  # http://localhost:3000
+npm run dev                  # http://localhost:3100
 ```
 
 ### Required configuration
@@ -31,7 +37,7 @@ npm run dev                  # http://localhost:3000
 ```
 NEXT_PUBLIC_WHATSAPP_NUMBER=971501234567   # digits only, no + or spaces
 NEXT_PUBLIC_SITE_NAME="Luxury Car Rental Dubai"
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com   # http://localhost:3100 for local
 ```
 
 Until a valid number is set, the booking form and contact page show a

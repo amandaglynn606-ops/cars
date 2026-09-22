@@ -11,6 +11,10 @@ import type { PreparedDocument } from './reservation-documents'
 
 const globalDB = globalThis as unknown as { zaviDB?: DatabaseSync }
 export function db() {
+  if (process.env.VERCEL === '1')
+    throw new Error(
+      'Online submissions are temporarily unavailable. Please contact Zavi on WhatsApp.',
+    )
   if (globalDB.zaviDB) return globalDB.zaviDB
   const folder = process.env.ZAVI_DATA_DIR || path.join(process.cwd(), '.local')
   mkdirSync(folder, { recursive: true })
@@ -76,6 +80,14 @@ export function removeVehicleDescriptions(database: DatabaseSync) {
   }
 }
 export function allVehicles(includeDrafts = false): Car[] {
+  // Vercel functions have no persistent writable disk. The published catalogue
+  // is bundled with the deployment; never create a temporary customer database.
+  if (process.env.VERCEL === '1') {
+    const seed = JSON.parse(readFileSync(path.join(process.cwd(), 'data/fleet.json'), 'utf8'))
+    return (seed as Car[])
+      .map(validateCar)
+      .filter((car) => includeDrafts || car.publicationStatus === 'published')
+  }
   return (db().prepare('SELECT data FROM vehicles').all() as { data: string }[])
     .map((r) => JSON.parse(r.data) as Car)
     .filter((c) => includeDrafts || c.publicationStatus === 'published')

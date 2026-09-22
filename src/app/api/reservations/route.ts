@@ -4,6 +4,11 @@ import { prepareDocuments } from '@/lib/reservation-documents'
 export async function POST(request: Request) {
   try {
     requireSameOrigin(request)
+    if (process.env.VERCEL === '1')
+      return Response.json(
+        { error: 'Online reservations are temporarily unavailable. Please enquire on WhatsApp.' },
+        { status: 503, headers: { 'Cache-Control': 'no-store' } },
+      )
     rateLimit('public-reservations', 30, 10 * 60000)
     let value: unknown
     let documents: Awaited<ReturnType<typeof prepareDocuments>> = []

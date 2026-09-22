@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import type { FormEvent, ReactNode } from 'react'
-import type { Car, ReservedDates } from '@/lib/types'
+import type { Car } from '@/lib/types'
 import { useBookingContact } from './BookingContactProvider'
 import { buildQuickChatUrl } from '@/lib/whatsapp'
 import WhatsappIcon from './WhatsappIcon'
@@ -13,9 +13,10 @@ export default function ReserveVehicle({
   plan,
   event: rentalEvent,
   children,
+  onlineReservations = true,
 }: {
   car: Car
-  reservations: ReservedDates[]
+  onlineReservations?: boolean
   start?: string
   end?: string
   location?: string
@@ -42,48 +43,64 @@ export default function ReserveVehicle({
   }
   return (
     <div className="z-vehicle-enquiry">
-      <p className="z-kicker z-enquiry-step">
-        <T>Step 1 of 2 · Your details</T>
-      </p>
-      <form onSubmit={next} className="z-reserve-contact-grid">
-        <label className="z-field">
-          <T>Full name</T>
-          <input
-            name="name"
-            autoComplete="name"
-            required
-            maxLength={150}
-            defaultValue={contact?.name || ''}
-          />
-        </label>
-        <label className="z-field">
-          <T>Email</T>
-          <input
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            maxLength={200}
-            defaultValue={contact?.email || ''}
-          />
-        </label>
-        <PhoneField defaultValue={contact?.phone || ''} />
-        <button type="submit" className="z-button" style={{ width: '100%' }} disabled={!available}>
-          <T>Continue to reservation</T>
-          <Icon name="arrow" />
-        </button>
-      </form>
-      {!available && (
-        <p className="z-error">
-          <T>This vehicle is not currently accepting reservations.</T>
+      {onlineReservations ? (
+        <>
+          <p className="z-kicker z-enquiry-step">
+            <T>Step 1 of 2 · Your details</T>
+          </p>
+          <form onSubmit={next} className="z-reserve-contact-grid">
+            <label className="z-field">
+              <T>Full name</T>
+              <input
+                name="name"
+                autoComplete="name"
+                required
+                maxLength={150}
+                defaultValue={contact?.name || ''}
+              />
+            </label>
+            <label className="z-field">
+              <T>Email</T>
+              <input
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                maxLength={200}
+                defaultValue={contact?.email || ''}
+              />
+            </label>
+            <PhoneField defaultValue={contact?.phone || ''} />
+            <button
+              type="submit"
+              className="z-button"
+              style={{ width: '100%' }}
+              disabled={!available}
+            >
+              <T>Continue to reservation</T>
+              <Icon name="arrow" />
+            </button>
+          </form>
+          {!available && (
+            <p className="z-error">
+              <T>This vehicle is not currently accepting reservations.</T>
+            </p>
+          )}
+          <p className="z-note" style={{ marginTop: 10 }}>
+            <T>
+              Next: choose dates, enter your delivery address and attach your documents. No payment
+              is taken here.
+            </T>
+          </p>
+        </>
+      ) : (
+        <p className="z-note" style={{ paddingBlock: 20 }}>
+          <T>
+            Enquire on WhatsApp for availability and a quote. Online reservations are temporarily
+            unavailable.
+          </T>
         </p>
       )}
-      <p className="z-note" style={{ marginTop: 10 }}>
-        <T>
-          Next: choose dates, enter your delivery address and attach your documents. No payment is
-          taken here.
-        </T>
-      </p>
       {children}
       <a
         href={buildQuickChatUrl(car, plan === 'monthly' ? 'monthly' : 'daily')}

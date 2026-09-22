@@ -2,7 +2,6 @@ import { notFound, permanentRedirect } from 'next/navigation'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { getCarByRoute, getRelatedCars } from '@/lib/fleet'
-import { reservedDates } from '@/lib/db'
 import { carHref, monthlyCarHref, categorySlug } from '@/lib/catalogue'
 import { siteConfig } from '@/lib/config'
 import CarGallery from '@/components/CarGallery'
@@ -152,7 +151,7 @@ export default async function VehicleDetail({
             )}
             <ReserveVehicle
               car={car}
-              reservations={reservedDates()}
+              onlineReservations={process.env.VERCEL !== '1'}
               {...query}
               plan={monthly ? 'monthly' : undefined}
             >

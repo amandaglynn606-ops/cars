@@ -44,6 +44,6 @@
     "postcss": "$postcss"
   },
   "engines": {
-    "node": ">=22.13.0"
+    "node": "22.x"
   }
 }

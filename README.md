@@ -25,6 +25,12 @@ npm.cmd start
 
 ## Data and management
 
+### Vercel catalogue deployment
+
+Vercel runs the public site from the bundled fleet seed without creating SQLite files in its read-only application directory. Node.js 22 is pinned in `package.json`; fleet data and locale dictionaries are explicitly included in the server-function bundle. Set `NEXT_PUBLIC_SITE_URL` to your public HTTPS domain (not the local-preview URL). If omitted, the server uses Vercel's production domain.
+
+This restores catalogue browsing, event pages, monthly pricing and WhatsApp enquiries on Vercel. Online reservation/document submissions and partnership forms are unavailable there until persistent external storage is implemented. Their pages provide WhatsApp contact instead, and submission APIs return 503 before reading uploads. Do not point `ZAVI_DATA_DIR` at `/tmp`: temporary storage would lose customer records. The existing SQLite-backed forms and administration continue to work on a persistent host and locally.
+
 `data/fleet.json` is the validated importable seed. On first use, it initializes `.local/zavi.sqlite`. After initialization, **SQLite is the live source of truth** for the homepage, filters, all catalogue pages, prices, admin edits and reservations. Editing the seed does not overwrite live changes.
 
 Vehicle descriptions have been removed from the catalogue and editor. Startup migrates legacy records, and validation discards descriptions from older imports. See [CONTENT-REVIEW.md](CONTENT-REVIEW.md) for the content changes, verification and pending Google update review.

@@ -10,6 +10,7 @@ export const getCarByRoute = (brand: string, model: string) => {
   const cars = getAllCars()
   const match = cars.find((c) => c.brandSlug === brand && c.modelSlug === model)
   if (match) return match
+  if (process.env.VERCEL === '1') return undefined
   const alias = db()
     .prepare('SELECT vehicleId FROM vehicle_aliases WHERE route=?')
     .get(brand + '/' + model) as { vehicleId: string } | undefined

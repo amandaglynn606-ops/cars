@@ -1,5 +1,7 @@
 ﻿import Link from 'next/link'
 import PartnershipForm from './PartnershipForm'
+import EnquiryFallback from './EnquiryFallback'
+import { siteConfig } from '@/lib/config'
 import PartnerMotion from './PartnerMotion'
 import Icon from './Icon'
 import { T } from './RegionalProvider'
@@ -153,7 +155,22 @@ export default function PartnerLanding({ type }: { type: PartnershipType }) {
             </div>
           </aside>
         )}
-        <PartnershipForm key={type} initialType={type} />
+        {process.env.VERCEL === '1' ? (
+          <EnquiryFallback
+            href={
+              'https://wa.me/' +
+              siteConfig.whatsappNumber +
+              '?text=' +
+              encodeURIComponent(
+                type === 'consignment'
+                  ? 'Hello Zavi, I would like to discuss consigning my car.'
+                  : 'Hello Zavi, I would like to discuss an agency partnership.',
+              )
+            }
+          />
+        ) : (
+          <PartnershipForm key={type} initialType={type} />
+        )}
       </section>
       {type === 'consignment' && (
         <>

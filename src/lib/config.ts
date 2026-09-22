@@ -1,6 +1,12 @@
 export const siteConfig = {
   name: 'Zavi',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'http://127.0.0.1:43117',
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
+      : process.env.VERCEL_URL
+        ? 'https://' + process.env.VERCEL_URL
+        : 'http://127.0.0.1:43117'),
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '971545974005',
   description:
     'Compare luxury car rental options in Dubai by brand, category and daily rate. View photos and send Zavi a reservation request for your dates.',

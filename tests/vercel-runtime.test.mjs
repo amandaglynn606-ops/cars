@@ -7,6 +7,7 @@ import { randomUUID } from 'node:crypto'
 import { moduleURL } from './load-module.mjs'
 
 process.env.VERCEL = '1'
+process.env.NEXT_PUBLIC_SITE_URL = 'https://dubailuxurycarrentals.ae'
 process.env.ZAVI_DATA_DIR = path.join(tmpdir(), 'zavi-no-write-' + randomUUID())
 const catalogueURL = await moduleURL('src/lib/catalogue.ts')
 const repoURL = await moduleURL('src/lib/db.ts', {

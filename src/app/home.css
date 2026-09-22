@@ -1,0 +1,847 @@
+.z-home .z-hero {
+  min-height: 570px;
+  height: min(680px, calc(100svh - 133px));
+}
+.z-home .z-hero h1 {
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(22px, 5.6vw, 80px);
+  line-height: 1.12;
+}
+.z-home .z-hero-intro {
+  max-width: 540px;
+  font-size: 14px;
+}
+.z-home-jump {
+  border-block: 1px solid var(--z-line);
+  background: #11110f;
+}
+.z-home-jump > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 25px;
+}
+.z-home-jump a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+}
+.z-home-jump a:hover {
+  color: var(--z-bronze);
+}
+.z-home-section {
+  padding-block: 64px;
+  scroll-margin-top: 165px;
+}
+.z-home .z-car-image {
+  aspect-ratio: 16 / 9;
+}
+.z-home-heading {
+  width: 100%;
+  margin-bottom: 36px;
+}
+.z-home-heading > .z-kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 17px;
+}
+.z-home-heading > .z-kicker > span {
+  color: var(--z-muted);
+  padding-right: 18px;
+  border-right: 1px solid var(--z-line);
+}
+.z-home-heading h2 {
+  display: block;
+  width: 100%;
+  font-family: var(--font-qiswah), serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 64px);
+  line-height: 1.15;
+  white-space: nowrap;
+  margin: 0 0 20px;
+}
+html:not([lang='en']) .z-home-heading h2 {
+  font-size: clamp(20px, 3.8vw, 58px);
+}
+html:not([lang='en']) .z-home .z-hero h1 {
+  font-size: clamp(15px, 4vw, 68px);
+}
+.z-home .z-hero-content > :not(.z-button),
+.z-home .z-hero-bottom {
+  text-shadow: 0 1px 4px #000;
+}
+.z-home-section-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+.z-home-section-intro > p {
+  color: var(--z-muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 770px;
+}
+.z-home-section-intro > a {
+  flex-shrink: 0;
+}
+.z-home-brand-row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 36px;
+  gap: 8px;
+  align-items: center;
+}
+.z-home-brand-scroll {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  color: var(--z-bronze);
+  border: 1px solid var(--z-line);
+  cursor: pointer;
+}
+.z-home-brand-scroll:hover {
+  border-color: var(--z-bronze);
+}
+.z-home-brand-scroll.is-previous svg {
+  transform: rotate(180deg);
+}
+.z-home-brands {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  gap: 8px;
+  padding: 4px 0;
+}
+.z-home-brands::-webkit-scrollbar {
+  display: none;
+}
+.z-home-brands > button {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 calc((100% - 72px) / 10);
+  min-width: 0;
+  gap: 10px;
+  min-height: 150px;
+  padding: 16px 4px;
+  border: 1px solid transparent;
+  border-bottom-color: var(--z-line);
+  color: var(--z-text);
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+.z-home-brands > button:hover,
+.z-home-brands > button[aria-pressed='true'] {
+  background: var(--z-panel);
+  border-bottom-color: var(--z-bronze);
+}
+.z-home-brands > button:focus-visible {
+  outline: 2px solid var(--z-bronze);
+  outline-offset: -2px;
+}
+.z-home-brand-logo {
+  width: min(112px, 100%);
+  height: 92px;
+  object-fit: contain;
+}
+.z-home-brand-name {
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (max-width: 1199px) {
+  .z-home-brands > button {
+    flex-basis: calc((100% - 32px) / 5);
+  }
+}
+@media (max-width: 699px) {
+  .z-home-brands > button {
+    flex-basis: calc((100% - 8px) / 2);
+  }
+}
+.z-home-brand-results {
+  margin-top: 28px;
+}
+.z-home-brand-results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.z-home-brand-results-heading > p {
+  font-size: 17px;
+}
+.z-home-brand-results-heading > p > span {
+  color: var(--z-muted);
+  font-size: 12px;
+}
+.z-home-brand-results-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--z-bronze);
+  font-size: 11px;
+}
+.z-home-brand-results .z-car-card {
+  display: flex;
+  flex-direction: column;
+}
+.z-home-brand-results .z-car-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.z-home-brand-results .z-car-bottom {
+  margin-top: auto;
+}
+.z-hot-section {
+  background: #191610;
+  border-block: 1px solid #453829;
+}
+.z-hot-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr);
+  gap: 40px;
+  align-items: stretch;
+}
+.z-hot-stage {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #4f4030;
+  background: #0e0d0b;
+}
+.z-hot-photo {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--z-panel);
+}
+.z-hot-photo-layer {
+  position: absolute;
+  inset: 0;
+}
+.z-hot-photo-layer img {
+  object-fit: cover;
+}
+.z-hot-edition {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: fit-content;
+  padding: 10px 14px;
+  background: #0e0d0bf0;
+  color: #e5c39b;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.z-hot-details {
+  padding: 24px;
+}
+.z-hot-title,
+.z-hot-book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.z-hot-title h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: clamp(30px, 2.6vw, 44px);
+  line-height: 1.1;
+  margin-top: 10px;
+}
+.z-hot-specs {
+  flex-shrink: 0;
+  display: grid;
+  gap: 9px;
+  text-align: right;
+  font-size: 10px;
+  color: var(--z-bronze);
+}
+.z-hot-book {
+  margin-top: 25px;
+  padding-top: 22px;
+  border-top: 1px solid var(--z-line);
+}
+.z-hot-book > p {
+  font-size: 24px;
+  color: #e5c39b;
+}
+.z-hot-book > p > span {
+  font-size: 11px;
+}
+.z-hot-lineup > .z-kicker {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 14px;
+  border-top: 1px solid #4f4030;
+  min-height: 48px;
+}
+.z-hot-lineup article {
+  border-top: 1px solid #453829;
+}
+.z-hot-lineup article:last-child {
+  border-bottom: 1px solid #453829;
+}
+.z-hot-lineup button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 18px 100px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+.z-hot-lineup button:hover,
+.z-hot-lineup button[aria-pressed='true'] {
+  background: #30271c;
+  border-left-color: #d1ad82;
+}
+.z-hot-number {
+  font-size: 10px;
+  color: var(--z-bronze);
+}
+.z-hot-thumb {
+  position: relative;
+  width: 100px;
+  aspect-ratio: 1.5;
+}
+.z-hot-thumb img {
+  object-fit: cover;
+}
+.z-hot-choice {
+  display: grid;
+  gap: 8px;
+}
+.z-hot-choice > span {
+  font-size: 10px;
+  color: #d1ad82;
+}
+.z-hot-choice strong {
+  font-family: var(--font-qiswah), serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.z-hot-lineup button > svg {
+  color: #d1ad82;
+}
+@media (max-width: 1100px) {
+  .z-hot-showcase {
+    gap: 24px;
+  }
+  .z-hot-lineup button {
+    grid-template-columns: 80px minmax(0, 1fr) 18px;
+    gap: 12px;
+    padding-inline: 10px;
+  }
+  .z-hot-number {
+    display: none;
+  }
+  .z-hot-thumb {
+    width: 80px;
+  }
+  .z-hot-book {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  .z-hot-photo {
+    flex: auto;
+    aspect-ratio: 1.8;
+    min-height: 0;
+  }
+  .z-hot-showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .z-hot-lineup {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+  }
+  .z-hot-lineup > .z-kicker {
+    grid-column: 1 / -1;
+  }
+  .z-hot-book {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media (max-width: 600px) {
+  .z-hot-details {
+    padding: 20px;
+  }
+  .z-hot-title {
+    align-items: flex-start;
+  }
+  .z-hot-specs {
+    font-size: 9px;
+    max-width: 100px;
+  }
+  .z-hot-book {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .z-hot-book .z-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .z-hot-lineup {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .z-home-brands > button,
+  .z-hot-lineup button {
+    transition: none;
+  }
+}
+.z-home-types {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.z-home-type {
+  min-width: 0;
+  border: 1px solid var(--z-line);
+  background: var(--z-panel);
+}
+.z-home-type-photo {
+  position: relative;
+  aspect-ratio: 1.85;
+  overflow: hidden;
+  background: #20201c;
+}
+.z-home-type-photo img {
+  object-fit: cover;
+  transition: transform 200ms ease;
+}
+.z-home-type:hover img {
+  transform: scale(1.025);
+}
+.z-home-type-photo > span {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 7px 10px;
+  background: #0b0b0ae8;
+  color: #ecdfce;
+  font-size: 10px;
+}
+.z-home-type-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 23px;
+}
+.z-home-type-info h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 30px;
+  line-height: 1.1;
+}
+.z-home-type-info p {
+  font-size: 11px;
+  color: var(--z-bronze);
+  margin-top: 10px;
+}
+.z-home-booking {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.z-home-booking > div {
+  padding: 30px;
+  background: var(--z-panel);
+  border: 1px solid var(--z-line);
+}
+.z-home-step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--z-bronze);
+  margin-bottom: 26px;
+}
+.z-home-step-top > span {
+  font-size: 11px;
+}
+.z-home-booking h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 29px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.z-home-booking p {
+  color: var(--z-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.z-home-faq {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 56px;
+}
+.z-home-faq-column {
+  border-top: 1px solid var(--z-line);
+}
+.z-home-faq-column > details {
+  border-bottom: 1px solid var(--z-line);
+}
+.z-home-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  list-style: none;
+  padding: 25px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+.z-home-faq summary::-webkit-details-marker {
+  display: none;
+}
+.z-home-faq summary > .z-faq-plus {
+  color: var(--z-bronze);
+  font-size: 24px;
+}
+.z-home-faq details[open] summary > .z-faq-plus {
+  transform: rotate(45deg);
+}
+.z-home-faq .z-faq-number {
+  font-size: 10px;
+  color: var(--z-bronze);
+  flex-shrink: 0;
+}
+.z-home-faq summary {
+  justify-content: flex-start;
+  min-height: 105px;
+  gap: 16px;
+  line-height: 1.6;
+}
+.z-home-faq .z-faq-plus {
+  margin-inline-start: auto;
+}
+.z-home-faq details > p {
+  padding-inline-start: 32px;
+}
+@media (max-width: 800px) {
+  .z-home-faq {
+    grid-template-columns: 1fr;
+  }
+  .z-home-faq-column + .z-home-faq-column {
+    border-top: 0;
+  }
+  .z-home-faq summary {
+    min-height: 90px;
+  }
+}
+.z-home-faq details > p {
+  max-width: 900px;
+  padding: 0 40px 25px 0;
+  color: var(--z-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.z-home-cta {
+  border-bottom: 1px solid var(--z-line);
+}
+.z-emirates {
+  position: relative;
+  isolation: isolate;
+  background: #111a1c;
+  scroll-margin-top: 160px;
+}
+.z-emirates-images,
+.z-emirates-images::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.z-emirates-images {
+  overflow: hidden;
+}
+.z-emirates-images img {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+.z-emirates-images img.is-active {
+  opacity: 1;
+}
+.z-emirates-images::after {
+  content: '';
+  z-index: 1;
+  background: linear-gradient(180deg, #070b0de8 0%, #070b0d45 38%, #070b0d85 57%, #070b0df5 100%);
+}
+.z-emirates-content {
+  padding-top: 56px;
+}
+.z-emirates-heading .z-kicker {
+  color: #ead7ba;
+  display: flex;
+  gap: 18px;
+}
+.z-emirates-heading h2 {
+  font-family: var(--font-qiswah), serif;
+  font-size: clamp(22px, 4.3vw, 64px);
+  font-weight: 400;
+  white-space: nowrap;
+  margin: 20px 0 14px;
+}
+.z-emirates-heading > p:last-child {
+  font-size: 13px;
+  color: #eee4d6;
+}
+.z-emirates-destination {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: clamp(130px, 15vw, 300px);
+  padding-bottom: 40px;
+}
+.z-emirates-destination .z-kicker {
+  color: #eee4d6;
+  text-shadow: 0 1px 4px #000;
+}
+.z-emirates-destination h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 1.15;
+  margin-top: 14px;
+  text-shadow: 0 1px 6px #000;
+}
+.z-emirates-destination h3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+.z-emirates-destination .z-button {
+  color: #fff;
+  border-color: #d5b88f;
+  background: #0a0e0da8;
+}
+.z-emirates-options {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-block: 1px solid #a28b6c85;
+}
+.z-emirates-options button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px 6px;
+  padding: 22px 14px;
+  color: #f1eade;
+  text-align: start;
+  cursor: pointer;
+  font-size: 12px;
+  border-top: 2px solid transparent;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+.z-emirates-options button > span:first-child {
+  flex: 0 0 100%;
+  font-size: 10px;
+  color: #d7bd99;
+}
+.z-emirates-options button[aria-pressed='true'] {
+  background: #ad88542e;
+  border-top-color: #d7bd99;
+}
+.z-emirates-options button:hover {
+  background: #ad885426;
+}
+.z-emirates-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 18px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #e3d7c6;
+}
+.z-emirates-foot a {
+  flex-shrink: 0;
+  text-decoration: underline;
+}
+.z-earn {
+  background: #0e0e0c;
+}
+@media (min-width: 1600px) {
+  .z-hot-photo-layer img {
+    object-fit: contain;
+  }
+}
+@media (max-width: 1100px) {
+  .z-emirates-options button {
+    font-size: 11px;
+    padding-inline: 8px;
+  }
+  .z-emirates-options button > svg {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .z-emirates-options {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .z-emirates-options button {
+    padding: 16px 10px;
+  }
+  .z-emirates-destination {
+    padding-top: 150px;
+  }
+}
+@media (max-width: 600px) {
+  .z-emirates-content {
+    padding-top: 40px;
+  }
+  .z-emirates-destination {
+    display: block;
+    padding-top: 120px;
+    padding-bottom: 25px;
+  }
+  .z-emirates-destination .z-button {
+    margin-top: 20px;
+  }
+  .z-emirates-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .z-emirates-options button {
+    font-size: 12px;
+    gap: 8px;
+    padding-block: 12px;
+  }
+  .z-emirates-options button > span:first-child {
+    flex: 0 0 auto;
+  }
+  .z-emirates-options button:last-child {
+    grid-column: 1/-1;
+  }
+  .z-emirates-options button > svg {
+    display: block;
+  }
+  .z-emirates-foot {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .z-emirates-images img,
+  .z-emirates-options button {
+    transition: none;
+  }
+}
+@media (max-width: 600px) {
+  #emirate-preview {
+    min-height: 145px;
+  }
+}
+@media (max-width: 1000px) {
+  .z-home-types {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .z-home-booking {
+    gap: 16px;
+  }
+  .z-home-booking > div {
+    padding: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .z-home .z-hero {
+    min-height: 520px;
+    max-height: 650px;
+    height: calc(100svh - 130px);
+  }
+  .z-home .z-hero h1 {
+    font-size: clamp(22px, 5.6vw, 34px);
+    max-width: none;
+  }
+  .z-home .z-hero-intro {
+    font-size: 12px;
+  }
+  .z-home-jump > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    padding-block: 25px;
+  }
+  .z-home-jump .z-kicker {
+    display: none;
+  }
+  .z-home-jump a {
+    justify-content: space-between;
+    font-size: 11px;
+  }
+  .z-home-section {
+    padding-block: 55px;
+    scroll-margin-top: 145px;
+  }
+  .z-home-heading {
+    margin-bottom: 27px;
+  }
+  .z-home-section-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .z-home-section-intro > p {
+    font-size: 12px;
+  }
+  .z-home-types,
+  .z-home-booking {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .z-home-faq summary {
+    font-size: 14px;
+  }
+}
+
+.z-home .z-hero h1 {
+  white-space: normal;
+  font-size: clamp(30px, 5.6vw, 80px);
+}
+.z-home .z-hero-content > .z-button {
+  margin-top: 28px;
+}
+.z-home .z-hero {
+  min-height: 660px;
+}
+@media (max-width: 600px) {
+  .z-home .z-hero h1 {
+    font-size: clamp(30px, 7.4vw, 44px);
+  }
+  .z-home .z-hero-content > .z-button {
+    margin-top: 20px;
+  }
+}

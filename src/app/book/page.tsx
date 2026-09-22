@@ -1,42 +1,49 @@
-import type { Metadata } from 'next'
+import Link from 'next/link'
 import BookingForm from '@/components/BookingForm'
 import { getAllCars, getCarBySlug } from '@/lib/fleet'
-
-export const metadata: Metadata = {
-  title: 'Make a Booking',
-  description:
-    'Reserve a supercar or luxury vehicle in Dubai. Send your dates and details straight to our team on WhatsApp - no payment taken online.',
-}
-
+import { rentalRequestContext } from '@/lib/home-rentals'
+export const metadata = { title: 'Request a Reservation', robots: { index: false, follow: true } }
 export default async function BookPage({
   searchParams,
 }: {
-  searchParams: Promise<{ car?: string; colour?: string; period?: string }>
+  searchParams: Promise<{
+    car?: string
+    start?: string
+    end?: string
+    location?: string
+    event?: string
+    plan?: string
+  }>
 }) {
-  const params = await searchParams
-  const cars = getAllCars()
-  const initialCar = params.car ? getCarBySlug(params.car) : undefined
-  const initialPeriod = params.period === 'monthly' ? 'monthly' : 'daily'
-
+  const p = await searchParams
+  const context = rentalRequestContext(p.event, p.plan)
   return (
-    <div className="container-lux pt-36 pb-24 md:pt-44">
-      <header className="mb-14 max-w-2xl">
-        <p className="eyebrow mb-4">Reservations</p>
-        <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] leading-[0.98]">
-          Make a booking
+    <div className="container-lux">
+      <header className="z-page-hero">
+        <p className="z-kicker">
+          <T>Rental enquiry</T>
+        </p>
+        <h1>
+          <T>Request a reservation</T>
         </h1>
-        <p className="mt-5 leading-relaxed text-muted">
-          Fill in your details and we will send the whole enquiry to our team on WhatsApp in one
-          tap. No card details, no deposit taken on this site.
+        <p className="z-lead">
+          <T>
+            Complete your reservation details. The team will confirm availability and your final
+            quote.
+          </T>
         </p>
       </header>
-
       <BookingForm
-        cars={cars}
-        initialCar={initialCar}
-        initialColour={params.colour}
-        initialPeriod={initialPeriod}
+        cars={getAllCars()}
+        initialCar={p.car ? getCarBySlug(p.car) : undefined}
+        initialStart={p.start}
+        initialEnd={p.end}
+        initialLocation={p.location || context.location}
+        initialNotes={context.notes}
+        initialPeriod={p.plan === 'monthly' ? 'monthly' : 'daily'}
       />
     </div>
   )
 }
+
+import { T } from '@/components/RegionalProvider'

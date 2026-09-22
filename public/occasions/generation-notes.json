@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": "dubai-date-night",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide landscape hero image for a Dubai date-night car rental planning page. Create an elegant editorial illustration with photographic realism: an intimate candlelit dinner table for two on an unbranded outdoor terrace overlooking Dubai Marina at blue hour. Two place settings, white flowers, water glasses, subtle candles, warm lights reflecting in the marina water, recognisable tall residential towers and moored yachts in the background. No people needed, no alcohol, no logos, no signage, no text, no watermark. The setting must feel geographically like Dubai Marina rather than Europe. Refined warm bronze tones and natural navy evening sky, realistic materials, restrained luxury. Wide 3:2 composition with the dinner setting clearly legible at card size. This is concept imagery, not documentation of a real venue or Zavi event.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-romantic-getaway",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 3:2 editorial hero for romantic getaways in Dubai. Create a refined photographic concept illustration of two lounge chairs and a small breakfast table on an unbranded resort balcony on Palm Jumeirah, looking across a tranquil beach and the Arabian Gulf toward Dubai's distant coastal skyline at warm sunrise. Foreground has a neatly packed small weekend bag, two coffee cups and delicate white flowers. Calm, intimate, tasteful luxury, realistic fabric and stone, natural light, restrained warm bronze palette. The sea and Dubai coastal setting must be legible. No people, no text, no logos, no watermark, no alcohol, no claim to depict a specific hotel. This is illustrative trip-planning imagery, not a photograph of an actual Zavi stay.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-surprise-gift",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 3:2 editorial concept image for a surprise luxury car rental gift in Dubai. Foreground a small open presentation box with a generic modern car key and an elegant gold ribbon, beside a wrapped bouquet of white roses on a stone table. Behind them, a parked unbranded graphite luxury sports coupe in an upscale Dubai courtyard with the recognisable single Burj Khalifa and Downtown towers in the background at golden hour. Frame the gift box and flowers as the principal subject; the car and Dubai skyline supply context. Photographic realism, sophisticated warm bronze and charcoal palette, believable scale and anatomy of objects. No people, no readable registration plates, no text, no logos, no watermark, no ribbon or flowers attached to the car. Illustration for planning a rental experience gift, not evidence of an actual Zavi vehicle or service.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-wedding",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 3:2 occasion hero for Dubai wedding and engagement car rental planning. Editorial photographic concept: an ivory bridal bouquet and two simple gold wedding rings in a small open box on a cream stone plinth in a landscaped Dubai garden courtyard. Behind, a parked elegant unbranded ivory luxury sedan at a discreet hotel entrance; Dubai modern skyline with one Burj Khalifa in the far distance. Late afternoon natural golden light, cream roses, soft green palms, tasteful black-and-bronze details. Focus on the wedding objects and convey a calm wedding-day arrival. No people, no logos, no readable plates, no text, no watermark. No flowers attached to car. Concept illustration, not a real venue, actual rental car or actual Zavi wedding.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-graduation",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 3:2 editorial planning image for graduation car rentals in Dubai. A black graduation cap with a gold tassel and a rolled diploma tied with a ribbon resting on a stone table, a tasteful bouquet beside them. In the midground a parked unbranded dark luxury sedan; beyond palms and a Dubai-inspired modern skyline with a single slender Burj Khalifa in the distance. Warm late afternoon light, natural photographic realism, milestone celebration without people. No university branding, text, logos, readable vehicle plates or watermark. This is AI concept illustration, not an actual university event or Zavi customer photograph.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-production",
+    "prompt": "Use case: photorealistic-natural. Wide 3:2 editorial illustration for a Dubai car photoshoot or music video production planning page. A professional cinema camera on a tripod and a folded light reflector in foreground, aimed at a parked unbranded bronze sports coupe in a spacious authorised private paved courtyard. Dubai modern city skyline with one Burj Khalifa visible in distant background. Golden afternoon light, deliberate behind-the-scenes composition, realistic equipment and vehicle proportions. The tripod must be on ground, no equipment attached to the car, no filming on public road, no people, no branding, no text, no watermarks. Refined charcoal and warm bronze aesthetic. Illustrative scene rather than an actual production or vehicle offered by Zavi.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-family-day",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide 3:2 family day out in Dubai editorial illustration. A family picnic bag, folded stroller and two small sun hats beside a parked unbranded elegant dark SUV in a legal paved parking bay adjacent to a Dubai waterfront park. Palm trees and Dubai Creek Harbour-inspired modern towers across the water, early morning soft light. Family outing objects are clearly visible, no children or adults present, car fully stationary, equipment on ground beside the car not in traffic. Realistic photographic materials and natural composition, warm restrained colours. No text, logos, readable plates or watermark. This is a concept illustration of a Dubai family outing, not a factual location photograph or proof of a Zavi service.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  },
+  {
+    "id": "dubai-business-event",
+    "prompt": "Use case: photorealistic-natural. Wide 3:2 editorial concept illustration for Dubai corporate event car rental. A neatly organised leather business bag and a plain blank conference badge on a small stone bench at an unbranded modern convention-hotel entrance. A polished dark luxury sedan parked legally under the covered arrival area, with modern Dubai glass towers and palms visible beyond. Professional understated tone, natural morning light, warm charcoal and bronze materials, convincing photographic detail. No people, no logos, no text on badge, no readable plates, no watermark. Make the context a business-event arrival in Dubai, without claiming this is a specific venue or an actual Zavi event.",
+    "method": "Built-in image_gen tool",
+    "usage": "AI-generated Dubai-inspired planning illustration; not an actual venue, vehicle listing or Zavi event."
+  }
+]

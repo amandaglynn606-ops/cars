@@ -1,30 +1,42 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import FleetBrowser from '@/components/FleetBrowser'
-import { getAllCars, getBrands, getBodyTypes } from '@/lib/fleet'
-
+import { getAllCars } from '@/lib/fleet'
 export const metadata: Metadata = {
-  title: 'The Fleet',
+  title: 'The Zavi Fleet',
   description:
-    'Browse every supercar, SUV and luxury saloon available to rent in Dubai, with daily and monthly rates.',
+    'Explore the Zavi fleet. Compare luxury cars, supercars and SUVs by brand, model, category and daily rental price.',
+  alternates: { canonical: '/fleet' },
 }
-
 export default function FleetPage() {
   const cars = getAllCars()
-  const brands = getBrands()
-  const bodyTypes = getBodyTypes()
-
   return (
-    <div className="container-lux pt-36 pb-24 md:pt-44">
-      <header className="mb-14 max-w-2xl">
-        <p className="eyebrow mb-4">{cars.length} vehicles available</p>
-        <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] leading-[0.98]">The Fleet</h1>
-        <p className="mt-5 leading-relaxed text-muted">
-          From weekend supercars to long-term executive SUVs. Every rate below includes insurance
-          and delivery inside Dubai.
-        </p>
+    <>
+      <header className="z-page-hero">
+        <div className="container-lux">
+          <div className="z-hero-row">
+            <div>
+              <p className="z-kicker">
+                <T>The Zavi fleet</T>
+              </p>
+              <h1>
+                <T>Browse rental cars</T>
+              </h1>
+              <p className="z-lead">
+                <T>Filter by brand, model, category or daily rate.</T>
+              </p>
+            </div>
+            <span>
+              {cars.length} <T>vehicles in the collection</T>
+            </span>
+          </div>
+        </div>
       </header>
-
-      <FleetBrowser cars={cars} brands={brands} bodyTypes={bodyTypes} />
-    </div>
+      <div className="container-lux">
+        <FleetBrowser cars={cars} />
+      </div>
+    </>
   )
 }
+
+import { T } from '@/components/RegionalProvider'

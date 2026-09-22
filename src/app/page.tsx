@@ -1,200 +1,217 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import Hero from '@/components/Hero'
-import CarCard from '@/components/CarCard'
-import Reveal from '@/components/Reveal'
-import { getAllCars, getFeaturedCars, getBrands, getBodyTypes, categorySlug } from '@/lib/fleet'
-import { siteConfig } from '@/lib/config'
+﻿import Hero from '@/components/Hero'
+import HomeRentalPlans from '@/components/HomeRentalPlans'
+import Icon from '@/components/Icon'
+import HomeSectionHeading from '@/components/HomeSectionHeading'
+import HomeBrandBrowser from '@/components/HomeBrandBrowser'
+import HotRentals from '@/components/HotRentals'
+import EmiratesBanner from '@/components/EmiratesBanner'
+import EarnWithUs from '@/components/EarnWithUs'
+import { existsSync } from 'node:fs'
+import path from 'node:path'
+import { getAllCars, getFeaturedCars, getBrands, categorySlug } from '@/lib/fleet'
+import './home.css'
 
-const STEPS = [
+export const metadata = {
+  title: 'Luxury Car Rental Dubai | Daily & Monthly Rentals | Zavi',
+  description:
+    'Explore luxury cars in Dubai by brand. Compare daily rates, save 20% on a 30-day rental and plan a car for UAE events. Request availability and delivery.',
+  alternates: { canonical: '/' },
+}
+const brandOrder = [
+  'Lamborghini',
+  'Ferrari',
+  'Rolls-Royce',
+  'Bentley',
+  'Porsche',
+  'McLaren',
+  'Mercedes-Benz',
+  'BMW',
+  'Audi',
+  'Aston Martin',
+  'Range Rover',
+  'Maserati',
+]
+const rentalQuestions = [
   {
-    n: '01',
-    title: 'Choose your car',
-    body: 'Browse the fleet and pick your model, colour and rental basis.',
+    question: 'Do tourists need a passport to rent a car in Dubai?',
+    answer:
+      'Tourists are normally asked for a valid passport, entry visa or entry record, and a driving licence accepted in the UAE. Requirements depend on your residency and licence country. Confirm the documents before collection; do not send passport copies through the initial enquiry form.',
   },
   {
-    n: '02',
-    title: 'Send the enquiry',
-    body: 'One tap sends your dates, location and details straight to our WhatsApp.',
+    question: 'Do UAE residents need an Emirates ID?',
+    answer:
+      'Residents are normally asked for a valid Emirates ID and UAE driving licence. Bring the required originals for the rental checks. If your ID is being renewed, ask the rental provider which documents it can accept before reserving a car.',
   },
   {
-    n: '03',
-    title: 'We confirm',
-    body: 'A specialist replies with availability, final pricing and handover options.',
+    question: 'What is the minimum age for a luxury car rental?',
+    answer:
+      'Many rental providers require drivers to be at least 21, while luxury and high-performance cars may require 25 or older. Minimum age and how long you must have held your licence depend on the car and insurer. Share your age and licence history so the team can confirm eligibility for your chosen model.',
   },
   {
-    n: '04',
-    title: 'We deliver',
-    body: 'Your car arrives at your hotel, residence or terminal, fully valeted.',
+    question: 'Will I need an International Driving Permit?',
+    answer:
+      'This depends on the country that issued your licence and your visitor or resident status. Some visitors can use an accepted national licence; others need an International Driving Permit alongside their original licence. Confirm acceptance with the rental provider before booking.',
+  },
+  {
+    question: 'Is a security deposit required?',
+    answer:
+      'Deposit requirements, accepted payment methods and the release period depend on the vehicle and rental provider. Ask for these terms in writing, including how tolls, fines, fuel and damage are handled. No payment is collected when you submit a request on this website.',
+  },
+  {
+    question: 'What does the monthly rental price include?',
+    answer:
+      'Our 30-day rental price is 20% below 30 days at the car’s current daily rate. Confirm the mileage allowance, insurance cover and excess, deposit, delivery and any additional charges with your quote. Extra days and extensions are priced separately.',
   },
 ]
-
-const ASSURANCES = [
-  { title: 'No deposit held', body: 'We never charge or block funds through this website.' },
-  { title: 'Free delivery', body: 'Complimentary handover anywhere inside Dubai.' },
-  { title: 'Fully insured', body: 'Comprehensive cover included on every rental.' },
-  { title: '24/7 support', body: 'A real person on WhatsApp, day or night.' },
-]
-
-export default function HomePage() {
-  const all = getAllCars()
-  const featured = getFeaturedCars(6)
+export default function Home() {
+  const cars = getAllCars()
   const brands = getBrands()
-  const bodyTypes = getBodyTypes().slice(0, 6)
-
-  // A representative photo for each body-type tile.
-  const tileImage = (type: string) =>
-    all.find((c) => c.bodyType === type && c.images.length > 0)?.images[0].src
-
+  const featured = getFeaturedCars(100)
+  const chosenBrands = new Set<string | null>()
+  const diverseFeatured = featured
+    .filter((car) => {
+      if (car.availability !== 'available' || chosenBrands.has(car.brand)) return false
+      chosenBrands.add(car.brand)
+      return true
+    })
+    .slice(0, 6)
+  const featuredSelection = [
+    ...diverseFeatured,
+    ...featured.filter(
+      (car) =>
+        car.availability === 'available' &&
+        !diverseFeatured.some((selected) => selected.id === car.id),
+    ),
+  ].slice(0, 6)
+  const brabus = cars.find(
+    (car) => car.id === 'mercedes-benz-g-63-brabus' && car.availability === 'available',
+  )
+  const hotRentals = brabus
+    ? [brabus, ...featuredSelection.filter((car) => car.id !== brabus.id)].slice(0, 6)
+    : featuredSelection
+  const selectedBrands = [...brands]
+    .sort((a, b) => {
+      const rank = (name: string) =>
+        brandOrder.includes(name) ? brandOrder.indexOf(name) : brandOrder.length
+      return rank(a.name) - rank(b.name) || a.name.localeCompare(b.name)
+    })
+    .map((brand) => {
+      const logo = '/brands/' + categorySlug(brand.name) + '.svg'
+      return { ...brand, logo: existsSync(path.join(process.cwd(), 'public', logo)) ? logo : null }
+    })
   return (
-    <>
-      <Hero cars={getFeaturedCars(4)} />
-
-      {/* Assurances */}
-      <section className="border-y border-white/8 bg-ink-900">
-        <Reveal stagger className="container-lux grid gap-8 py-14 sm:grid-cols-2 lg:grid-cols-4">
-          {ASSURANCES.map((item) => (
-            <div key={item.title}>
-              <p className="font-display text-lg">{item.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
-            </div>
-          ))}
-        </Reveal>
+    <div className="z-home">
+      <Hero
+        cars={featuredSelection.length ? featuredSelection : cars.slice(0, 1)}
+        total={cars.length}
+      />
+      <nav className="z-home-jump" aria-label="Homepage sections">
+        <div className="container-lux">
+          <span className="z-kicker">
+            <T>Find your rental</T>
+          </span>
+          <a href="#browse-brands">
+            <T>Brands </T>
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href="#monthly-rentals">
+            <T>Monthly rentals </T>
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href="#hot-rentals">
+            <T>Hot rentals </T>
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href="#emirates">
+            <T>Emirates</T>
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href="#event-rentals">
+            <T>Events</T>
+            <Icon name="arrow" size={15} />
+          </a>
+          <a href="#earn-with-us">
+            <T>Earn with us</T>
+            <Icon name="arrow" size={15} />
+          </a>
+        </div>
+      </nav>
+      <section
+        id="browse-brands"
+        className="z-home-section container-lux"
+        aria-labelledby="brands-heading"
+      >
+        <HomeSectionHeading
+          id="brands-heading"
+          number="01"
+          eyebrow="The brands"
+          title="Browse brands"
+          description="Choose a brand to see its models, photos and listed daily rates."
+          href="/brands"
+          linkLabel={`View all ${brands.length} brands`}
+        />
+        <HomeBrandBrowser brands={selectedBrands} cars={cars} />
       </section>
-
-      {/* Featured fleet */}
-      <section className="container-lux py-24 md:py-32">
-        <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow mb-4">The collection</p>
-            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1.02]">
-              Our most requested
-            </h2>
-          </div>
-          <Link
+      {hotRentals.length > 0 && (
+        <section
+          id="hot-rentals"
+          className="z-home-section container-lux z-hot-section"
+          aria-labelledby="hot-heading"
+        >
+          <HomeSectionHeading
+            id="hot-heading"
+            number="02"
+            eyebrow="The Zavi selection"
+            title="Hot rentals"
+            description="Featured cars from the catalogue. Compare their listed rates and request a quote for your dates."
             href="/fleet"
-            className="rounded-full border border-white/20 px-7 py-3 text-xs tracking-[0.16em] uppercase transition-colors duration-300 hover:border-gold-500 hover:text-gold-500"
-          >
-            View all {all.length}
-          </Link>
-        </Reveal>
-
-        <Reveal stagger className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((car) => (
-            <CarCard key={car.slug} car={car} />
-          ))}
-        </Reveal>
-      </section>
-
-      {/* Body types */}
-      <section className="border-t border-white/8 bg-ink-900 py-24 md:py-32">
+            linkLabel={`View all ${cars.length} vehicles`}
+          />
+          <HotRentals cars={hotRentals} />
+        </section>
+      )}
+      <EmiratesBanner />
+      <EarnWithUs image={brabus?.featuredImage || cars[0].featuredImage} />
+      <HomeRentalPlans cars={cars} />
+      <section
+        id="rental-questions"
+        className="z-home-section z-section-tint"
+        aria-labelledby="questions-heading"
+      >
         <div className="container-lux">
-          <Reveal className="mb-14">
-            <p className="eyebrow mb-4">Browse by</p>
-            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1.02]">
-              Every kind of drive
-            </h2>
-          </Reveal>
-
-          <Reveal stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {bodyTypes.map((type) => {
-              const image = tileImage(type.name)
-              return (
-                <Link
-                  key={type.name}
-                  href={`/fleet/type/${categorySlug(type.name)}`}
-                  className="group relative aspect-[16/10] overflow-hidden rounded-sm bg-ink-800"
-                >
-                  {image && (
-                    <Image
-                      src={image}
-                      alt=""
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-[900ms] ease-[var(--ease-lux)] group-hover:scale-105"
-                    />
-                  )}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink-950/95 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
-                    <p className="font-display text-2xl transition-colors group-hover:text-gold-500">
-                      {type.name}
+          <HomeSectionHeading
+            id="questions-heading"
+            number="07"
+            eyebrow="Before you book"
+            title="Rental questions"
+            description="Passports, Emirates ID, driving licences and the essentials before you collect your car."
+            href="/contact"
+            linkLabel="Contact Zavi"
+          />
+          <div className="z-home-faq">
+            {[rentalQuestions.slice(0, 3), rentalQuestions.slice(3)].map((column, index) => (
+              <div className="z-home-faq-column" key={index}>
+                {column.map((item, row) => (
+                  <details key={item.question}>
+                    <summary>
+                      <span className="z-faq-number">0{index * 3 + row + 1}</span>
+                      <T>{item.question}</T>
+                      <span className="z-faq-plus" aria-hidden="true">
+                        +
+                      </span>
+                    </summary>
+                    <p>
+                      <T>{item.answer}</T>
                     </p>
-                    <p className="text-xs text-muted">{type.count} cars</p>
-                  </div>
-                </Link>
-              )
-            })}
-          </Reveal>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="container-lux py-24 md:py-32">
-        <Reveal className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-4">How it works</p>
-          <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1.02]">
-            Booked in a single message
-          </h2>
-          <p className="mt-5 leading-relaxed text-muted">
-            No checkout, no card details, no waiting on email. Tell us what you want and we handle
-            the rest over WhatsApp.
-          </p>
-        </Reveal>
-
-        <Reveal stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step) => (
-            <div key={step.n} className="hairline pt-6">
-              <p className="font-display text-4xl text-gold-500">{step.n}</p>
-              <p className="mt-4 font-display text-xl">{step.title}</p>
-              <p className="mt-2.5 text-sm leading-relaxed text-muted">{step.body}</p>
-            </div>
-          ))}
-        </Reveal>
-      </section>
-
-      {/* Marques */}
-      <section className="border-y border-white/8 bg-ink-900 py-20">
-        <div className="container-lux">
-          <Reveal className="mb-10 text-center">
-            <p className="eyebrow">Marques in the fleet</p>
-          </Reveal>
-          <Reveal stagger className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
-            {brands.map((brand) => (
-              <Link
-                key={brand.name}
-                href={`/fleet/brand/${categorySlug(brand.name)}`}
-                className="font-display text-xl text-bone/45 transition-colors duration-300 hover:text-gold-500 md:text-2xl"
-              >
-                {brand.name}
-              </Link>
+                  </details>
+                ))}
+              </div>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
-
-      {/* Closing CTA */}
-      <section className="container-lux py-28 text-center md:py-36">
-        <Reveal>
-          <p className="eyebrow mb-5">Ready when you are</p>
-          <h2 className="font-display mx-auto max-w-3xl text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.02]">
-            Your car is waiting in {siteConfig.locations[0]}
-          </h2>
-          <div className="mt-11 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/book"
-              className="rounded-full bg-gold-500 px-10 py-4 text-xs tracking-[0.18em] uppercase text-ink-950 transition-transform duration-300 hover:scale-[1.03]"
-            >
-              Start a booking
-            </Link>
-            <Link
-              href="/fleet"
-              className="rounded-full border border-bone/25 px-10 py-4 text-xs tracking-[0.18em] uppercase transition-colors duration-300 hover:border-gold-500 hover:text-gold-500"
-            >
-              Browse the fleet
-            </Link>
-          </div>
-        </Reveal>
-      </section>
-    </>
+    </div>
   )
 }
+
+import { T } from '@/components/RegionalProvider'

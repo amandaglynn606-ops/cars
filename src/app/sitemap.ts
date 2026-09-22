@@ -1,31 +1,45 @@
 import type { MetadataRoute } from 'next'
 import { getAllCars, getBrands, getBodyTypes, categorySlug } from '@/lib/fleet'
+import { carHref, monthlyCarHref } from '@/lib/catalogue'
 import { siteConfig } from '@/lib/config'
-
+import { locationHref } from '@/lib/location-routing'
+import { locationPages } from '@/lib/location-pages'
+import { occasionPages } from '@/lib/occasion-pages'
+import { rentalEvents } from '@/lib/home-rentals'
+import { eventHref } from '@/lib/event-guides'
+export const dynamic = 'force-dynamic'
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/fleet', '/book', '/services', '/about', '/contact'].map((route) => ({
-    url: `${siteConfig.url}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }))
-
-  const carRoutes = getAllCars().map((car) => ({
-    url: `${siteConfig.url}/fleet/${car.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-
-  const categoryRoutes = [
-    ...getBrands().map((b) => `/fleet/brand/${categorySlug(b.name)}`),
-    ...getBodyTypes().map((t) => `/fleet/type/${categorySlug(t.name)}`),
-  ].map((route) => ({
-    url: `${siteConfig.url}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.75,
-  }))
-
-  return [...staticRoutes, ...categoryRoutes, ...carRoutes]
+  const pages = [
+    '',
+    '/fleet',
+    '/monthly-luxury-car-rental',
+    '/brands',
+    '/categories',
+    '/about',
+    '/contact',
+    '/partners',
+    '/partners/consign-your-car',
+    '/partners/rental-agencies',
+    '/locations',
+    '/occasions',
+    '/events',
+  ]
+  return [
+    ...rentalEvents.map((event) => ({ url: siteConfig.url + eventHref(event.slug) })),
+    ...pages.map((p) => ({ url: siteConfig.url + p })),
+    ...locationPages.map((page) => ({ url: siteConfig.url + locationHref(page) })),
+    ...occasionPages.map((page) => ({ url: siteConfig.url + '/occasions/' + page.slug })),
+    ...getBrands().map((b) => ({ url: siteConfig.url + '/brands/' + categorySlug(b.name) })),
+    ...getBodyTypes().map((c) => ({ url: siteConfig.url + '/categories/' + categorySlug(c.name) })),
+    ...getAllCars()
+      .filter((car) => car.pricing.daily !== null && car.pricing.daily > 0)
+      .map((car) => ({
+        url: siteConfig.url + monthlyCarHref(car),
+        lastModified: new Date(car.updatedAt),
+      })),
+    ...getAllCars().map((c) => ({
+      url: siteConfig.url + carHref(c),
+      lastModified: new Date(c.updatedAt),
+    })),
+  ]
 }

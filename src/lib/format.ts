@@ -1,6 +1,6 @@
 /** Formats an AED amount with thousands separators and no decimals. */
 export const formatPrice = (amount: number, currency = 'AED') =>
-  `${new Intl.NumberFormat('en-AE', { maximumFractionDigits: 0 }).format(amount)} ${currency}`
+  `${currency} ${new Intl.NumberFormat('en-AE', { maximumFractionDigits: 2 }).format(amount)}`
 
 export const formatDate = (iso: string) => {
   if (!iso) return ''

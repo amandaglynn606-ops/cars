@@ -1,0 +1,445 @@
+.z-destination-page {
+  background: #0d0d0b;
+}
+.z-destination-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 48px;
+  padding-block: 48px;
+  align-items: stretch;
+}
+.z-destination-intro {
+  padding-block: 18px;
+}
+.z-destination-intro .z-breadcrumb {
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+  font-size: 10px;
+  line-height: 1.8;
+}
+.z-destination-intro h1,
+.z-destination-index-heading h1 {
+  font-family: var(--font-qiswah), serif;
+  font-size: clamp(42px, 4.8vw, 76px);
+  font-weight: 400;
+  line-height: 1.08;
+  margin: 24px 0;
+  overflow-wrap: break-word;
+}
+.z-destination-lead {
+  font-size: 14px;
+  color: #c6bdae;
+  line-height: 1.95;
+  max-width: 610px;
+}
+.z-destination-intro > .z-button {
+  margin-top: 30px;
+}
+.z-destination-visual {
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #4f4030;
+}
+.z-destination-visual img {
+  object-fit: cover;
+}
+.z-destination-visual figcaption {
+  position: absolute;
+  inset-inline: 16px;
+  bottom: 16px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  background: #0a0c0ced;
+  color: #e9d3b5;
+  padding: 10px 14px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.z-destination-visual figcaption a {
+  text-decoration: underline;
+}
+.z-destination-jump {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 23px;
+  border-block: 1px solid #443828;
+  background: #191610;
+}
+.z-destination-jump a {
+  font-size: 12px;
+}
+.z-destination-section {
+  padding-block: 60px;
+  scroll-margin-top: 180px;
+}
+.z-destination-section h2 {
+  font-family: var(--font-qiswah), serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 18px 0 30px;
+}
+.z-destination-planning {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+.z-destination-planning article {
+  border-top: 1px solid #655037;
+  padding-top: 24px;
+}
+.z-destination-planning article > span {
+  color: var(--z-bronze);
+  font-size: 11px;
+}
+.z-destination-planning h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 28px;
+  margin: 20px 0 15px;
+  font-weight: 400;
+}
+.z-destination-planning p {
+  font-size: 13px;
+  color: #c6bdae;
+  line-height: 1.95;
+}
+.z-destination-fleet {
+  background: #17140f;
+  border-block: 1px solid #443828;
+}
+.z-destination-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.z-destination-section > .z-note {
+  max-width: 850px;
+  line-height: 1.8;
+}
+.z-destination-section .z-fleet {
+  margin-top: 32px;
+}
+.z-destination-faq {
+  border-top: 1px solid var(--z-line);
+}
+.z-destination-faq details {
+  border-bottom: 1px solid var(--z-line);
+}
+.z-destination-faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+}
+.z-destination-faq summary::-webkit-details-marker {
+  display: none;
+}
+.z-destination-faq summary span {
+  color: var(--z-bronze);
+}
+.z-destination-faq p {
+  max-width: 980px;
+  color: #c6bdae;
+  font-size: 13px;
+  line-height: 1.95;
+  padding-bottom: 25px;
+}
+.z-destination-related {
+  background: #17140f;
+}
+.z-destination-related > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.z-destination-related > div > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #443828;
+  font-size: 14px;
+}
+.z-destination-related svg {
+  flex-shrink: 0;
+  color: var(--z-bronze);
+}
+.z-destination-index-heading {
+  padding-block: 70px 35px;
+}
+.z-destination-index-heading > p:last-of-type {
+  max-width: 740px;
+  color: #c6bdae;
+  line-height: 1.9;
+  font-size: 14px;
+}
+.z-destination-index-heading nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.z-destination-index-heading nav a {
+  border: 1px solid #655037;
+  padding: 14px 18px;
+  font-size: 12px;
+}
+.z-location-emirates-grid,
+.z-occasion-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.z-location-link,
+.z-occasion-directory > a {
+  display: block;
+  border: 1px solid #443828;
+  background: #17140f;
+}
+.z-location-card-image,
+.z-occasion-card-image {
+  position: relative;
+  aspect-ratio: 1.8;
+  overflow: hidden;
+}
+.z-location-card-image img,
+.z-occasion-card-image img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.z-location-link:hover img,
+.z-occasion-directory > a:hover img {
+  transform: scale(1.025);
+}
+.z-location-link > div:last-child,
+.z-occasion-directory > a > div:last-child {
+  padding: 25px;
+}
+.z-location-link h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.z-location-link span,
+.z-occasion-directory > a > div > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 11px;
+  color: #d1ad82;
+}
+.z-location-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.z-location-directory .z-location-link {
+  border: 0;
+  border-top: 1px solid #655037;
+  background: transparent;
+}
+.z-location-directory .z-location-link > div {
+  padding: 22px 0;
+}
+.z-location-directory .z-location-link h3 {
+  font-size: 25px;
+}
+.z-occasion-card-image > span {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 9px 12px;
+  font-size: 11px;
+  color: #e9d3b5;
+  background: #0a0c0ced;
+}
+.z-occasion-directory h2 {
+  font-size: 30px;
+  margin: 0 0 18px;
+}
+.z-occasion-directory p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #c6bdae;
+  margin-bottom: 24px;
+}
+.z-emirates-destination h3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+@media (max-width: 1000px) {
+  .z-location-emirates-grid,
+  .z-occasion-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .z-location-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .z-destination-planning {
+    gap: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .z-destination-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .z-destination-visual {
+    min-height: 0;
+    aspect-ratio: 1.8;
+  }
+  .z-destination-intro .z-breadcrumb {
+    margin-bottom: 25px;
+  }
+  .z-destination-planning {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .z-destination-section {
+    padding-block: 45px;
+  }
+  .z-destination-related > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .z-destination-jump {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .z-destination-hero {
+    padding-top: 24px;
+  }
+  .z-destination-index-heading {
+    padding-top: 45px;
+  }
+  .z-destination-intro h1,
+  .z-destination-index-heading h1 {
+    font-size: 40px;
+  }
+  .z-destination-lead {
+    font-size: 13px;
+  }
+  .z-destination-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+  .z-location-emirates-grid,
+  .z-occasion-directory,
+  .z-location-directory,
+  .z-destination-related > div {
+    grid-template-columns: 1fr;
+  }
+  .z-destination-faq summary {
+    font-size: 14px;
+  }
+  .z-destination-visual figcaption {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .z-location-card-image img,
+  .z-occasion-card-image img {
+    transition: none;
+  }
+}
+
+.z-occasion-guide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 36px;
+  margin: 28px 0 40px;
+}
+.z-occasion-guide h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+.z-occasion-guide p {
+  font-size: 14px;
+  color: #c6bdae;
+  line-height: 1.9;
+}
+.z-occasion-guide aside {
+  padding: 28px;
+  background: #191610;
+  border: 1px solid #443828;
+}
+.z-occasion-guide .z-text-link {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 22px;
+  align-items: center;
+}
+.z-occasion-group {
+  scroll-margin-top: 150px;
+}
+.z-occasion-group > h2 {
+  margin-bottom: 30px;
+}
+.z-occasion-directory h3 {
+  font-family: var(--font-qiswah), serif;
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.z-occasion-image-note {
+  padding-block: 24px 60px;
+  color: #c6bdae;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.z-occasion-image-note p {
+  max-width: 800px;
+}
+.z-occasion-image-note a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .z-occasion-guide {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.z-location-region-heading {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.z-location-region-image {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.z-location-region-image img {
+  object-fit: cover;
+}
+@media (max-width: 600px) {
+  .z-location-region-heading {
+    display: block;
+  }
+  .z-location-region-image {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}

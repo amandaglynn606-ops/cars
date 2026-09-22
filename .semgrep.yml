@@ -1,0 +1,20 @@
+rules:
+  - id: zavi-no-dynamic-code-execution
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: Do not execute strings as code in the application.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+  - id: zavi-no-interpolated-sql
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: Use parameterized SQL queries instead of interpolating values.
+    pattern: $DB.prepare(`...${$VALUE}...`)
+  - id: zavi-no-legacy-crypto
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: Use a modern cryptographic primitive for security-sensitive operations.
+    pattern-either:
+      - pattern: createHash('md5')
+      - pattern: createHash('sha1')

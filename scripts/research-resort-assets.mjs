@@ -1,0 +1,3 @@
+import {writeFile} from 'node:fs/promises'
+const pages=[['vida-photos','https://www.vidahotels.com/en/resorts/vida-beach-resort-umm-al-quwain/photos-and-videos/'],['oberoi-ajman','https://www.oberoihotels.com/hotels-in-al-zorah/'],['miramar-fujairah','https://www.miramaralaqah.ae/']]
+for(const [id,url]of pages){try{const response=await fetch(url,{signal:AbortSignal.timeout(20000)});const body=await response.text();await writeFile('.local/emirates/'+id+'-official.html',body);console.log(id,response.status);console.log([...new Set([...body.matchAll(/(?:https:)?\/\/[^\s"'<>]+?\.(?:jpg|jpeg|webp)(?:\?[^\s"'<>]*)?/gi)].map(m=>m[0]))].slice(0,35))}catch(e){console.log(id,e.message)}}

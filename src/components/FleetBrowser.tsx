@@ -1,273 +1,359 @@
 'use client'
-
-import { useMemo, useState } from 'react'
-import Link from 'next/link'
-import CarCard from './CarCard'
-import { filterCars, priceBounds, categorySlug, type FleetFilters } from '@/lib/fleet'
-import { formatPrice } from '@/lib/format'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 import type { Car, RentalPeriod } from '@/lib/types'
-
-const SORTS: { value: NonNullable<FleetFilters['sort']>; label: string }[] = [
-  { value: 'price-desc', label: 'Price: high to low' },
-  { value: 'price-asc', label: 'Price: low to high' },
-  { value: 'power', label: 'Most powerful' },
-  { value: 'name', label: 'A to Z' },
-]
-
-const PAGE = 12
-
+import {
+  emptyFilters,
+  filterCars,
+  priceBounds,
+  fleetFacets,
+  readFleetFilters,
+  fleetFilterParams,
+  filterErrors,
+  type FleetFilters,
+} from '@/lib/catalogue'
+import CarCard from './CarCard'
+import Icon from './Icon'
+import { useRegional } from './RegionalProvider'
+type MultiKey = 'categories' | 'brands' | 'models' | 'seats'
+const labels: Record<MultiKey, string> = {
+  categories: 'Category',
+  brands: 'Brand',
+  models: 'Model',
+  seats: 'Seats',
+}
+const multiKeys = Object.keys(labels) as MultiKey[]
 export default function FleetBrowser({
   cars,
-  brands,
-  bodyTypes,
   lockedBrand,
   lockedBodyType,
+  period = 'daily',
 }: {
   cars: Car[]
-  brands: { name: string; count: number }[]
-  bodyTypes: { name: string; count: number }[]
-  /** When set, this category is fixed and its filter row is hidden. */
+  period?: RentalPeriod
   lockedBrand?: string
   lockedBodyType?: string
+  brands?: { name: string; count: number }[]
+  bodyTypes?: { name: string; count: number }[]
 }) {
-  const [brand, setBrand] = useState('')
-  const [bodyType, setBodyType] = useState('')
-  const [period, setPeriod] = useState<RentalPeriod>('daily')
-  const [search, setSearch] = useState('')
-  const [sort, setSort] = useState<NonNullable<FleetFilters['sort']>>('price-desc')
-  const [maxPrice, setMaxPrice] = useState<number | null>(null)
-  const [visible, setVisible] = useState(PAGE)
-
-  // Bounds follow the rental basis, so the slider is meaningful in both modes.
-  const bounds = useMemo(() => priceBounds(cars, period), [cars, period])
-
-  const results = useMemo(
+  const pathname = usePathname()
+  const { t, currency, rate, money } = useRegional()
+  const displayPrice = (value: string) =>
+    value === '' ? '' : String(Math.round(Number(value) * rate * 100) / 100)
+  const basePrice = (value: string) => (value === '' ? '' : String(Number(value) / rate))
+  const searchParams = useSearchParams()
+  const initial: FleetFilters = {
+    ...emptyFilters,
+    brands: lockedBrand ? [lockedBrand] : [],
+    categories: lockedBodyType ? [lockedBodyType] : [],
+  }
+  const filters = useMemo(
     () =>
-      filterCars(cars, {
-        brand: lockedBrand ?? brand ?? undefined,
-        bodyType: lockedBodyType ?? bodyType ?? undefined,
-        period,
-        search,
-        sort,
-        maxPrice: maxPrice ?? undefined,
-      }),
-    [cars, lockedBrand, brand, lockedBodyType, bodyType, period, search, sort, maxPrice],
+      readFleetFilters(new URLSearchParams(searchParams.toString()), lockedBrand, lockedBodyType),
+    [searchParams, lockedBrand, lockedBodyType],
   )
-
-  const shown = results.slice(0, visible)
-  const dirty = brand || bodyType || search || maxPrice != null
-
-  const reset = () => {
-    setBrand('')
-    setBodyType('')
-    setSearch('')
-    setMaxPrice(null)
-    setVisible(PAGE)
+  const setFilters = (value: FleetFilters | ((previous: FleetFilters) => FleetFilters)) => {
+    const next = typeof value === 'function' ? value(filters) : value
+    const params = fleetFilterParams(next)
+    window.history.replaceState(null, '', pathname + (params.size ? '?' + params.toString() : ''))
   }
-
-  const bump = <T,>(setter: (v: T) => void) => (value: T) => {
-    setter(value)
-    setVisible(PAGE)
-  }
-
-  const chip = (selected: boolean) =>
-    `rounded-full border px-4 py-2 text-xs tracking-wide transition-colors duration-300 ${
-      selected
-        ? 'border-gold-500 bg-gold-500 text-ink-950'
-        : 'border-white/12 text-bone/65 hover:border-white/35 hover:text-bone'
-    }`
-
-  const fieldCls =
-    'rounded-full border border-white/12 bg-ink-850 px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-faint focus:border-gold-500'
-
-  return (
-    <div>
-      {/* Sticky control bar - stays reachable while scrolling a long grid */}
-      <div className="sticky top-[4.5rem] z-30 -mx-6 mb-8 bg-ink-950/85 px-6 py-4 backdrop-blur-xl md:-mx-10 md:px-10">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-          <input
-            value={search}
-            onChange={(e) => bump(setSearch)(e.target.value)}
-            placeholder="Search model or marque..."
-            aria-label="Search the fleet"
-            className={`${fieldCls} w-full lg:max-w-64`}
-          />
-
-          <div className="flex items-center gap-2">
-            {(['daily', 'monthly'] as RentalPeriod[]).map((p) => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => {
-                  setPeriod(p)
-                  setMaxPrice(null)
-                  setVisible(PAGE)
-                }}
-                className={chip(period === p)}
-              >
-                {p === 'daily' ? 'Per day' : 'Per month'}
-              </button>
-            ))}
-          </div>
-
-          {bounds && bounds.min < bounds.max && (
-            <label className="flex flex-1 items-center gap-3 text-xs text-muted">
-              <span className="shrink-0">Up to</span>
+  const [draft, setDraft] = useState<FleetFilters>(initial)
+  const [open, setOpen] = useState(false),
+    [visible, setVisible] = useState(12)
+  const dialog = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    setVisible(12)
+  }, [filters])
+  useEffect(() => {
+    if (open) {
+      dialog.current?.showModal()
+      document.body.style.overflow = 'hidden'
+    } else {
+      dialog.current?.close()
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+  const facets = useMemo(() => fleetFacets(cars, filters, period), [cars, filters, period])
+  const draftFacets = useMemo(() => fleetFacets(cars, draft, period), [cars, draft, period])
+  const found = useMemo(() => filterCars(cars, filters, period), [cars, filters, period])
+  const bounds = priceBounds(cars, period)
+  const set = <K extends keyof FleetFilters>(key: K, value: FleetFilters[K]) =>
+    setFilters((f) => ({ ...f, [key]: value }))
+  const clear = () => setFilters({ ...initial })
+  const isLocked = (k: MultiKey) =>
+    (k === 'brands' && !!lockedBrand) || (k === 'categories' && !!lockedBodyType)
+  const active = multiKeys
+    .flatMap((k) =>
+      filters[k].map((v) => ({
+        key: k,
+        value: v,
+        label: v,
+      })),
+    )
+    .filter((c) => !isLocked(c.key))
+  const activeCount =
+    active.length +
+    ['search', 'minPrice', 'maxPrice'].filter((k) => filters[k as keyof FleetFilters]).length
+  function filterPanel(state: FleetFilters, update: (f: FleetFilters) => void, mobile = false) {
+    const options = mobile ? draftFacets : facets
+    const toggle = (k: MultiKey, v: string) =>
+      update({
+        ...state,
+        [k]: state[k].includes(v) ? state[k].filter((x) => x !== v) : [...state[k], v],
+      })
+    return (
+      <div className="z-filter-fields">
+        {multiKeys
+          .filter((k) => !isLocked(k) && (options[k].length > 0 || k === 'models'))
+          .map((k) => (
+            <details
+              key={k}
+              open={['categories', 'brands', 'models'].includes(k)}
+              className="z-filter-group"
+            >
+              <summary>
+                <T>{labels[k]}</T>
+                <span>{state[k].length || '+'}</span>
+              </summary>
+              <div className="z-filter-options">
+                {options[k].length ? (
+                  options[k].map(({ value: v, count }) => (
+                    <label key={v}>
+                      <input
+                        type="checkbox"
+                        checked={state[k].includes(v)}
+                        disabled={count === 0 && !state[k].includes(v)}
+                        onChange={() => toggle(k, v)}
+                      />
+                      <span>
+                        <T>{t(v)}</T>
+                      </span>
+                      <small aria-hidden="true">{count}</small>
+                    </label>
+                  ))
+                ) : (
+                  <p className="z-note">
+                    <T>No recorded options.</T>
+                  </p>
+                )}
+              </div>
+            </details>
+          ))}
+        <fieldset className="z-filter-group z-price-filter">
+          <legend>
+            <T>{period === 'monthly' ? 'Price / 30 days' : 'Price / day'}</T>
+          </legend>
+          <div className="z-two-fields">
+            <label>
+              <T>Min</T> <T>{currency}</T>
               <input
-                type="range"
-                min={bounds.min}
-                max={bounds.max}
-                step={Math.max(1, Math.round((bounds.max - bounds.min) / 60))}
-                value={maxPrice ?? bounds.max}
-                onChange={(e) => bump(setMaxPrice)(Number(e.target.value))}
-                aria-label={`Maximum ${period === 'daily' ? 'daily' : 'monthly'} rate`}
-                className="h-1 w-full min-w-28 cursor-pointer appearance-none rounded-full bg-ink-600 accent-gold-500"
+                type="number"
+                min="0"
+                step="any"
+                max={bounds ? Number(displayPrice(String(bounds.max))) : undefined}
+                placeholder={displayPrice(String(bounds?.min || 0))}
+                value={displayPrice(state.minPrice)}
+                onChange={(e) => update({ ...state, minPrice: basePrice(e.target.value) })}
               />
-              <span className="w-24 shrink-0 text-right font-medium text-bone">
-                {formatPrice(maxPrice ?? bounds.max)}
-              </span>
             </label>
-          )}
-
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value as NonNullable<FleetFilters['sort']>)}
-            aria-label="Sort results"
-            className={`${fieldCls} lg:ml-auto`}
-          >
-            {SORTS.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* Category rows - hidden for whichever dimension this page has locked */}
-      <div className="mb-8 space-y-3">
-        {!lockedBrand && (
-          <div className="flex flex-wrap gap-2">
-            <button type="button" onClick={() => bump(setBrand)('')} className={chip(!brand)}>
-              All marques
-            </button>
-            {brands.map((item) => (
-              <button
-                key={item.name}
-                type="button"
-                onClick={() => bump(setBrand)(item.name === brand ? '' : item.name)}
-                className={chip(brand === item.name)}
-              >
-                {item.name}
-                <span className="ml-1.5 opacity-55">{item.count}</span>
-              </button>
-            ))}
+            <label>
+              <T>Max</T> <T>{currency}</T>
+              <input
+                type="number"
+                min="0"
+                step="any"
+                placeholder={displayPrice(String(bounds?.max || 14000))}
+                value={displayPrice(state.maxPrice)}
+                onChange={(e) => update({ ...state, maxPrice: basePrice(e.target.value) })}
+              />
+            </label>
           </div>
-        )}
-
-        {!lockedBodyType && (
-          <div className="flex flex-wrap gap-2">
-            <button type="button" onClick={() => bump(setBodyType)('')} className={chip(!bodyType)}>
-              All types
-            </button>
-            {bodyTypes.map((item) => (
-              <button
-                key={item.name}
-                type="button"
-                onClick={() => bump(setBodyType)(item.name === bodyType ? '' : item.name)}
-                className={chip(bodyType === item.name)}
-              >
-                {item.name}
-                <span className="ml-1.5 opacity-55">{item.count}</span>
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Inside a locked category, offer the sibling categories as links */}
-        {lockedBrand && (
-          <div className="flex flex-wrap gap-2">
-            <Link href="/fleet" className={chip(false)}>
-              All marques
-            </Link>
-            {brands.map((item) => (
-              <Link
-                key={item.name}
-                href={`/fleet/brand/${categorySlug(item.name)}`}
-                className={chip(item.name === lockedBrand)}
-              >
-                {item.name}
-                <span className="ml-1.5 opacity-55">{item.count}</span>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        {lockedBodyType && (
-          <div className="flex flex-wrap gap-2">
-            <Link href="/fleet" className={chip(false)}>
-              All types
-            </Link>
-            {bodyTypes.map((item) => (
-              <Link
-                key={item.name}
-                href={`/fleet/type/${categorySlug(item.name)}`}
-                className={chip(item.name === lockedBodyType)}
-              >
-                {item.name}
-                <span className="ml-1.5 opacity-55">{item.count}</span>
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="hairline mb-8 flex items-center justify-between pt-5 text-sm text-muted">
-        <p>
-          {results.length} {results.length === 1 ? 'vehicle' : 'vehicles'}
-        </p>
-        {dirty && (
-          <button type="button" onClick={reset} className="link-sweep text-gold-500">
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {shown.length === 0 ? (
-        <div className="py-28 text-center">
-          <p className="font-display display-md">Nothing matches that</p>
-          <p className="mt-4 text-sm text-muted">
-            Try a different marque, type, or widen the price range.
+        </fieldset>
+        {filterErrors(state).map((error) => (
+          <p className="z-error" role="alert" key={error}>
+            <T>{error}</T>
           </p>
-          <button
-            type="button"
-            onClick={reset}
-            className="mt-8 rounded-full border border-gold-500/45 px-8 py-3.5 text-[0.7rem] tracking-[0.16em] uppercase text-gold-500 transition-colors hover:bg-gold-500 hover:text-ink-950"
-          >
-            Reset filters
+        ))}
+        {!mobile && (
+          <button className="z-clear" onClick={clear}>
+            <T>Clear all filters </T>
+            <Icon name="close" size={14} />
           </button>
-        </div>
-      ) : (
-        <>
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {shown.map((car, i) => (
-              <CarCard key={car.slug} car={car} period={period} priority={i < 3} />
-            ))}
+        )}
+      </div>
+    )
+  }
+  return (
+    <div className="z-fleet-browser">
+      <div className="z-fleet-layout">
+        <aside className="z-sidebar" aria-label={t('Filter fleet')}>
+          <div className="z-sidebar-title">
+            <Icon name="filter" />
+            <h2>
+              <T>Filter fleet</T>
+            </h2>
           </div>
-
-          {visible < results.length && (
-            <div className="mt-16 text-center">
-              <button
-                type="button"
-                onClick={() => setVisible((v) => v + PAGE)}
-                className="rounded-full border border-white/20 px-9 py-4 text-[0.7rem] tracking-[0.16em] uppercase transition-colors duration-300 hover:border-gold-500 hover:text-gold-500"
+          {filterPanel(filters, setFilters)}
+        </aside>
+        <div className="z-fleet-results">
+          <div className="z-results-toolbar">
+            <button
+              className="z-mobile-filter z-button z-button-outline"
+              onClick={() => {
+                setDraft(structuredClone(filters))
+                setOpen(true)
+              }}
+            >
+              <Icon name="filter" size={17} />
+              <T>Filter </T>
+              {activeCount > 0 && '(' + activeCount + ')'}
+            </button>
+            <p className="z-result-count" role="status" aria-live="polite">
+              <strong>{found.length}</strong> <T>vehicles found</T>
+            </p>
+            <label className="z-sort">
+              <T>Sort by</T>
+              <select
+                aria-label={t('Sort by')}
+                value={filters.sort}
+                onChange={(e) => set('sort', e.target.value as FleetFilters['sort'])}
               >
-                Load more ({results.length - visible} remaining)
+                <option value="featured">
+                  <T>Featured</T>
+                </option>
+                <option value="price-asc">
+                  <T>Price: Low to High</T>
+                </option>
+                <option value="price-desc">
+                  <T>Price: High to Low</T>
+                </option>
+                <option value="newest">
+                  <T>Newest</T>
+                </option>
+                <option value="name">
+                  <T>Name: A–Z</T>
+                </option>
+              </select>
+            </label>
+          </div>
+          {activeCount > 0 && (
+            <div className="z-active-filters">
+              {active.map((c) => (
+                <button
+                  key={c.key + c.value}
+                  onClick={() =>
+                    set(
+                      c.key,
+                      filters[c.key].filter((v) => v !== c.value),
+                    )
+                  }
+                  aria-label={'Remove ' + c.label + ' filter'}
+                >
+                  <T>{c.label}</T>
+                  <Icon name="close" size={12} />
+                </button>
+              ))}
+              {(['search', 'minPrice', 'maxPrice'] as const)
+                .filter((k) => filters[k])
+                .map((k) => (
+                  <button
+                    key={k}
+                    onClick={() => set(k, '')}
+                    aria-label={k === 'search' ? 'Clear search' : undefined}
+                  >
+                    <T>
+                      {k === 'search'
+                        ? filters[k]
+                        : `${t(k === 'minPrice' ? 'Min' : 'Max')} ${money(Number(filters[k]))}`}
+                    </T>
+                    <Icon name="close" size={12} />
+                  </button>
+                ))}
+              <button className="z-chip-clear" onClick={clear}>
+                <T>Clear all</T>
               </button>
             </div>
           )}
-        </>
-      )}
+          <div className="z-fleet-grid">
+            {found.slice(0, visible).map((c) => (
+              <CarCard key={c.id} car={c} period={period} />
+            ))}
+          </div>
+          {!found.length && (
+            <div className="z-empty">
+              <Icon name="search" size={32} />
+              <h2>
+                <T>No matching vehicles</T>
+              </h2>
+              <p>
+                <T>
+                  No vehicles match this selection. Adjust a filter to discover more of the
+                  collection.
+                </T>
+              </p>
+              <button className="z-button" onClick={clear}>
+                <T>Clear all filters</T>
+              </button>
+            </div>
+          )}
+          {found.length > visible && (
+            <div className="z-load-more">
+              <p>
+                <T>Showing </T>
+                {Math.min(visible, found.length)} <T>of </T>
+                {found.length} <T>vehicles</T>
+              </p>
+              <button
+                className="z-button z-button-outline"
+                onClick={() => setVisible((v) => v + 12)}
+              >
+                <T>Explore more vehicles </T>
+                <Icon name="arrow" size={16} />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      <dialog
+        ref={dialog}
+        className="z-filter-dialog"
+        aria-label={t('Filter fleet')}
+        onCancel={() => setOpen(false)}
+      >
+        <div className="z-drawer-top">
+          <h2>
+            <T>Filter fleet</T>
+          </h2>
+          <button
+            className="z-icon-button"
+            aria-label={t('Close filters')}
+            onClick={() => setOpen(false)}
+          >
+            <Icon name="close" />
+          </button>
+        </div>
+        <div className="z-drawer-body">{filterPanel(draft, setDraft, true)}</div>
+        <div className="z-drawer-bottom">
+          <button className="z-clear" onClick={() => setDraft({ ...initial })}>
+            <T>Clear all</T>
+          </button>
+          <button
+            className="z-button"
+            onClick={() => {
+              setFilters(draft)
+              setOpen(false)
+            }}
+          >
+            <T>Apply filters · </T>
+            {filterCars(cars, draft, period).length} <T>vehicles</T>
+          </button>
+        </div>
+      </dialog>
     </div>
   )
 }
+
+import { T } from '@/components/RegionalProvider'

@@ -1,133 +1,326 @@
 'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { siteConfig } from '@/lib/config'
-import { buildQuickChatUrl } from '@/lib/whatsapp'
-
-const links = [
-  { href: '/fleet', label: 'Fleet' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-]
-
-export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
+import ZaviLogo from './ZaviLogo'
+import Icon from './Icon'
+import RegionalBar from './RegionalBar'
+import OccasionNavigation, { type OccasionLink } from './OccasionNavigation'
+import FleetNavigation from './FleetNavigation'
+import EventNavigation, { type EventLink } from './EventNavigation'
+import BrowseNavigation, { type BrowseGroup } from './BrowseNavigation'
+import { Price, T, useRegional } from '@/components/RegionalProvider'
+import { categorySlug, searchDestination } from '@/lib/catalogue'
+export interface MenuCar {
+  id: string
+  name: string
+  brand: string
+  categories: string[]
+  href: string
+  thumbnail: string
+  price: number
+  searchText: string
+  model: string
+  keywords: string[]
+}
+type Facet = { name: string; count: number }
+export default function Nav({
+  cars,
+  brands,
+  categories,
+  occasions,
+  locationGroups,
+  events,
+}: {
+  cars: MenuCar[]
+  brands: Facet[]
+  categories: Facet[]
+  occasions: OccasionLink[]
+  locationGroups: BrowseGroup[]
+  events: EventLink[]
+}) {
   const pathname = usePathname()
-
+  const { t } = useRegional()
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const [open, setOpen] = useState(false),
+    [query, setQuery] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [activeBrowse, setActiveBrowse] = useState('')
+  const brandGroups = [
+    {
+      name: 'Car brands',
+      links: [...brands]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((brand) => ({
+          name: brand.name,
+          href: '/brands/' + categorySlug(brand.name),
+          count: brand.count,
+        })),
+    },
+  ]
+  const browse = (name: string) => {
+    setSearchOpen(false)
+    setActiveBrowse(name)
+  }
+  const searchBox = useRef<HTMLDivElement>(null)
+  const dialog = useRef<HTMLDialogElement>(null),
+    header = useRef<HTMLElement>(null)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    setOpen(false)
+    setSearchOpen(false)
+    setQuery(searchParams.get('search') || '')
+  }, [pathname, searchParams])
+  useEffect(() => {
+    const outside = (event: PointerEvent) => {
+      if (!searchBox.current?.contains(event.target as Node)) setSearchOpen(false)
+    }
+    document.addEventListener('pointerdown', outside)
+    return () => document.removeEventListener('pointerdown', outside)
   }, [])
-
-  // Never leave the mobile drawer open across a navigation.
-  useEffect(() => setOpen(false), [pathname])
-
-  // Lock body scroll while the drawer is open.
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (open) {
+      dialog.current?.showModal()
+      document.body.style.overflow = 'hidden'
+    } else {
+      dialog.current?.close()
+      document.body.style.overflow = ''
+    }
     return () => {
       document.body.style.overflow = ''
     }
   }, [open])
-
+  useEffect(() => {
+    const element = header.current
+    if (!element) return
+    const resize = () =>
+      element.style.setProperty('--z-nav-bottom', element.getBoundingClientRect().bottom + 'px')
+    const observer = new ResizeObserver(resize)
+    observer.observe(element)
+    resize()
+    return () => observer.disconnect()
+  }, [])
+  const close = () => {
+    setActiveBrowse('')
+    setOpen(false)
+    setSearchOpen(false)
+  }
+  function submitSearch(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    close()
+    router.push(searchDestination(query, cars, brands))
+  }
+  const found = [...cars]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((c) =>
+      query
+        .toLowerCase()
+        .trim()
+        .split(/\s+/)
+        .every((word) => c.searchText.includes(word)),
+    )
+  const navigationLinks = [
+    ['Monthly rentals', '/monthly-luxury-car-rental'],
+    ['Earn with us', '/partners'],
+    ['About Zavi', '/about'],
+    ['Contact', '/contact'],
+    ['Reserve a vehicle', '/book'],
+  ]
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[var(--ease-lux)] ${
-        scrolled || open
-          ? 'bg-ink-950/85 backdrop-blur-xl border-b border-white/10 py-4'
-          : 'bg-transparent py-7'
-      }`}
-    >
-      <nav className="container-lux flex items-center justify-between gap-6">
-        <Link href="/" className="group flex flex-col leading-none">
-          <span className="font-display text-xl tracking-[0.18em] uppercase">
-            {siteConfig.name.split(' ')[0]}
-          </span>
-          <span className="eyebrow mt-1 transition-colors group-hover:text-gold-400">Dubai</span>
+    <header ref={header} className="z-header">
+      <RegionalBar />
+      <div className="z-header-inner">
+        <Link href="/" className="z-nav-logo" aria-label="Zavi home" onClick={close}>
+          <ZaviLogo />
         </Link>
-
-        <ul className="hidden items-center gap-10 md:flex">
-          {links.map((link) => {
-            const active = pathname === link.href || pathname.startsWith(link.href + '/')
-            return (
-              <li key={link.href}>
+        <nav aria-label={t('Main navigation')} className="z-desktop-nav">
+          <FleetNavigation
+            cars={cars}
+            categories={categories}
+            onNavigate={close}
+            onOpen={() => browse('fleet')}
+            dismiss={searchOpen || open || activeBrowse !== 'fleet'}
+          />
+          <Link
+            href="/monthly-luxury-car-rental"
+            onClick={close}
+            aria-current={pathname.startsWith('/monthly-luxury-car-rental') ? 'page' : undefined}
+          >
+            <T>Monthly rentals</T>
+          </Link>
+          <BrowseNavigation
+            label="Car brands"
+            href="/brands"
+            groups={brandGroups}
+            onNavigate={close}
+            onOpen={() => browse('brands')}
+            dismiss={searchOpen || open || activeBrowse !== 'brands'}
+          />
+          <BrowseNavigation
+            label="Locations"
+            href="/locations"
+            groups={locationGroups}
+            collapsible
+            onNavigate={close}
+            onOpen={() => browse('locations')}
+            dismiss={searchOpen || open || activeBrowse !== 'locations'}
+          />
+          <OccasionNavigation
+            occasions={occasions}
+            dismiss={searchOpen || open || activeBrowse !== 'occasions'}
+            onNavigate={close}
+            onOpen={() => browse('occasions')}
+          />
+          <EventNavigation
+            events={events}
+            onNavigate={close}
+            onOpen={() => browse('events')}
+            dismiss={searchOpen || open || activeBrowse !== 'events'}
+          />
+        </nav>
+        <div className="z-header-actions">
+          <div
+            className="z-nav-search-wrap"
+            ref={searchBox}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node)) setSearchOpen(false)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') setSearchOpen(false)
+            }}
+          >
+            <form className="z-nav-search" role="search" action="/fleet" onSubmit={submitSearch}>
+              <input
+                type="search"
+                name="search"
+                aria-label={t('Search vehicles')}
+                placeholder={t('Search cars')}
+                value={query}
+                autoComplete="off"
+                onFocus={() => {
+                  setSearchOpen(true)
+                }}
+                onChange={(event) => {
+                  setQuery(event.target.value)
+                  setSearchOpen(true)
+                }}
+              />
+              <button type="submit" aria-label={t('Search fleet')}>
+                <Icon name="search" size={18} />
+              </button>
+            </form>
+            {searchOpen && query.trim() && (
+              <div
+                className="z-nav-search-results"
+                role="region"
+                aria-label={t('Search suggestions')}
+              >
+                <p className="z-note" role="status">
+                  {found.length} <T>matching vehicles</T>
+                </p>
+                {found.slice(0, 6).map((car) => (
+                  <Link key={car.id} href={car.href} onClick={close}>
+                    <span>
+                      <T>{car.name}</T>
+                      <small>
+                        <Price amount={car.price} /> / <T>day</T>
+                      </small>
+                    </span>
+                    <Icon name="arrow" size={16} />
+                  </Link>
+                ))}
                 <Link
-                  href={link.href}
-                  className={`relative text-sm tracking-wide transition-colors ${
-                    active ? 'text-gold-500' : 'text-bone/75 hover:text-bone'
-                  }`}
+                  className="z-text-link"
+                  href={'/fleet?search=' + encodeURIComponent(query.trim())}
+                  onClick={close}
                 >
-                  {link.label}
-                  <span
-                    className={`absolute -bottom-1.5 left-0 h-px bg-gold-500 transition-all duration-400 ease-[var(--ease-lux)] ${
-                      active ? 'w-full' : 'w-0'
-                    }`}
-                  />
+                  <T>View search results </T>
+                  <Icon name="arrow" size={16} />
                 </Link>
-              </li>
-            )
-          })}
-        </ul>
-
-        <div className="flex items-center gap-3">
-          <a
-            href={buildQuickChatUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full border border-gold-500/45 px-6 py-2.5 text-xs tracking-[0.16em] uppercase text-gold-500 transition-all duration-300 hover:bg-gold-500 hover:text-ink-950 sm:block"
-          >
-            Book Now
-          </a>
-
+              </div>
+            )}
+          </div>
+          <Link href="/book" className="z-button z-header-cta" onClick={close}>
+            <T>Reserve a vehicle </T>
+            <Icon name="arrow" size={16} />
+          </Link>
+        </div>
+        <button
+          className="z-icon-button z-menu-toggle"
+          aria-label={t('Open navigation')}
+          aria-expanded={open}
+          onClick={() => {
+            setActiveBrowse('')
+            setOpen(true)
+          }}
+        >
+          <Icon name="menu" />
+        </button>
+      </div>
+      <dialog
+        ref={dialog}
+        className="z-nav-dialog"
+        aria-label={t('Navigation')}
+        onCancel={() => setOpen(false)}
+      >
+        <div className="z-drawer-top">
+          <ZaviLogo />
           <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+            className="z-icon-button"
+            aria-label={t('Close navigation')}
+            onClick={() => setOpen(false)}
           >
-            <span
-              className={`h-px w-6 bg-bone transition-all duration-300 ${open ? 'translate-y-[3px] rotate-45' : ''}`}
-            />
-            <span
-              className={`h-px w-6 bg-bone transition-all duration-300 ${open ? '-translate-y-[3px] -rotate-45' : ''}`}
-            />
+            <Icon name="close" />
           </button>
         </div>
-      </nav>
+        <div className="z-mobile-nav-scroll">
+          <FleetNavigation
+            cars={cars}
+            categories={categories}
+            mobile
+            onNavigate={close}
+            dismiss={!open}
+          />
 
-      {open && (
-        <div className="fixed inset-x-0 top-full h-screen bg-ink-950/97 backdrop-blur-xl md:hidden">
-          <ul className="container-lux flex flex-col gap-2 py-10">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block border-b border-white/8 py-5 font-display text-3xl"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-            <li className="pt-6">
-              <a
-                href={buildQuickChatUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-full bg-gold-500 py-4 text-center text-xs tracking-[0.2em] uppercase text-ink-950"
+          <BrowseNavigation
+            label="Car brands"
+            href="/brands"
+            groups={brandGroups}
+            mobile
+            dismiss={!open}
+            onNavigate={close}
+          />
+          <BrowseNavigation
+            label="Locations"
+            href="/locations"
+            groups={locationGroups}
+            collapsible
+            mobile
+            dismiss={!open}
+            onNavigate={close}
+          />
+          <OccasionNavigation occasions={occasions} mobile dismiss={!open} onNavigate={close} />
+          <EventNavigation events={events} mobile dismiss={!open} onNavigate={close} />
+          <nav aria-label={t('Mobile navigation')}>
+            {navigationLinks.map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={close}
+                aria-current={
+                  pathname === href || pathname.startsWith(href + '/') ? 'page' : undefined
+                }
               >
-                Book on WhatsApp
-              </a>
-            </li>
-          </ul>
+                <T>{label}</T>
+                <Icon name="arrow" />
+              </Link>
+            ))}
+          </nav>
         </div>
-      )}
+        <p className="z-kicker">
+          <T>Zavi · Car rental in Dubai</T>
+        </p>
+      </dialog>
     </header>
   )
 }

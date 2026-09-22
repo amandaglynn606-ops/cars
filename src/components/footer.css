@@ -1,0 +1,185 @@
+.z-footer.z-footer-redesign {
+  padding-top: 0;
+  background: radial-gradient(ellipse at 15% 0, #39302255, transparent 55%), #0c0d0b;
+  border-top: 1px solid #514331;
+}
+.z-footer-invitation {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: end;
+  gap: 60px;
+  padding: 76px 0 66px;
+  border-bottom: 1px solid #c9aa7830;
+}
+.z-footer-invitation .z-kicker {
+  color: #bd9a71;
+  margin-bottom: 22px;
+}
+.z-footer-invitation h2 {
+  font:
+    clamp(48px, 6.5vw, 94px)/1.02 var(--font-qiswah),
+    serif;
+  letter-spacing: -0.035em;
+  color: #efe7dc;
+}
+.z-footer-invitation h2 em {
+  font-weight: 400;
+  color: #c8a47b;
+}
+.z-footer-reserve {
+  max-width: 360px;
+  justify-self: end;
+}
+.z-footer-reserve p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #bcb3a5;
+  margin-bottom: 28px;
+}
+.z-footer-navigation {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 50px;
+  padding: 60px 0;
+}
+.z-footer-identity .zavi-logo {
+  font-size: 52px;
+  line-height: 1;
+}
+.z-footer-identity p {
+  margin: 23px 0;
+  max-width: 210px;
+  color: #b9af9f;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.z-footer-contact {
+  display: inline-flex;
+  gap: 22px;
+  align-items: center;
+  font-size: 12px;
+  color: #dbb88c;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #9b7955;
+}
+.z-footer-location {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 24px;
+  color: #988e80;
+  font-size: 10px;
+}
+.z-footer-navigation nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.z-footer-navigation h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #d7b58d;
+  margin: 5px 0 10px;
+}
+.z-footer-navigation nav a {
+  font-size: 12px;
+  color: #bcb4a9;
+  line-height: 1.7;
+  padding-block: 2px;
+}
+.z-footer-navigation nav a:hover {
+  color: #f0d0a7;
+}
+.z-footer-marques {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 25px 0;
+  border-block: 1px solid #c9aa7824;
+}
+.z-footer-marques > span {
+  font-size: 9px;
+  white-space: nowrap;
+  color: #9f8a70;
+}
+.z-footer-marques > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+}
+.z-footer-marques a {
+  font-size: 12px;
+  color: #c1b6a5;
+}
+.z-footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0 110px;
+  font-size: 10px;
+  color: #a2998d;
+}
+.z-footer-legal > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.z-footer-top {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+}
+.z-footer-top svg {
+  transform: rotate(-90deg);
+}
+@media (max-width: 900px) {
+  .z-footer-navigation {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+  .z-footer-identity {
+    grid-column: 1/-1;
+  }
+  .z-footer-invitation {
+    gap: 30px;
+  }
+  .z-footer-legal {
+    flex-wrap: wrap;
+  }
+  .z-footer-marques {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .z-footer-invitation {
+    grid-template-columns: 1fr;
+    padding: 48px 0;
+  }
+  .z-footer-reserve {
+    justify-self: start;
+    max-width: 100%;
+  }
+  .z-footer-navigation {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 0;
+    gap: 36px 24px;
+  }
+  .z-footer-navigation nav:last-child {
+    grid-column: 1/-1;
+  }
+  .z-footer-legal {
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .z-footer-top {
+    margin-inline-start: auto;
+  }
+  .z-footer-marques > div {
+    gap: 18px 24px;
+  }
+}

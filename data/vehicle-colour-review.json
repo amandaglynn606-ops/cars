@@ -1,0 +1,1244 @@
+{
+  "reviewedAt": "2026-09-20",
+  "method": "Visual review of all 777 local photographs. Colour names describe visible exterior appearance, not manufacturer paint codes. Null entries are interior/detail photos excluded from colour previews. Original filenames are not authoritative.",
+  "vehicles": {
+    "lamborghini-revuelto": {
+      "photos": {
+        "/fleet/lamborghini-revuelto/01-Lamborghini-Revuelto-1.webp": "yellow",
+        "/fleet/lamborghini-revuelto/02-Lamborghini-Revuelto-Yellow-2.webp": "yellow",
+        "/fleet/lamborghini-revuelto/03-Lamborghini-Revuelto-Yellow-3.webp": "yellow",
+        "/fleet/lamborghini-revuelto/04-Lamborghini-Revuelto-Yellow-4.webp": null,
+        "/fleet/lamborghini-revuelto/05-Lamborghini-Revuelto-Yellow-5.webp": null,
+        "/fleet/lamborghini-revuelto/06-Lamborghini-Revuelto-Green-1-1.webp": "light-green",
+        "/fleet/lamborghini-revuelto/07-Lamborghini-Revuelto-Green-2-1.webp": "light-green",
+        "/fleet/lamborghini-revuelto/08-Lamborghini-Revuelto-Green-4-1.webp": "light-green",
+        "/fleet/lamborghini-revuelto/09-Lamborghini-Revuelto-Green-3-1.webp": "light-green",
+        "/fleet/lamborghini-revuelto/10-Lamborghini-Revuelto-Green-2.webp": null,
+        "/fleet/lamborghini-revuelto/11-Lamborghini-Revuelto-Gray-1.webp": "gray",
+        "/fleet/lamborghini-revuelto/12-Lamborghini-Revuelto-Gray-2.webp": "gray",
+        "/fleet/lamborghini-revuelto/13-Lamborghini-Revuelto-Gray-3.webp": "gray",
+        "/fleet/lamborghini-revuelto/14-Lamborghini-Revuelto-3.webp": null,
+        "/fleet/lamborghini-revuelto/15-Lamborghini-Revuelto-5.webp": null
+      }
+    },
+    "ferrari-purosangue": {
+      "photos": {
+        "/fleet/ferrari-purosangue/01-Ferrari-Purosangue-Red-1.webp": "red",
+        "/fleet/ferrari-purosangue/02-Ferrari-Purosangue-Red-2-1.webp": "red",
+        "/fleet/ferrari-purosangue/03-Ferrari-Purosangue-Red-3.webp": "red",
+        "/fleet/ferrari-purosangue/04-Ferrari-Purosangue-Red-3-1.webp": "red",
+        "/fleet/ferrari-purosangue/05-Ferrari-Purosangue-Red-4.webp": null,
+        "/fleet/ferrari-purosangue/06-Ferrari-Purosangue-Black-1-2.webp": "black",
+        "/fleet/ferrari-purosangue/07-Ferrari-Purosangue-Black-2-1.webp": "black",
+        "/fleet/ferrari-purosangue/08-Black-Ferrari-Purosangue-3.webp": "black",
+        "/fleet/ferrari-purosangue/09-Ferrari-Purosangue-Black-3-1.webp": "black",
+        "/fleet/ferrari-purosangue/10-Ferrari-Purosangue-black-3.webp": null,
+        "/fleet/ferrari-purosangue/11-Ferrari-Purosangue-Orange-1.webp": "orange",
+        "/fleet/ferrari-purosangue/12-Ferrari-Purosangue-Orange-2.webp": "orange",
+        "/fleet/ferrari-purosangue/13-Ferrari-Purosangue-Orange-4.webp": "orange",
+        "/fleet/ferrari-purosangue/14-Ferrari-Purosangue-Orange-3.webp": "orange",
+        "/fleet/ferrari-purosangue/15-Ferrari-Purosangue-4.webp": null,
+        "/fleet/ferrari-purosangue/16-Ferrari-Purosangue-Blue-1.webp": "light-blue",
+        "/fleet/ferrari-purosangue/17-Ferrari-Purosangue-Blue-2.webp": "light-blue",
+        "/fleet/ferrari-purosangue/18-Ferrari-Purosangue-Blue-4.webp": "light-blue",
+        "/fleet/ferrari-purosangue/19-Ferrari-Purosangue-Blue-3.webp": "light-blue",
+        "/fleet/ferrari-purosangue/20-Ferrari-Purosangue-5-1.webp": null
+      }
+    },
+    "lamborghini-aventador-svj": {
+      "photos": {
+        "/fleet/lamborghini-aventador-svj/01-Lamborghini-Aventador-SVJ-2.webp": "black-and-yellow",
+        "/fleet/lamborghini-aventador-svj/02-Lamborghini-Aventador-SVJ-3.webp": "black-and-yellow",
+        "/fleet/lamborghini-aventador-svj/03-Lamborghini-Aventador-SVJ.webp": "black-and-yellow",
+        "/fleet/lamborghini-aventador-svj/04-3-2.webp": null,
+        "/fleet/lamborghini-aventador-svj/05-4-1.webp": null
+      }
+    },
+    "mercedes-gt63-black-series": {
+      "photos": {
+        "/fleet/mercedes-gt63-black-series/01-Mercedes-GT63-Black-Series-Orange-1-1.webp": "orange",
+        "/fleet/mercedes-gt63-black-series/02-Mercedes-GT63-Black-Series-Orange-3-1.webp": "orange",
+        "/fleet/mercedes-gt63-black-series/03-Mercedes-GT63-Black-Series-Orange-2-1.webp": "orange",
+        "/fleet/mercedes-gt63-black-series/04-Mercedes-GT63-Black-Series-Orange-4-1.webp": "orange",
+        "/fleet/mercedes-gt63-black-series/05-Mercedes-GT63-Black-Series-Orange-5.webp": null
+      }
+    },
+    "rolls-royce-phantom": {
+      "photos": {
+        "/fleet/rolls-royce-phantom/01-Rolls-Royce-Phantom-1-1.webp": "black",
+        "/fleet/rolls-royce-phantom/02-Rolls-Royce-Phantom-2-1.webp": "black",
+        "/fleet/rolls-royce-phantom/03-Rolls-Royce-Phantom-3.webp": "black",
+        "/fleet/rolls-royce-phantom/04-Rolls-Royce-Phantom-4-1.webp": "black",
+        "/fleet/rolls-royce-phantom/05-Rolls-Royce-Phantom-5.webp": null
+      }
+    },
+    "ferrari-812-superfast": {
+      "photos": {
+        "/fleet/ferrari-812-superfast/01-Ferrari-812-Superfast-1.webp": "red",
+        "/fleet/ferrari-812-superfast/02-Ferrari-812-Superfast-2.webp": "red",
+        "/fleet/ferrari-812-superfast/03-Ferrari-812-Superfast-4.webp": "red",
+        "/fleet/ferrari-812-superfast/04-Ferrari-812-Superfast-3.webp": "red"
+      }
+    },
+    "rolls-royce-cullinan": {
+      "photos": {
+        "/fleet/rolls-royce-cullinan/01-Rolls-Royce-Cullinan-Green-1.jpg": "black",
+        "/fleet/rolls-royce-cullinan/02-Rolls-Royce-Cullinan-Green-2.jpg": "black",
+        "/fleet/rolls-royce-cullinan/03-Rolls-Royce-Cullinan-Green-3.webp": "black",
+        "/fleet/rolls-royce-cullinan/04-Rolls-Royce-Cullinan-Green-4.jpg": "black",
+        "/fleet/rolls-royce-cullinan/05-Rolls-Royce-Cullinan-Green-5.webp": null,
+        "/fleet/rolls-royce-cullinan/06-Rolls-Royce-Cullinan-1.webp": "white",
+        "/fleet/rolls-royce-cullinan/07-Rolls-Royce-Cullinan-White-2.webp": "white",
+        "/fleet/rolls-royce-cullinan/08-Rolls-Royce-Cullinan-White-3.webp": "white",
+        "/fleet/rolls-royce-cullinan/09-Rolls-Royce-Cullinan-White-4.webp": "white",
+        "/fleet/rolls-royce-cullinan/10-Rolls-Royce-Cullinan-White-5.webp": null,
+        "/fleet/rolls-royce-cullinan/11-Rolls-Royce-Cullinan-1-1.webp": "brown",
+        "/fleet/rolls-royce-cullinan/12-Rolls-Royce-Cullinan-2025-Brown-3.webp": "brown",
+        "/fleet/rolls-royce-cullinan/13-Rolls-Royce-Cullinan-2.webp": "brown",
+        "/fleet/rolls-royce-cullinan/14-Rolls-Royce-Cullinan-2025-Brown-5.webp": null,
+        "/fleet/rolls-royce-cullinan/15-Rolls-Royce-Cullinan-2025-Brown-4.webp": null,
+        "/fleet/rolls-royce-cullinan/16-Rolls-Royce-Cullinan-Black-Badge-1.webp": "blue",
+        "/fleet/rolls-royce-cullinan/17-Rolls-Royce-Cullinan-Black-Badghe-Blue-2.webp": "blue",
+        "/fleet/rolls-royce-cullinan/18-Rolls-Royce-Cullinan-Black-Badghe-Blue-3.webp": "blue",
+        "/fleet/rolls-royce-cullinan/19-Rolls-Royce-Cullinan-Black-Badghe-Blue-4.webp": "blue",
+        "/fleet/rolls-royce-cullinan/20-Rolls-Royce-Cullinan-Black-Badghe-Blue-5.webp": null,
+        "/fleet/rolls-royce-cullinan/21-Rolls-Royce-Cullinan.webp": "black",
+        "/fleet/rolls-royce-cullinan/22-Rolls-Royce-Cullinan-Black-2-1.webp": "black",
+        "/fleet/rolls-royce-cullinan/23-Rolls-Royce-Cullinan-Black-4-1.webp": "black",
+        "/fleet/rolls-royce-cullinan/24-Rolls-Royce-Cullinan-Black-6.webp": null,
+        "/fleet/rolls-royce-cullinan/25-Rolls-Royce-Cullinan-Black-13.webp": null
+      },
+      "featuredImage": "/fleet/rolls-royce-cullinan/21-Rolls-Royce-Cullinan.webp"
+    },
+    "rolls-royce-spectre": {
+      "photos": {
+        "/fleet/rolls-royce-spectre/01-Rolls-Royce-Spectre-1.webp": "green",
+        "/fleet/rolls-royce-spectre/02-Rolls-Royce-Spectre-2.webp": "green",
+        "/fleet/rolls-royce-spectre/03-Rolls-Royce-Spectre-Green-10.webp": "green",
+        "/fleet/rolls-royce-spectre/04-Rolls-Royce-Spectre-3.webp": "green",
+        "/fleet/rolls-royce-spectre/05-Rolls-Royce-Spectre-Green-3.webp": null,
+        "/fleet/rolls-royce-spectre/06-Rolls-Royce-Spectre-Green-10.webp": "green",
+        "/fleet/rolls-royce-spectre/07-Rolls-Royce-Spectre-Green-3.webp": null
+      }
+    },
+    "ferrari-sf90-spider": {
+      "photos": {
+        "/fleet/ferrari-sf90-spider/01-Ferrari-SF-90-Spider-Red-1-1.webp": "red",
+        "/fleet/ferrari-sf90-spider/02-Ferrari-SF-90-Spider-Red-2-1.webp": "red",
+        "/fleet/ferrari-sf90-spider/03-Ferrari-SF-90-Spider-Red-5-1.webp": "red",
+        "/fleet/ferrari-sf90-spider/04-Ferrari-SF-90-Spider-Red-3.webp": "red",
+        "/fleet/ferrari-sf90-spider/05-Ferrari-SF-90-Spider-Red-4.webp": null
+      }
+    },
+    "ferrari-sf90": {
+      "photos": {
+        "/fleet/ferrari-sf90/01-Ferrari-SF90-Yellow-1.webp": "yellow",
+        "/fleet/ferrari-sf90/02-Ferrari-SF90-Yellow-2.webp": "yellow",
+        "/fleet/ferrari-sf90/03-Ferrari-SF90-Yellow-3.webp": "yellow",
+        "/fleet/ferrari-sf90/04-sf90-5.webp": null,
+        "/fleet/ferrari-sf90/05-sf90-8.webp": null,
+        "/fleet/ferrari-sf90/06-sf90-5-1.webp": null,
+        "/fleet/ferrari-sf90/07-sf90-8-1.webp": null
+      }
+    },
+    "porsche-911-gt3rs": {
+      "photos": {
+        "/fleet/porsche-911-gt3rs/01-Porsche-911-GT3RS-1.webp": "black",
+        "/fleet/porsche-911-gt3rs/02-Porsche-911-GT3RS-3.webp": "black",
+        "/fleet/porsche-911-gt3rs/03-Porsche-911-GT3RS-2.webp": "black",
+        "/fleet/porsche-911-gt3rs/04-PORSCHE-911-GT3-RS-7.webp": null,
+        "/fleet/porsche-911-gt3rs/05-PORSCHE-911-GT3-RS-8.webp": null
+      }
+    },
+    "rolls-royce-cullinan-mansory": {
+      "photos": {
+        "/fleet/rolls-royce-cullinan-mansory/01-Rolls-Royce-Cullinan-Mansory-Black-1-1.webp": "black",
+        "/fleet/rolls-royce-cullinan-mansory/02-Rolls-Royce-Cullinan-Mansory-Black-3.webp": "black",
+        "/fleet/rolls-royce-cullinan-mansory/03-Rolls-Royce-Cullinan-Mansory-Black-2-1.webp": "black",
+        "/fleet/rolls-royce-cullinan-mansory/04-Rolls-Royce-Cullinan-Mansory-Black-5.webp": null,
+        "/fleet/rolls-royce-cullinan-mansory/05-Rolls-Royce-Cullinan-Mansory-Black-4.webp": null
+      }
+    },
+    "porsche-gt3rs": {
+      "photos": {
+        "/fleet/porsche-gt3rs/01-Porsche-GT3RS-1.webp": "green",
+        "/fleet/porsche-gt3rs/02-porsche-GT3RS-3-1.webp": "green",
+        "/fleet/porsche-gt3rs/03-Porsche-GT3RS-2-1.webp": "green",
+        "/fleet/porsche-gt3rs/04-Porsche-GT3RS-4.webp": null,
+        "/fleet/porsche-gt3rs/05-Porsche-GT3RS-5.webp": null,
+        "/fleet/porsche-gt3rs/06-Porsche-GT3RS-Yellow-1.webp": "yellow",
+        "/fleet/porsche-gt3rs/07-Porsche-GT3RS-Yellow-2.webp": "yellow",
+        "/fleet/porsche-gt3rs/08-Porsche-GT3RS-Yellow-3.webp": "yellow",
+        "/fleet/porsche-gt3rs/09-porsche-GT3RS-4.webp": null,
+        "/fleet/porsche-gt3rs/10-porsche-GT3RS-5.webp": null,
+        "/fleet/porsche-gt3rs/11-Porsche-GT3RS-Silver-1.webp": "silver",
+        "/fleet/porsche-gt3rs/12-Porsche-GT3RS-Silver-3.webp": "silver",
+        "/fleet/porsche-gt3rs/13-Porsche-GT3RS-Silver-4.webp": "silver",
+        "/fleet/porsche-gt3rs/14-Porsche-GT3RS-Silver-2.webp": "silver",
+        "/fleet/porsche-gt3rs/15-porsche-GT3RS-4-1.webp": null
+      }
+    },
+    "mclaren-750s": {
+      "photos": {
+        "/fleet/mclaren-750s/01-Mclaren-750-S-1-1.webp": "red",
+        "/fleet/mclaren-750s/02-Mclaren-750-S-5-1.webp": "red",
+        "/fleet/mclaren-750s/03-Mclaren-750-S-3-1.webp": "red",
+        "/fleet/mclaren-750s/04-Mclaren-750-S-8.webp": null,
+        "/fleet/mclaren-750s/05-Mclaren-750-S-9.webp": null
+      }
+    },
+    "lamborghini-huracan-sto": {
+      "photos": {
+        "/fleet/lamborghini-huracan-sto/01-Lamborghini-Huracan-STO-Golden-1-1.webp": "gold",
+        "/fleet/lamborghini-huracan-sto/02-Lamborghini-Huracan-STO-Golden-2-1.webp": "gold",
+        "/fleet/lamborghini-huracan-sto/03-Lamborghini-Huracan-STO-Golden-3-1.webp": "gold",
+        "/fleet/lamborghini-huracan-sto/04-Lamborghini-Huracan-STO-Golden-2.webp": null,
+        "/fleet/lamborghini-huracan-sto/05-Lamborghini-Huracan-STO-Golden-3.webp": null
+      }
+    },
+    "rolls-royce-ghost-mansory": {
+      "photos": {
+        "/fleet/rolls-royce-ghost-mansory/01-Rolls-Royce-Ghost-Mansory-1.webp": "silver",
+        "/fleet/rolls-royce-ghost-mansory/02-Rolls-Royce-Ghost-Mansory-Gray-2.webp": "silver",
+        "/fleet/rolls-royce-ghost-mansory/03-Rolls-Royce-Ghost-Mansory-Gray-3.webp": "silver",
+        "/fleet/rolls-royce-ghost-mansory/04-Rolls-Royce-Ghost-Mansory-Gray-5.webp": null,
+        "/fleet/rolls-royce-ghost-mansory/05-Rolls-Royce-Ghost-Mansory-Gray-4.webp": null
+      }
+    },
+    "lamborghini-performante": {
+      "photos": {
+        "/fleet/lamborghini-performante/01-Lamborghini-Performante-Green-1-1.webp": "green",
+        "/fleet/lamborghini-performante/02-Lamborghini-Performante-Green-2-1.webp": "green",
+        "/fleet/lamborghini-performante/03-Lamborghini-Performante-Green-5-1.webp": "green",
+        "/fleet/lamborghini-performante/04-Lamborghini-Performante-Green-3.webp": "green",
+        "/fleet/lamborghini-performante/05-Lamborghini-Performante-Green-4.webp": null
+      }
+    },
+    "lamborghini-urus-mansory": {
+      "photos": {
+        "/fleet/lamborghini-urus-mansory/01-Lamborghini-Urus-Mansory-Yellow-1.webp": "lime-green",
+        "/fleet/lamborghini-urus-mansory/02-Lamborghini-Urus-Mansory-Yellow-2.webp": "lime-green",
+        "/fleet/lamborghini-urus-mansory/03-Lamborghini-Urus-Mansory-Yellow-3.webp": "lime-green",
+        "/fleet/lamborghini-urus-mansory/04-Lamborghini-Urus-Mansory-Yellow-4.webp": "lime-green",
+        "/fleet/lamborghini-urus-mansory/05-Lamborghini-Urus-Mansory-Yellow-5.webp": null,
+        "/fleet/lamborghini-urus-mansory/06-Lamborghini-Urus-Mansory-Black-1.jpg": "black",
+        "/fleet/lamborghini-urus-mansory/07-Lamborghini-Urus-Mansory-Black-2.jpg": "black",
+        "/fleet/lamborghini-urus-mansory/08-Lamborghini-Urus-Mansory-Black-4.webp": "black",
+        "/fleet/lamborghini-urus-mansory/09-Lamborghini-Urus-Mansory-Black-3.jpg": "black",
+        "/fleet/lamborghini-urus-mansory/10-Lamborghini-Urus-Mansory-Black-5.webp": null
+      }
+    },
+    "lamborghini-urus-performante": {
+      "photos": {
+        "/fleet/lamborghini-urus-performante/01-Lamborghini-Urus-Perfomante-1.webp": "yellow",
+        "/fleet/lamborghini-urus-performante/02-Lamborghini-Urus-Perfomante-2.webp": "yellow",
+        "/fleet/lamborghini-urus-performante/03-Lamborghini-Urus-Performante-Yellow-2.webp": "yellow",
+        "/fleet/lamborghini-urus-performante/04-Lamborghini-Urus-Perfomante-3.webp": "yellow",
+        "/fleet/lamborghini-urus-performante/05-Lamborghini-Urus-Performante-Yellow-5.webp": null
+      }
+    },
+    "mercedes-gt63": {
+      "photos": {
+        "/fleet/mercedes-gt63/01-Mercedes-GT63-Gray-1-1.webp": "silver",
+        "/fleet/mercedes-gt63/02-Mercedes-GT63-Gray-2-1.webp": "silver",
+        "/fleet/mercedes-gt63/03-Mercedes-GT63-Gray-3.webp": "silver",
+        "/fleet/mercedes-gt63/04-Mercedes-GT63-Gray-4-1.webp": "silver",
+        "/fleet/mercedes-gt63/05-Mercedes-GT63-Gray-5.webp": null
+      }
+    },
+    "lamborghini-evo": {
+      "photos": {
+        "/fleet/lamborghini-evo/01-Lamborghini-Evo-Yellow-1-1.webp": "yellow",
+        "/fleet/lamborghini-evo/02-Lamborghini-Evo-Yellow-2-1.webp": "yellow",
+        "/fleet/lamborghini-evo/03-Lamborghini-Evo-Yellow-4-1.webp": "yellow",
+        "/fleet/lamborghini-evo/04-Lamborghini-Evo-Yellow-3-1.webp": "yellow",
+        "/fleet/lamborghini-evo/05-Lamborghini-Evo-Yellow-3.webp": null,
+        "/fleet/lamborghini-evo/06-Lamborghini-EVO-1.webp": "turquoise",
+        "/fleet/lamborghini-evo/07-Lamborghini-EVO-2.webp": "turquoise",
+        "/fleet/lamborghini-evo/08-Lamborghini-EVO-Tiffani-3.webp": "turquoise",
+        "/fleet/lamborghini-evo/09-Lamborghini-EVO-3.webp": "turquoise",
+        "/fleet/lamborghini-evo/10-Lamborghini-EVO-Tiffani-2.webp": null
+      }
+    },
+    "maserati-mc120": {
+      "photos": {
+        "/fleet/maserati-mc120/01-Maserati-MC120-1-1.webp": "black",
+        "/fleet/maserati-mc120/02-Maserati-MC120-2-1.webp": "black",
+        "/fleet/maserati-mc120/03-Maserati-MC120-3-1.webp": "black",
+        "/fleet/maserati-mc120/04-Maserati-MC120-4-1.webp": "black",
+        "/fleet/maserati-mc120/05-Maserati-MC120-5.webp": null
+      }
+    },
+    "lamborghini-huracan-evo-coupe": {
+      "photos": {
+        "/fleet/lamborghini-huracan-evo-coupe/01-Lamborghini-huracan-evo-coupe-1-1.webp": "black",
+        "/fleet/lamborghini-huracan-evo-coupe/02-Lamborghini-huracan-evo-coupe-2-1.webp": "black",
+        "/fleet/lamborghini-huracan-evo-coupe/03-Lamborghini-huracan-evo-coupe-5.webp": "black",
+        "/fleet/lamborghini-huracan-evo-coupe/04-Lamborghini-huracan-evo-coupe-3.webp": null,
+        "/fleet/lamborghini-huracan-evo-coupe/05-Lamborghini-huracan-evo-coupe-4.webp": null
+      }
+    },
+    "mclaren-720s-spider": {
+      "photos": {
+        "/fleet/mclaren-720s-spider/01-McLaren-720S-spider-1.webp": "orange",
+        "/fleet/mclaren-720s-spider/02-McLaren-720S-spider-1-1.webp": "orange",
+        "/fleet/mclaren-720s-spider/03-McLaren-720S-spider-3-1.webp": "orange",
+        "/fleet/mclaren-720s-spider/04-McLaren-720S-spider-2-1.webp": "orange",
+        "/fleet/mclaren-720s-spider/05-McLaren-720S-spider-5.webp": null
+      }
+    },
+    "ferrari-f8-spyder": {
+      "photos": {
+        "/fleet/ferrari-f8-spyder/01-Ferrari-F8-Spyder-1.jpg": "black",
+        "/fleet/ferrari-f8-spyder/02-Ferrari-F8-Spyder-3.jpg": "black",
+        "/fleet/ferrari-f8-spyder/03-Ferrari-F8-Spyder-2.jpg": "black",
+        "/fleet/ferrari-f8-spyder/04-Ferrari-F8-Spyder-4.jpg": "black",
+        "/fleet/ferrari-f8-spyder/05-Ferrari-F8-Spyder-3.webp": null
+      }
+    },
+    "aston-martin-dbx-707": {
+      "photos": {
+        "/fleet/aston-martin-dbx-707/01-Aston-Martin-DBX-707-Green-1.webp": "teal",
+        "/fleet/aston-martin-dbx-707/02-Aston-Martin-DBX-707-Green-2.webp": "teal",
+        "/fleet/aston-martin-dbx-707/03-Aston-Martin-DBX-707-Green-3.webp": "teal",
+        "/fleet/aston-martin-dbx-707/04-Aston-Martin-DBX-707-Green-5-1.webp": "teal",
+        "/fleet/aston-martin-dbx-707/05-Aston-Martin-DBX-707-Green-4.webp": null
+      }
+    },
+    "lamborghini-huracan-spyder": {
+      "photos": {
+        "/fleet/lamborghini-huracan-spyder/01-Lamborghini-Huracan-Spyder-1-1.webp": "black",
+        "/fleet/lamborghini-huracan-spyder/02-Lamborghini-Huracan-Spyder-2-1.webp": "black",
+        "/fleet/lamborghini-huracan-spyder/03-Lamborghini-Huracan-Spyder-black-5.webp": null,
+        "/fleet/lamborghini-huracan-spyder/04-Lamborghini-Huracan-Spyder-black-2.webp": null,
+        "/fleet/lamborghini-huracan-spyder/05-Lamborghini-Huracan-Spyder-black-4.webp": null,
+        "/fleet/lamborghini-huracan-spyder/06-Lamborghini-Huracan-Spyder-Blue.webp": "blue",
+        "/fleet/lamborghini-huracan-spyder/07-Lamborghini-Huracan-Spyder-2.webp": "blue",
+        "/fleet/lamborghini-huracan-spyder/08-Lamborghini-Huracan-Spyder-Blue-2.webp": "blue",
+        "/fleet/lamborghini-huracan-spyder/09-Lamborghini-Huracan-Spyder-3.webp": null,
+        "/fleet/lamborghini-huracan-spyder/10-Lamborghini-Huracan-Spyder-4.webp": null
+      }
+    },
+    "aston-martin-dbx": {
+      "photos": {
+        "/fleet/aston-martin-dbx/01-Aston-Martin-DBX-1-2.webp": "black",
+        "/fleet/aston-martin-dbx/02-Aston-Martin-DBX-4-1.webp": "black",
+        "/fleet/aston-martin-dbx/03-Aston-Martin-DBX-2-1.webp": "black",
+        "/fleet/aston-martin-dbx/04-Aston-Martin-DBX-3-1.webp": "black",
+        "/fleet/aston-martin-dbx/05-Aston-Martin-DBX-5.webp": null
+      }
+    },
+    "lamborghini-urus": {
+      "photos": {
+        "/fleet/lamborghini-urus/01-Lamborghini-Urus-Gray-1.webp": "gray",
+        "/fleet/lamborghini-urus/02-Lamborghini-Urus-Gray-2.webp": "gray",
+        "/fleet/lamborghini-urus/03-Lamborghini-Urus-Gray-2.webp": "gray",
+        "/fleet/lamborghini-urus/04-Lamborghini-Urus-Gray-3.webp": "gray",
+        "/fleet/lamborghini-urus/05-Lamborghini-Urus-Gray-5.webp": null,
+        "/fleet/lamborghini-urus/06-Lamborgini-Urus-Light-Blue-1.webp": "light-blue",
+        "/fleet/lamborghini-urus/07-Lamborgini-Urus-Light-Blue-2.webp": "light-blue",
+        "/fleet/lamborghini-urus/08-Lamborgini-Urus-Light-Blue-3.webp": "light-blue",
+        "/fleet/lamborghini-urus/09-Lamborghini-Urus-4-2.webp": null,
+        "/fleet/lamborghini-urus/10-Lamborghini-Urus-5-2.webp": null,
+        "/fleet/lamborghini-urus/11-Lamborgini-Urus-Blue.webp": "blue",
+        "/fleet/lamborghini-urus/12-Lamborgini-Urus-Blue-3.webp": "blue",
+        "/fleet/lamborghini-urus/13-Lamborgini-Urus-Blue-2.webp": "blue",
+        "/fleet/lamborghini-urus/14-Lamborgini-Urus-Blue-4.webp": "blue",
+        "/fleet/lamborghini-urus/15-Lamborghini-Urus-2-1.webp": "blue",
+        "/fleet/lamborghini-urus/16-Lamborghini-Urus-yellow-1.webp.webp": "yellow",
+        "/fleet/lamborghini-urus/17-Lamborghini-Urus-yellow-2.webp": "yellow",
+        "/fleet/lamborghini-urus/18-Lamborghini-Urus-yellow-3.webp": "yellow",
+        "/fleet/lamborghini-urus/19-Lamborghini-Urus-2022-4.webp": null,
+        "/fleet/lamborghini-urus/20-Lamborghini-Urus-2022-5.webp": null,
+        "/fleet/lamborghini-urus/21-Lamborghini-Urus-2-1-1.webp": "matte-gray",
+        "/fleet/lamborghini-urus/22-Lamborghini-Urus-3.jpg": "matte-gray",
+        "/fleet/lamborghini-urus/23-Lamborghini-Urus-2.jpg": "matte-gray",
+        "/fleet/lamborghini-urus/24-Lamborghini-Urus-5.webp": null,
+        "/fleet/lamborghini-urus/25-Lamborghini-Urus-4.webp": null
+      }
+    },
+    "bentley-gtc": {
+      "photos": {
+        "/fleet/bentley-gtc/01-Bentley-GTC-1.webp": "green",
+        "/fleet/bentley-gtc/02-Bentley-GTC-2.webp": "green",
+        "/fleet/bentley-gtc/03-Bentley-GTC-3.webp": "green",
+        "/fleet/bentley-gtc/04-Bentley-GTC-Green-3.webp": "green",
+        "/fleet/bentley-gtc/05-Bentley-GTC-Green-4.webp": null
+      }
+    },
+    "mclaren-720s": {
+      "photos": {
+        "/fleet/mclaren-720s/01-McLaren-720s-1-1.webp": "blue",
+        "/fleet/mclaren-720s/02-McLaren-720s-2-1.webp": "blue",
+        "/fleet/mclaren-720s/03-McLaren-720s-4-1.webp": "blue",
+        "/fleet/mclaren-720s/04-McLaren-720s-3-1.webp": "blue",
+        "/fleet/mclaren-720s/05-McLaren-720s-5.webp": null
+      }
+    },
+    "maserati-mc20": {
+      "photos": {
+        "/fleet/maserati-mc20/01-Maserati-MC20-1.webp": "yellow",
+        "/fleet/maserati-mc20/02-Maserati-MC20-2.webp": "yellow",
+        "/fleet/maserati-mc20/03-Maserati-MC20-Yellow-2.webp": "yellow",
+        "/fleet/maserati-mc20/04-Maserati-MC20-Yellow-4.webp": null,
+        "/fleet/maserati-mc20/05-Maserati-MC20-Yellow-5.webp": null
+      }
+    },
+    "rolls-royce-dawn": {
+      "photos": {
+        "/fleet/rolls-royce-dawn/01-Rolls-Royce-Dawn-green.webp": "metallic-emerald-green",
+        "/fleet/rolls-royce-dawn/02-Rolls-Royce-Dawn-green-2.webp": "metallic-emerald-green",
+        "/fleet/rolls-royce-dawn/03-Rolls-Royce-Dawn-green-4.webp": "metallic-emerald-green",
+        "/fleet/rolls-royce-dawn/04-Rolls-Royce-Dawn-green-3.webp": "metallic-emerald-green",
+        "/fleet/rolls-royce-dawn/05-Rolls-Royce-Dawn-Green-5.webp": null,
+        "/fleet/rolls-royce-dawn/06-Rolls-Roys-Dawn-1.webp": "white",
+        "/fleet/rolls-royce-dawn/07-Rolls-Roys-Dawn-2.webp": "white",
+        "/fleet/rolls-royce-dawn/08-Rolls-Royce-Dawn-3.webp": "white",
+        "/fleet/rolls-royce-dawn/09-Rolls-Roys-Dawn-3.webp": "white",
+        "/fleet/rolls-royce-dawn/10-Rolls-Royce-Dawn-5.webp": null
+      }
+    },
+    "mercedes-g550-4-4-brabus": {
+      "photos": {
+        "/fleet/mercedes-g550-4-215-4-brabus/01-Mercedes-G550-4-4-Brabus-1.webp": "teal-and-black",
+        "/fleet/mercedes-g550-4-215-4-brabus/02-Mercedes-G550-4-4-Brabus-3.webp": "teal-and-black",
+        "/fleet/mercedes-g550-4-215-4-brabus/03-Mercedes-G550-4-4-Brabus-4.webp": "teal-and-black",
+        "/fleet/mercedes-g550-4-215-4-brabus/04-Mercedes-G550-4x4-Brabus-TiffanyBlack-2.webp": null,
+        "/fleet/mercedes-g550-4-215-4-brabus/05-Mercedes-G550-4-4-Brabus-2.webp": "teal-and-black"
+      }
+    },
+    "ferrari-f8-trubito": {
+      "photos": {
+        "/fleet/ferrari-f8-trubito/01-Ferrari-F8-Trubito-1.webp": "white",
+        "/fleet/ferrari-f8-trubito/02-Ferrari-F8-Trubito-1-1.webp": "white",
+        "/fleet/ferrari-f8-trubito/03-Ferrari-F8-Trubito-2-1.webp": "white",
+        "/fleet/ferrari-f8-trubito/04-Ferrari-F8-Trubito-4-1.webp": "white",
+        "/fleet/ferrari-f8-trubito/05-Ferrari-F8-Trubito-2.webp": null
+      }
+    },
+    "mclaren-artura": {
+      "photos": {
+        "/fleet/mclaren-artura/01-McLaren-Artura-1-2.webp": "black",
+        "/fleet/mclaren-artura/02-McLaren-Artura-2-1.webp": "black",
+        "/fleet/mclaren-artura/03-McLaren-Artura-3.webp": null,
+        "/fleet/mclaren-artura/04-McLaren-Artura-4.webp": null,
+        "/fleet/mclaren-artura/05-McLaren-Artura-5.webp": null
+      }
+    },
+    "mercedes-maybach-s680-long": {
+      "photos": {
+        "/fleet/mercedes-maybach-s680-long/01-Maybach-S680-Long-White.webp": "black-and-white",
+        "/fleet/mercedes-maybach-s680-long/02-Mercedes-Maybach-S680-Long-White-3.webp": "black-and-white",
+        "/fleet/mercedes-maybach-s680-long/03-Mercedes-Maybach-S680-Long-White-4.webp": "black-and-white",
+        "/fleet/mercedes-maybach-s680-long/04-Mercedes-Maybach-S680-Long-White-2.webp": "black-and-white",
+        "/fleet/mercedes-maybach-s680-long/05-Mercedes-Maybach-S680-Long-White-5.webp": null
+      }
+    },
+    "bmw-m5-g90": {
+      "photos": {
+        "/fleet/bmw-m5-g90/01-BMW-M5-G90-Black-Matte-1.webp": "matte-gray",
+        "/fleet/bmw-m5-g90/02-BMW-M5-G90-Black-Matte-2.webp": "matte-gray",
+        "/fleet/bmw-m5-g90/03-BMW-M5-G90-Black-Matte-4.webp": "matte-gray",
+        "/fleet/bmw-m5-g90/04-BMW-M5-G90-Black-Matte-5.webp": "matte-gray",
+        "/fleet/bmw-m5-g90/05-BMW-M5-G90-Black-Matte-3.webp": null,
+        "/fleet/bmw-m5-g90/06-BMW-M5-G90-Black-1.webp": "black",
+        "/fleet/bmw-m5-g90/07-BMW-M5-G90-Black-2.webp": "black",
+        "/fleet/bmw-m5-g90/08-BMW-M5-G90-Black-4.webp": "black",
+        "/fleet/bmw-m5-g90/09-BMW-M5-G90-Black-5.webp": "black",
+        "/fleet/bmw-m5-g90/10-BMW-M5-G90-Black-3.webp": null,
+        "/fleet/bmw-m5-g90/11-BMW-M5-G90-Black-2.webp": "black",
+        "/fleet/bmw-m5-g90/12-BMW-M5-G90-Black-4.webp": "black",
+        "/fleet/bmw-m5-g90/13-BMW-M5-G90-Black-5.webp": "black",
+        "/fleet/bmw-m5-g90/14-BMW-M5-G90-Black-3.webp": null
+      }
+    },
+    "mercedes-gtc-r": {
+      "photos": {
+        "/fleet/mercedes-gtc-r/01-Mercedes-GTCR-red-1.webp": "orange",
+        "/fleet/mercedes-gtc-r/02-Mercedes-GTCR-red-2.webp": "orange",
+        "/fleet/mercedes-gtc-r/03-Mercedes-GTCR-red-3.webp": "orange",
+        "/fleet/mercedes-gtc-r/04-Mercedes-GTCR-4.webp": "orange",
+        "/fleet/mercedes-gtc-r/05-Mercedes-GTCR-5.webp": null
+      }
+    },
+    "porsche-911-turbo-s": {
+      "photos": {
+        "/fleet/porsche-911-turbo-s/01-Porsche-911-Turbo-S-white-1.webp": "white",
+        "/fleet/porsche-911-turbo-s/02-Porsche-911-Turbo-S-white-2.webp": "white",
+        "/fleet/porsche-911-turbo-s/03-Porsche-White-3.webp": null,
+        "/fleet/porsche-911-turbo-s/04-Porsche-White-4.webp": null
+      }
+    },
+    "aston-martin-vantage": {
+      "photos": {
+        "/fleet/aston-martin-vantage/01-Aston-Martin-Vantage-1-1.webp": "silver",
+        "/fleet/aston-martin-vantage/02-Aston-Martin-Vantage-2-1.webp": "silver",
+        "/fleet/aston-martin-vantage/03-Aston-Martin-Vantage-3-1.webp": "silver",
+        "/fleet/aston-martin-vantage/04-Aston-Martin-Vantage-4.webp": null,
+        "/fleet/aston-martin-vantage/05-Aston-Martin-Vantage-5-1.webp": null
+      }
+    },
+    "bentley-flying-spur": {
+      "photos": {
+        "/fleet/bentley-flying-spur/01-Bentley-Flying-Spur-black-1-1.webp": "black",
+        "/fleet/bentley-flying-spur/02-Bentley-Flying-Spur-Black-2.webp": "black",
+        "/fleet/bentley-flying-spur/03-Bentley-Flying-Spur-Black-5.webp": "black",
+        "/fleet/bentley-flying-spur/04-Bentley-Flying-Spur-Black-3.webp": "black",
+        "/fleet/bentley-flying-spur/05-Bentley-Flying-Spur-Black-4.webp": null,
+        "/fleet/bentley-flying-spur/06-Bentley-Flying-Spur-1-1.webp": "dark-blue",
+        "/fleet/bentley-flying-spur/07-Bentley-Flying-Spur-2.webp": "dark-blue",
+        "/fleet/bentley-flying-spur/08-Bentley-Flying-Spur-2-1.webp": "dark-blue",
+        "/fleet/bentley-flying-spur/09-Bentley-Flying-Spur-3.webp": null,
+        "/fleet/bentley-flying-spur/10-Bentley-Flying-Spur-5.webp": null
+      }
+    },
+    "bentley-continental-gtc": {
+      "photos": {
+        "/fleet/bentley-continental-gtc/01-Bentley-Continental-GTC.webp": "black",
+        "/fleet/bentley-continental-gtc/02-2.webp": "black",
+        "/fleet/bentley-continental-gtc/03-3.webp": "black",
+        "/fleet/bentley-continental-gtc/04-5-5.webp": null,
+        "/fleet/bentley-continental-gtc/05-6-6.webp": null,
+        "/fleet/bentley-continental-gtc/06-7-7.webp": null,
+        "/fleet/bentley-continental-gtc/07-8-8.webp": null
+      }
+    },
+    "mercedes-sl63-amg": {
+      "photos": {
+        "/fleet/mercedes-sl63-amg/01-Mercedes-SL63-AMG-1.webp": "white",
+        "/fleet/mercedes-sl63-amg/02-Mercedes-SL63-AMG-2.webp": "white",
+        "/fleet/mercedes-sl63-amg/03-Mercedes-SL63-AMG-4.webp": "white",
+        "/fleet/mercedes-sl63-amg/04-Mercedes-SL63-AMG-3.webp": "white",
+        "/fleet/mercedes-sl63-amg/05-Mercedes-SL63-AMG-White-5.webp": null
+      }
+    },
+    "range-rover-vogue-sv": {
+      "photos": {
+        "/fleet/range-rover-vogue-sv/01-Range-Rover-Vogue-SV-1.webp": "matte-gray",
+        "/fleet/range-rover-vogue-sv/02-Range-Rover-Vogue-SV-Black-Matte-2.webp": "matte-gray",
+        "/fleet/range-rover-vogue-sv/03-Range-Rover-Vogue-SV-Black-Matte-3.webp": "matte-gray",
+        "/fleet/range-rover-vogue-sv/04-Range-Rover-Vogue-SV-Black-Matte-4.webp": null,
+        "/fleet/range-rover-vogue-sv/05-Range-Rover-Vogue-SV-Black-Matte-5.webp": null
+      }
+    },
+    "range-rover-sport-sv": {
+      "photos": {
+        "/fleet/range-rover-sport-sv/01-Range-Rover-Sport-SV-1.webp": "bronze",
+        "/fleet/range-rover-sport-sv/02-Range-Rover-Sport-SV-Brown-Matte-3.webp": "bronze",
+        "/fleet/range-rover-sport-sv/03-Range-Rover-Sport-SV-Brown-Matte-2.webp": "bronze",
+        "/fleet/range-rover-sport-sv/04-Range-Rover-Sport-SV-Brown-Matte-4.webp": null,
+        "/fleet/range-rover-sport-sv/05-Range-Rover-Sport-SV-Brown-Matte-5.webp": null
+      }
+    },
+    "bmw-xm": {
+      "photos": {
+        "/fleet/bmw-xm/01-BMW-XM-1.webp": "black",
+        "/fleet/bmw-xm/02-BMW-XM-2.webp": "black",
+        "/fleet/bmw-xm/03-BMW-XM-3.webp": "black",
+        "/fleet/bmw-xm/04-BMW-XM-Black-5.webp": "black",
+        "/fleet/bmw-xm/05-BMW-XM-Black-3.webp": null,
+        "/fleet/bmw-xm/06-BMW-XM-Black-5.webp": "black",
+        "/fleet/bmw-xm/07-BMW-XM-Black-3.webp": null
+      }
+    },
+    "bmw-x6m": {
+      "photos": {
+        "/fleet/bmw-x6m/01-BMW-X6M-Orange-1.webp": "orange",
+        "/fleet/bmw-x6m/02-BMW-X6M-Orange-3.webp": "orange",
+        "/fleet/bmw-x6m/03-BMW-X6M-Orange-4.webp": "orange",
+        "/fleet/bmw-x6m/04-BMW-X6M-Orange-5.webp": "orange",
+        "/fleet/bmw-x6m/05-BMW-X6M-Orange-2.webp": null
+      }
+    },
+    "bentley-bentayga": {
+      "photos": {
+        "/fleet/bentley-bentayga/01-Bentley-Bentayga-1.webp": "turquoise",
+        "/fleet/bentley-bentayga/02-Bentley-Bentayga-3.webp": "turquoise",
+        "/fleet/bentley-bentayga/03-Bentley-Bentayga-2.webp": "turquoise",
+        "/fleet/bentley-bentayga/04-Bentley-Bentayga-Tiffani-4.webp": null,
+        "/fleet/bentley-bentayga/05-Bentley-Bentayga-Tiffani-5.webp": null
+      }
+    },
+    "brabus-g900": {
+      "photos": {
+        "/fleet/brabus-g900/01-Brabus-G900-1-1.webp": "gray",
+        "/fleet/brabus-g900/02-Brabus-G900-2.webp": "gray",
+        "/fleet/brabus-g900/03-Brabus-G900-2-1.webp": "gray",
+        "/fleet/brabus-g900/04-Brabus-G900-3.webp": null,
+        "/fleet/brabus-g900/05-Brabus-G900-5.webp": null
+      }
+    },
+    "mercedes-gls-600": {
+      "photos": {
+        "/fleet/mercedes-gls-600/01-1-1.webp": "black-and-gold",
+        "/fleet/mercedes-gls-600/02-2-2.webp": "black-and-gold",
+        "/fleet/mercedes-gls-600/03-3-3.webp": "black-and-gold",
+        "/fleet/mercedes-gls-600/04-5-2.webp": null,
+        "/fleet/mercedes-gls-600/05-6-scaled.webp": null,
+        "/fleet/mercedes-gls-600/06-7-2-1.webp": null,
+        "/fleet/mercedes-gls-600/07-8-2-1.webp": null
+      }
+    },
+    "mercedes-g63-2025": {
+      "photos": {
+        "/fleet/mercedes-g63-2025/01-Mercedes-G63-1-1.webp": "black",
+        "/fleet/mercedes-g63-2025/02-1-1-1.webp": "black",
+        "/fleet/mercedes-g63-2025/03-3-3-1.webp": "black",
+        "/fleet/mercedes-g63-2025/04-4-4.webp": "black",
+        "/fleet/mercedes-g63-2025/05-9.webp": null,
+        "/fleet/mercedes-g63-2025/06-5-5-1.webp": null,
+        "/fleet/mercedes-g63-2025/07-8-8-1.webp": null,
+        "/fleet/mercedes-g63-2025/08-6-6-1.webp": null,
+        "/fleet/mercedes-g63-2025/09-7-7-1.webp": null,
+        "/fleet/mercedes-g63-2025/10-9-9.webp": null,
+        "/fleet/mercedes-g63-2025/11-10.webp": null
+      }
+    },
+    "mercedes-amg-g63": {
+      "photos": {
+        "/fleet/mercedes-amg-g63/01-Mercedes-AMG-G63-White-1-2.webp": "white",
+        "/fleet/mercedes-amg-g63/02-Mercedes-AMG-G63-White-2.webp": "white",
+        "/fleet/mercedes-amg-g63/03-Mercedes-AMG-G63-White-3.webp": "white",
+        "/fleet/mercedes-amg-g63/04-Mercedes-AMG-G63-White-4.webp": "white",
+        "/fleet/mercedes-amg-g63/05-Mercedes-AMG-G63-White-5.webp": null
+      }
+    },
+    "bmw-x5m": {
+      "photos": {
+        "/fleet/bmw-x5m/01-BMW-X5M-2025-Black-1-1.webp": "black",
+        "/fleet/bmw-x5m/02-BMW-X5M-Black-2.webp": "black",
+        "/fleet/bmw-x5m/03-BMW-X5M-BlackBMW-X5M-Black-3.webp": "black",
+        "/fleet/bmw-x5m/04-BMW-X5M-2025-Black-5.webp": null,
+        "/fleet/bmw-x5m/05-BMW-X5M-2025-Black-3.webp": null,
+        "/fleet/bmw-x5m/06-BMW-X5M-1-1.webp": "matte-gray",
+        "/fleet/bmw-x5m/07-BMW-X5M-2022-Black-Matte-2.webp": "matte-gray",
+        "/fleet/bmw-x5m/08-BMW-X5M-2022-Black-Matte-4.webp": "matte-gray",
+        "/fleet/bmw-x5m/09-BMW-X5M-2022-Black-Matte-5.webp": null,
+        "/fleet/bmw-x5m/10-BMW-X5M-2022-Black-Matte-3.webp": null
+      }
+    },
+    "audi-r8-spyder": {
+      "photos": {
+        "/fleet/audi-r8-spyder/01-Audi-R8-Spyder-1-1.webp": "blue",
+        "/fleet/audi-r8-spyder/02-Audi-R8-Spyder-2-1.webp": "blue",
+        "/fleet/audi-r8-spyder/03-Audi-R8-Spyder-3-1.webp": "blue",
+        "/fleet/audi-r8-spyder/04-Audi-R8-Spyder-4.webp": null,
+        "/fleet/audi-r8-spyder/05-Audi-R8-Spyder-5.webp": null,
+        "/fleet/audi-r8-spyder/06-Audi-R8-Spyder-4-1.webp": null
+      }
+    },
+    "dodge-ram-trx": {
+      "photos": {
+        "/fleet/dodge-ram-trx/01-Dodge-Ram-TRX-1-1.webp": "black",
+        "/fleet/dodge-ram-trx/02-Dodge-Ram-TRX-4.webp": "black",
+        "/fleet/dodge-ram-trx/03-Dodge-Ram-TRX-3-1.webp": "black",
+        "/fleet/dodge-ram-trx/04-Dodge-Ram-TRX-2.webp": null,
+        "/fleet/dodge-ram-trx/05-Dodge-Ram-TRX-5.webp": null
+      }
+    },
+    "mercedes-benz-g-63-brabus": {
+      "photos": {
+        "/fleet/mercedes-benz-g-63-brabus/01-brabus-2.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus/02-Mercedes-Benz-G-63-Brabus-Kit-2020-3.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus/03-Mercedes-Benz-G63-Yellow.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus/04-Mercedes-Benz-G-63-Brabus-Kit-2020-4.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus/05-Mercedes-Benz-G-63-Brabus-Kit-2020-5.webp": null
+      }
+    },
+    "mercedes-benz-g-63": {
+      "photos": {
+        "/fleet/mercedes-benz-g-63/01-Mercedez-Benz-G63.webp": "black",
+        "/fleet/mercedes-benz-g-63/02-Mercedes-Benz-G63-3.webp": "black",
+        "/fleet/mercedes-benz-g-63/03-Mercedes-Benz-G63-2.webp": "black",
+        "/fleet/mercedes-benz-g-63/04-Mercedes-Benz-G63-2021-5.webp": null,
+        "/fleet/mercedes-benz-g-63/05-Mercedes-Benz-G63-2021-4.webp": null
+      }
+    },
+    "mercedes-s-580-brabus": {
+      "photos": {
+        "/fleet/mercedes-s-580-brabus/01-Mercedes-S-580-Brabus-White-4-1.webp": "white",
+        "/fleet/mercedes-s-580-brabus/02-Mercedes-S-580-Brabus-White-2-1.webp": "white",
+        "/fleet/mercedes-s-580-brabus/03-Mercedes-S-580-Brabus-White-3-1.webp": "white",
+        "/fleet/mercedes-s-580-brabus/04-Mercedes-S-580-Brabus-White-5.webp": null,
+        "/fleet/mercedes-s-580-brabus/05-Mercedes-S-580-Brabus-White-4.webp": null
+      }
+    },
+    "mercedes-maybach-s580": {
+      "photos": {
+        "/fleet/mercedes-maybach-s580/01-maybach-finalee.webp": "black",
+        "/fleet/mercedes-maybach-s580/02-Maybach-S580-3.webp": "black",
+        "/fleet/mercedes-maybach-s580/03-Mybach-S580-2.webp": "black",
+        "/fleet/mercedes-maybach-s580/04-Mercedes-Maybach-S580-Black-4.webp": null,
+        "/fleet/mercedes-maybach-s580/05-Mercedes-Maybach-S580-Black-5.webp": null
+      }
+    },
+    "porsche-911-targa": {
+      "photos": {
+        "/fleet/porsche-911-targa/01-Porsche-911-Targa-final.webp": "red",
+        "/fleet/porsche-911-targa/02-Porsche-911-Targa-2.webp": "red",
+        "/fleet/porsche-911-targa/03-Porsche-911-Targa-Red-2.webp": "red",
+        "/fleet/porsche-911-targa/04-Porsche-911-Targa-3.webp": "red",
+        "/fleet/porsche-911-targa/05-Porsche-911-Targa-Red-5.webp": null
+      }
+    },
+    "dodge-challenger-hellcat": {
+      "photos": {
+        "/fleet/dodge-challenger-hellcat/01-Dodge-Challenger-Hellcat-1.webp": "red",
+        "/fleet/dodge-challenger-hellcat/02-Dodge-Challenger-Hellcat-2-1.webp": "red",
+        "/fleet/dodge-challenger-hellcat/03-Dodge-Challenger-Hellcat-3.webp": "red",
+        "/fleet/dodge-challenger-hellcat/04-Dodge-Challenger-Hellcat-5.webp": null,
+        "/fleet/dodge-challenger-hellcat/05-Dodge-Challenger-Hellcat-4.webp": null
+      }
+    },
+    "audi-rs6": {
+      "photos": {
+        "/fleet/audi-rs6/01-AUDI-rs6-1.webp": "blue",
+        "/fleet/audi-rs6/02-Audi-Rs6-2.webp": "blue",
+        "/fleet/audi-rs6/03-Audi-RS6-2-1.webp": "blue",
+        "/fleet/audi-rs6/04-Audi-Rs6-4.webp": null,
+        "/fleet/audi-rs6/05-Audi-Rs6-5.webp": null
+      }
+    },
+    "cadillac-escalade-v": {
+      "photos": {
+        "/fleet/cadillac-escalade-v/01-Cadillac-Escalade-V-1-1.webp": "white",
+        "/fleet/cadillac-escalade-v/02-Cadillac-Escalade-V-2-1.webp": "white",
+        "/fleet/cadillac-escalade-v/03-Cadillac-Escalade-V-3-1.webp": "white",
+        "/fleet/cadillac-escalade-v/04-Cadillac-Escalade-V-4-1.webp": "white",
+        "/fleet/cadillac-escalade-v/05-Cadillac-Escalade-V-5.webp": null
+      }
+    },
+    "audi-r8": {
+      "photos": {
+        "/fleet/audi-r8/01-Audi-R8-Blue-1.webp": "light-blue",
+        "/fleet/audi-r8/02-Audi-R8-Blue-2.webp": "light-blue",
+        "/fleet/audi-r8/03-Audi-R8-Spyder-2022-Yellow-3.webp": null,
+        "/fleet/audi-r8/04-Audi-R8-3.webp": null,
+        "/fleet/audi-r8/05-Audi-R8-4.webp": null
+      }
+    },
+    "bmw-840": {
+      "photos": {
+        "/fleet/bmw-840/01-BMW-840-Green-1.webp": "lime-green",
+        "/fleet/bmw-840/02-BMW-840-Green-2.webp": "lime-green",
+        "/fleet/bmw-840/03-BMW-840-Green-3.webp": "lime-green",
+        "/fleet/bmw-840/04-BMW-840-Green-5.webp": "lime-green",
+        "/fleet/bmw-840/05-BMW-840-Green-4.webp": null
+      }
+    },
+    "bmw-760i": {
+      "photos": {
+        "/fleet/bmw-760i/01-BMW-760i-Gray-1-1.webp": "dark-gray",
+        "/fleet/bmw-760i/02-BMW-760i-Gray-2-1.webp": "dark-gray",
+        "/fleet/bmw-760i/03-BMW-760i-Gray-3.webp": "dark-gray",
+        "/fleet/bmw-760i/04-BMW-760i-Gray-5-1.webp": "dark-gray",
+        "/fleet/bmw-760i/05-BMW-760i-Gray-4.webp": null,
+        "/fleet/bmw-760i/06-bmw-760i-finale.webp": "matte-gray",
+        "/fleet/bmw-760i/07-BMW-760i-3.webp": "matte-gray",
+        "/fleet/bmw-760i/08-BMW-760i-2.webp": "matte-gray",
+        "/fleet/bmw-760i/09-BMW-760i-BlackSilver-3.webp": "matte-gray",
+        "/fleet/bmw-760i/10-BMW-760i-BlackSilver-4.webp": null
+      }
+    },
+    "bmw-850i": {
+      "photos": {
+        "/fleet/bmw-850i/01-BMW-850i-front.webp": "blue",
+        "/fleet/bmw-850i/02-BMW-850i-3.webp": null,
+        "/fleet/bmw-850i/03-BMW-850i-5.webp": "blue",
+        "/fleet/bmw-850i/04-BMW-850i-4.webp": null,
+        "/fleet/bmw-850i/05-BMW-850i-2-1.webp": "blue"
+      }
+    },
+    "ford-mustang-gt-shelby": {
+      "photos": {
+        "/fleet/ford-mustang-gt-shelby/01-Ford-Mustang-GT-Shelby-3-1-scaled.webp": "red",
+        "/fleet/ford-mustang-gt-shelby/02-GT-Shelby-2.webp": null,
+        "/fleet/ford-mustang-gt-shelby/03-GT-Shelby-3.webp": "red",
+        "/fleet/ford-mustang-gt-shelby/04-GT-Shelby-4.webp": "red",
+        "/fleet/ford-mustang-gt-shelby/05-Ford-Mustang-GT-Shelby-2.webp": null
+      }
+    },
+    "cadillac-escalade": {
+      "photos": {
+        "/fleet/cadillac-escalade/01-WhatsApp-Image-2026-04-30-at-3.25.04-PM.jpg": "black",
+        "/fleet/cadillac-escalade/02-WhatsApp-Image-2026-04-30-at-3.25.55-PM.jpg": "black",
+        "/fleet/cadillac-escalade/03-WhatsApp-Image-2026-04-30-at-3.25.04-PM-1.jpg": null,
+        "/fleet/cadillac-escalade/04-WhatsApp-Image-2026-04-30-at-3.25.05-PM.jpg": null,
+        "/fleet/cadillac-escalade/05-WhatsApp-Image-2026-04-30-at-3.25.06-PM.jpg": null,
+        "/fleet/cadillac-escalade/06-Cadillac-Escalade.webp": "black",
+        "/fleet/cadillac-escalade/07-Cadillac-Escalade-2.webp": "black",
+        "/fleet/cadillac-escalade/08-BCadillac-2.webp": "black",
+        "/fleet/cadillac-escalade/09-BCadillac-4.webp": null,
+        "/fleet/cadillac-escalade/10-BCadillac-5.webp": null,
+        "/fleet/cadillac-escalade/11-BCadillac-6.webp": null
+      }
+    },
+    "bmw-m4": {
+      "photos": {
+        "/fleet/bmw-m4/01-BMW-M4-Green-1.webp": "green",
+        "/fleet/bmw-m4/02-BMW-M4-Green-2.webp": "green",
+        "/fleet/bmw-m4/03-BMW-M4-Green-4.webp": "green",
+        "/fleet/bmw-m4/04-BMW-M4-Green-3.webp": "green",
+        "/fleet/bmw-m4/05-BMW-M4-Green-2.webp": null
+      }
+    },
+    "bmw-740i": {
+      "photos": {
+        "/fleet/bmw-740i/01-BMW-740i-1-2.webp": "black",
+        "/fleet/bmw-740i/02-2-2-3.webp": "black",
+        "/fleet/bmw-740i/03-3-3-3.webp": "black",
+        "/fleet/bmw-740i/04-4-4-2.webp": "black",
+        "/fleet/bmw-740i/05-5-5-2.webp": null,
+        "/fleet/bmw-740i/06-6-6-2.webp": null
+      }
+    },
+    "lotus-emira": {
+      "photos": {
+        "/fleet/lotus-emira/01-lotus-emiraa.webp": "red",
+        "/fleet/lotus-emira/02-Lotus-Emira-4.webp": "red",
+        "/fleet/lotus-emira/03-Lotus-Emira-5.webp": "red",
+        "/fleet/lotus-emira/04-Lotus-Emira-2.webp": "red",
+        "/fleet/lotus-emira/05-Lotus-Emira-3.webp": "red",
+        "/fleet/lotus-emira/06-WhatsApp-Image-2026-05-12-at-6.17.27-PM.webp": "red",
+        "/fleet/lotus-emira/07-WhatsApp-Image-2026-05-12-at-6.17.26-PM-1.webp": null
+      }
+    },
+    "bmw-m4-convertible": {
+      "photos": {
+        "/fleet/bmw-m4-convertible/01-BMW-m4-Convertiblee.webp": "dark-blue",
+        "/fleet/bmw-m4-convertible/02-BMW-M4-Convertible-2.webp": "dark-blue",
+        "/fleet/bmw-m4-convertible/03-BMW-M4-Convertible-3.webp": "dark-blue",
+        "/fleet/bmw-m4-convertible/04-BMW-M4-Convertible-4.webp": "dark-blue",
+        "/fleet/bmw-m4-convertible/05-BMW-M4-Convertible-Blue-3.webp": null
+      }
+    },
+    "range-rover-hse-vogue-1st": {
+      "photos": {
+        "/fleet/range-rover-hse-vogue-1st/01-Range-Rover-HSE-Vogue-1st-1.webp": "black",
+        "/fleet/range-rover-hse-vogue-1st/02-Range-Rover-HSE-Vogue-1st.webp": "black",
+        "/fleet/range-rover-hse-vogue-1st/03-Range-Rover-HSE-Vogue-1st-Black-2.webp": "black",
+        "/fleet/range-rover-hse-vogue-1st/04-Range-Rover-HSE-Vogue-2nd.webp": "black",
+        "/fleet/range-rover-hse-vogue-1st/05-Range-Rover-HSE-Vogue-1st-Black-5.webp": null,
+        "/fleet/range-rover-hse-vogue-1st/06-Range-Rover-HSE-Vogue-Front-View.webp": "black"
+      }
+    },
+    "bmw-x6": {
+      "photos": {
+        "/fleet/bmw-x6/01-BMW-X6-1.webp": "silver",
+        "/fleet/bmw-x6/02-2-1.webp": "silver",
+        "/fleet/bmw-x6/03-4-4-1.webp": null,
+        "/fleet/bmw-x6/04-3-3-2.webp": null,
+        "/fleet/bmw-x6/05-2-2-2.webp": null
+      }
+    },
+    "mercedes-benz-s580": {
+      "photos": {
+        "/fleet/mercedes-benz-s580/01-Mercedes-Benz-S580-1-2.webp": "white",
+        "/fleet/mercedes-benz-s580/02-Mercedes-Benz-S580-2-1.webp": "white",
+        "/fleet/mercedes-benz-s580/03-Mercedes-Benz-S580-3.webp": null,
+        "/fleet/mercedes-benz-s580/04-Mercedes-Benz-S580-5.webp": null,
+        "/fleet/mercedes-benz-s580/05-Mercedes-Benz-S580-4.webp": null
+      }
+    },
+    "mercedes-v-class": {
+      "photos": {
+        "/fleet/mercedes-v-class/01-Mercedes-V-Class-White-1-1.webp": "white",
+        "/fleet/mercedes-v-class/02-Mercedes-V-Class-White-4.webp": "white",
+        "/fleet/mercedes-v-class/03-Mercedes-V-Class-White-3-1.webp": "white",
+        "/fleet/mercedes-v-class/04-Mercedes-V-Class-White-2.webp": null,
+        "/fleet/mercedes-v-class/05-Mercedes-V-Class-White-5.webp": null
+      }
+    },
+    "mercedes-gls450": {
+      "photos": {
+        "/fleet/mercedes-gls450/01-Mercedes-GLS450-1.webp": "black",
+        "/fleet/mercedes-gls450/02-Mercedes-GLS450-2.webp": "black",
+        "/fleet/mercedes-gls450/03-Mercedes-GLS450-Green-4.webp": "black",
+        "/fleet/mercedes-gls450/04-Mercedes-GLS450-3.webp": "black",
+        "/fleet/mercedes-gls450/05-Mercedes-GLS450-Green-5.webp": null
+      }
+    },
+    "gmc-yukon-denali": {
+      "photos": {
+        "/fleet/gmc-yukon-denali/01-GMC-Yukon-Denali-Black-1.webp": "black",
+        "/fleet/gmc-yukon-denali/02-GMC-Yukon-Denali-Black-2-1.webp": "black",
+        "/fleet/gmc-yukon-denali/03-GMC-Yukon-Denali-Black-4-1.webp": "black",
+        "/fleet/gmc-yukon-denali/04-GMC-Yukon-Denali-Black-5.webp": null,
+        "/fleet/gmc-yukon-denali/05-GMC-Yukon-Denali-Black-3.webp": null
+      }
+    },
+    "land-rover-defender": {
+      "photos": {
+        "/fleet/land-rover-defender/01-Land-Rover-Defender.webp": "matte-gray",
+        "/fleet/land-rover-defender/02-Land-Rover-Defender-Black-3.webp": "matte-gray",
+        "/fleet/land-rover-defender/03-Land-Rover-Defender-Black-2-1.webp": "matte-gray",
+        "/fleet/land-rover-defender/04-Land-Rover-Defender-Black-3-1.webp": "matte-gray",
+        "/fleet/land-rover-defender/05-Land-Rover-Defender-Black-5.webp": null,
+        "/fleet/land-rover-defender/06-Land-Rover-Defender-1-1.webp": "black",
+        "/fleet/land-rover-defender/07-Land-Rover-Defender-2-1.webp": "black",
+        "/fleet/land-rover-defender/08-Land-Rover-Defender-4.webp": "black",
+        "/fleet/land-rover-defender/09-Land-Rover-Defender-3-1.webp": "black",
+        "/fleet/land-rover-defender/10-Land-Rover-Defender-5.webp": null
+      }
+    },
+    "range-rover-svr": {
+      "photos": {
+        "/fleet/range-rover-svr/01-Range-Rover-SVR-2.webp": "matte-gray",
+        "/fleet/range-rover-svr/02-Range-Rover-SVR-2-1-1.webp": "matte-gray",
+        "/fleet/range-rover-svr/03-Range-Rover-SVR-Gray-3-1.webp": "matte-gray",
+        "/fleet/range-rover-svr/04-Range-Rover-SVR-Gray-4.webp": null,
+        "/fleet/range-rover-svr/05-Range-Rover-SVR-Gray-5.webp": null,
+        "/fleet/range-rover-svr/06-Range-Rover-SVR-Gray-3.webp": "matte-gray",
+        "/fleet/range-rover-svr/07-Range-Rover-SVR-2-1.webp": "matte-gray",
+        "/fleet/range-rover-svr/08-Range-Rover-SVR-Blue-1-1.webp": "blue",
+        "/fleet/range-rover-svr/09-Range-Rover-SVR-2020-3.webp": "blue",
+        "/fleet/range-rover-svr/10-Range-Rover-SVR-Blue-2.webp": "blue",
+        "/fleet/range-rover-svr/11-Range-Rover-SVR-Blue-3.webp": "blue",
+        "/fleet/range-rover-svr/12-Range-Rover-SVR-2020-5.webp": null,
+        "/fleet/range-rover-svr/13-Range-Rover-SVR-Internal-image-5.webp": "blue",
+        "/fleet/range-rover-svr/14-Range-Rover-SVR-2020-5-1.webp": null
+      }
+    },
+    "mercedes-benz-s500": {
+      "photos": {
+        "/fleet/mercedes-benz-s500/01-Mercedes-Benz-S500-1-1.webp": "black",
+        "/fleet/mercedes-benz-s500/02-Mercedes-Benz-S500-2-1.webp": "black",
+        "/fleet/mercedes-benz-s500/03-Mercedes-Benz-S500-3-1.webp": "black",
+        "/fleet/mercedes-benz-s500/04-Mercedes-Benz-S500-4-1.webp": "black",
+        "/fleet/mercedes-benz-s500/05-Mercedes-Benz-S500-5.webp": null
+      }
+    },
+    "chevrolet-corvette-c8": {
+      "photos": {
+        "/fleet/chevrolet-corvette-c8/01-Chevrolet-Corvette-C8-1-1.webp": "red",
+        "/fleet/chevrolet-corvette-c8/02-Chevrolet-Corvette-C8-4-2.webp": "red",
+        "/fleet/chevrolet-corvette-c8/03-Chevrolet-Corvette-C8-3-1.webp": "red",
+        "/fleet/chevrolet-corvette-c8/04-Chevrolet-Corvette-C8-2.webp": null,
+        "/fleet/chevrolet-corvette-c8/05-Chevrolet-Corvette-C8-5.webp": null
+      }
+    },
+    "cadillac-escalade-platinum-sport": {
+      "photos": {
+        "/fleet/cadillac-escalade-platinum-sport/01-Cadillac-Escalade-Platinum-Sport-2.webp": "black",
+        "/fleet/cadillac-escalade-platinum-sport/02-Cadillac4.webp": "black",
+        "/fleet/cadillac-escalade-platinum-sport/03-Cadillac1.webp": "black",
+        "/fleet/cadillac-escalade-platinum-sport/04-Cadillac3.webp": null,
+        "/fleet/cadillac-escalade-platinum-sport/05-Cadillac5.webp": null
+      }
+    },
+    "bmw-x7": {
+      "photos": {
+        "/fleet/bmw-x7/01-BMW-X7-1-1.webp": "silver",
+        "/fleet/bmw-x7/02-BMW-X7-3-1.webp": "silver",
+        "/fleet/bmw-x7/03-BMW-X7-2-1.webp": "silver",
+        "/fleet/bmw-x7/04-BMW-X75.webp": null,
+        "/fleet/bmw-x7/05-BMW-X7-4.webp": null,
+        "/fleet/bmw-x7/06-BMW-X7-WHITE-1.webp": "white",
+        "/fleet/bmw-x7/07-BMW-X7-WHITE-2.webp": "white",
+        "/fleet/bmw-x7/08-BMW-X7-WHITE-3.webp": "white",
+        "/fleet/bmw-x7/09-BMW-X7-WHITE-4.webp": null,
+        "/fleet/bmw-x7/10-BMW-X7-WHITE-5.webp": null
+      }
+    },
+    "range-rover-sport": {
+      "photos": {
+        "/fleet/range-rover-sport/01-Land-Rover-Sport-1.webp": "white",
+        "/fleet/range-rover-sport/02-Range-Rover-Sport-2020-2.webp": "white",
+        "/fleet/range-rover-sport/03-Land-Rover-Sport-2020-3-1.webp": "white",
+        "/fleet/range-rover-sport/04-Range-Rover-Sport-2020-4.webp": null,
+        "/fleet/range-rover-sport/05-Range-Rover-Sport-2020-5.webp": null
+      }
+    },
+    "nissan-patrol": {
+      "photos": {
+        "/fleet/nissan-patrol/01-Nissan-patrol-Cover-image-1.webp": "dark-gray",
+        "/fleet/nissan-patrol/02-Nissan-Patrol-Black-2025-4.webp": "dark-gray",
+        "/fleet/nissan-patrol/03-3-2.webp": "dark-gray",
+        "/fleet/nissan-patrol/04-4-1.webp": "dark-gray",
+        "/fleet/nissan-patrol/05-2-2.webp": "dark-gray",
+        "/fleet/nissan-patrol/06-5-3.webp": "dark-gray",
+        "/fleet/nissan-patrol/07-Nissan-Patrol-Black-2025-6.webp": null,
+        "/fleet/nissan-patrol/08-Nissan-Patrol-Black-2025-7.webp": null,
+        "/fleet/nissan-patrol/09-Nissan-Patrol-Black-2025-9.webp": null,
+        "/fleet/nissan-patrol/10-Nissan-Patrol-Black-2025-10.webp": null,
+        "/fleet/nissan-patrol/11-Nissan-Patrol-Black-2025-11.webp": null,
+        "/fleet/nissan-patrol/12-Nissan-Patrol-Black-2025-12.webp": null,
+        "/fleet/nissan-patrol/13-Nissan-Patrol-Black-2025-13.webp": null,
+        "/fleet/nissan-patrol/14-Nissan-Patrol-Black-2025-14.webp": null,
+        "/fleet/nissan-patrol/15-Nissan-Patrol-Black-2025-15.webp": null,
+        "/fleet/nissan-patrol/16-Nissan-patrol-Cover-image-1-1.webp": "dark-gray"
+      }
+    },
+    "nissan-patrol-super-safari": {
+      "photos": {
+        "/fleet/nissan-patrol-super-safari/01-Nissan-patrol-Super-Safari.webp": "silver",
+        "/fleet/nissan-patrol-super-safari/02-patrol-2-3.jpg": "silver",
+        "/fleet/nissan-patrol-super-safari/03-Nissan-Patrol-Super-Safari-GrayGolden-5-1.webp": "silver",
+        "/fleet/nissan-patrol-super-safari/04-patrol-2-1.webp": "silver",
+        "/fleet/nissan-patrol-super-safari/05-Nissan-Patrol-Super-Safari-GrayGolden-3-1.webp": null,
+        "/fleet/nissan-patrol-super-safari/06-patrol-2-3.webp": "silver",
+        "/fleet/nissan-patrol-super-safari/07-Nissan-Patrol-Super-Safari-GrayGolden-5.webp": "silver",
+        "/fleet/nissan-patrol-super-safari/08-Nissan-Patrol-Super-Safari-GrayGolden-3.webp": null
+      }
+    },
+    "chevrolet-tahoe": {
+      "photos": {
+        "/fleet/chevrolet-tahoe/01-Chevrolet-Tahoe-gray.webp": "gray",
+        "/fleet/chevrolet-tahoe/02-Chevrolet-Tahoe-Gray-2.webp": "gray",
+        "/fleet/chevrolet-tahoe/03-Chevrolet-Tahoe-Gray-5-1.webp": "gray",
+        "/fleet/chevrolet-tahoe/04-Chevrolet-Tahoe-gray-2-1.webp": "gray",
+        "/fleet/chevrolet-tahoe/05-Chevrolet-Tahoe-Gray-4.webp": null
+      }
+    },
+    "bmw-x5-40i": {
+      "photos": {
+        "/fleet/bmw-x5-40i/01-BMW-X5-40i.webp": "black",
+        "/fleet/bmw-x5-40i/02-BMW-X5-40i-2-1.webp": "black",
+        "/fleet/bmw-x5-40i/03-BMW-X5-40i-3-1.webp": "black",
+        "/fleet/bmw-x5-40i/04-BMW-X5-40i-3.webp": "black",
+        "/fleet/bmw-x5-40i/05-BMW-X5-40i-5.webp": null
+      }
+    },
+    "mercedes-benz-v250": {
+      "photos": {
+        "/fleet/mercedes-benz-v250/01-Mercedes-Benz-V250.webp": "black",
+        "/fleet/mercedes-benz-v250/02-Mercedes-Benz-V250-2-1.webp": "black",
+        "/fleet/mercedes-benz-v250/03-Mercedes-Benz-V250-3-1.webp": "black",
+        "/fleet/mercedes-benz-v250/04-Mercedes-Benz-V250-4.webp": null,
+        "/fleet/mercedes-benz-v250/05-Mercedes-Benz-V250-5.webp": null
+      }
+    },
+    "bmw-430i": {
+      "photos": {
+        "/fleet/bmw-430i/01-BMW-430i-front-view-final.webp": "silver",
+        "/fleet/bmw-430i/02-BMW-430i-2-1.webp": "silver",
+        "/fleet/bmw-430i/03-BMW-430i-4.webp": "silver",
+        "/fleet/bmw-430i/04-BMW-430i-3.webp": "silver",
+        "/fleet/bmw-430i/05-BMW-430i-Gray-4.webp": null
+      }
+    },
+    "mercedes-gle-350": {
+      "photos": {
+        "/fleet/mercedes-gle-350/01-mercedes-a-1.webp": "blue",
+        "/fleet/mercedes-gle-350/02-Mercedes-GLE-350-4.webp": "blue",
+        "/fleet/mercedes-gle-350/03-Mercedes-GLE-350-3.webp": "blue",
+        "/fleet/mercedes-gle-350/04-Mercedes-GLE-350-2-1.webp": "blue",
+        "/fleet/mercedes-gle-350/05-Mercedes-GLE-350-5.webp": null,
+        "/fleet/mercedes-gle-350/06-Mercedes-GLE-350.webp": "black",
+        "/fleet/mercedes-gle-350/07-Mercedes-GLE-350-2-2.webp": "black",
+        "/fleet/mercedes-gle-350/08-3-1.webp": "black",
+        "/fleet/mercedes-gle-350/09-Mercedes-GLE-350-3-1.webp": "black",
+        "/fleet/mercedes-gle-350/10-5.webp": null,
+        "/fleet/mercedes-gle-350/11-3-3.webp": "black",
+        "/fleet/mercedes-gle-350/12-5-2.webp": null
+      }
+    },
+    "mercedes-benz-e450": {
+      "photos": {
+        "/fleet/mercedes-benz-e450/01-Mercedes-Benz-E450-2.webp": "turquoise",
+        "/fleet/mercedes-benz-e450/02-e450-internal-3.webp": "turquoise",
+        "/fleet/mercedes-benz-e450/03-Mercedes-Benz-E450-internal.webp": "turquoise",
+        "/fleet/mercedes-benz-e450/04-Mercedes-Benz-E450-2021-5.webp": null,
+        "/fleet/mercedes-benz-e450/05-Mercedes-Benz-E450-2021-4.webp": null
+      }
+    },
+    "camaro-v8": {
+      "photos": {
+        "/fleet/camaro-v8/01-Camaro-V8-1-1.webp": "black",
+        "/fleet/camaro-v8/02-Camaro-V8-2.webp": "black",
+        "/fleet/camaro-v8/03-Camaro-V8-3-1.webp": "black",
+        "/fleet/camaro-v8/04-Camaro-V8-4-1.webp": "black",
+        "/fleet/camaro-v8/05-Camaro-V8-4.webp": null
+      }
+    },
+    "mercedes-c200": {
+      "photos": {
+        "/fleet/mercedes-c200/01-c200-1.webp": "white",
+        "/fleet/mercedes-c200/02-Mercedes-C200-White-5.webp": "white",
+        "/fleet/mercedes-c200/03-c200-white.webp": "white",
+        "/fleet/mercedes-c200/04-c200-white-2.webp": "white",
+        "/fleet/mercedes-c200/05-Mercedes-C200-White-2.webp": null,
+        "/fleet/mercedes-c200/06-mercedes-c200.webp": "turquoise",
+        "/fleet/mercedes-c200/07-mercedes-c200-1.webp": "turquoise",
+        "/fleet/mercedes-c200/08-mercedes-c200-2.webp": "turquoise",
+        "/fleet/mercedes-c200/09-Mercedes-C200-Tiffany-4.webp": null,
+        "/fleet/mercedes-c200/10-Mercedes-C200-Tiffany-5.webp": null
+      }
+    },
+    "nissan-nismo": {
+      "photos": {
+        "/fleet/nissan-nismo/01-nismo-1.webp": "white",
+        "/fleet/nissan-nismo/02-Nissan-Nismo-2022-2.webp": "white",
+        "/fleet/nissan-nismo/03-nissan-2.webp": "white",
+        "/fleet/nissan-nismo/04-Nissan-Nismo-2022-3.webp": null,
+        "/fleet/nissan-nismo/05-Nissan-Nismo-2022-5.webp": null,
+        "/fleet/nissan-nismo/06-nismo-tn.webp": "black",
+        "/fleet/nissan-nismo/07-nissan-2-1.webp": "black",
+        "/fleet/nissan-nismo/08-Nissan-Nismo-2024-3.webp": "black",
+        "/fleet/nissan-nismo/09-nissan-3.webp": "black",
+        "/fleet/nissan-nismo/10-Nissan-Nismo-2024-5.webp": null
+      }
+    },
+    "ford-mustang": {
+      "photos": {
+        "/fleet/ford-mustang/01-mustang-black.webp": "gray",
+        "/fleet/ford-mustang/02-mustang2-1.webp": "gray",
+        "/fleet/ford-mustang/03-mustang3-1.webp": "gray",
+        "/fleet/ford-mustang/04-mustang1.webp": "gray",
+        "/fleet/ford-mustang/05-mustang-1.webp": "yellow",
+        "/fleet/ford-mustang/06-yellowmustang2.webp": "yellow",
+        "/fleet/ford-mustang/07-yellowmustang3.webp": "yellow",
+        "/fleet/ford-mustang/08-Ford-Mustang-3.webp": null,
+        "/fleet/ford-mustang/09-Ford-Mustang-2.webp": null
+      }
+    },
+    "mercedes-cla250": {
+      "photos": {
+        "/fleet/mercedes-cla250/01-cla250-final.webp": "white",
+        "/fleet/mercedes-cla250/02-mercedes2-1.webp": "white",
+        "/fleet/mercedes-cla250/03-Mercedes-CLA250-White-5.webp": "white",
+        "/fleet/mercedes-cla250/04-mercedes3-1.webp": "white",
+        "/fleet/mercedes-cla250/05-Mercedes-CLA250-White-2.webp": null
+      }
+    },
+    "bmw-320i": {
+      "photos": {
+        "/fleet/bmw-320i/01-bmw-320i-2-1.webp": "white",
+        "/fleet/bmw-320i/02-bmw-320i-3.jpg": "white",
+        "/fleet/bmw-320i/03-bmw320i-2.jpg": "white",
+        "/fleet/bmw-320i/04-BMW-320i-3.webp": "white",
+        "/fleet/bmw-320i/05-BMW-320i-4.webp": null
+      }
+    },
+    "mercedes-glc-300": {
+      "photos": {
+        "/fleet/mercedes-glc-300/01-Mercedes-GLC-300-1.webp": "white",
+        "/fleet/mercedes-glc-300/02-Mercedes-GLC-300-4.webp": "white",
+        "/fleet/mercedes-glc-300/03-Mercedes-GLC-300-3.webp": "white",
+        "/fleet/mercedes-glc-300/04-Mercedes-GLC-300-2.webp": "white",
+        "/fleet/mercedes-glc-300/05-Mercedes-GLC-300-5.webp": null
+      }
+    },
+    "dodge-charger-srt": {
+      "photos": {
+        "/fleet/dodge-charger-srt/01-Dodge-Charger-SRT.webp": "silver",
+        "/fleet/dodge-charger-srt/02-dodge-charger-2-1.webp": "silver",
+        "/fleet/dodge-charger-srt/03-Dodge-Charger-SRT-3.webp": "silver",
+        "/fleet/dodge-charger-srt/04-dodge-charger-3.webp": "silver",
+        "/fleet/dodge-charger-srt/05-Dodge-Charger-SRT-5.webp": null
+      }
+    },
+    "camaro-silver-convertible": {
+      "photos": {
+        "/fleet/camaro-silver-convertible/01-Camaro-Silver-Convertible-1.webp": "silver",
+        "/fleet/camaro-silver-convertible/02-silver-camaro-2.webp": "silver",
+        "/fleet/camaro-silver-convertible/03-silver-camaro-3.webp": "silver",
+        "/fleet/camaro-silver-convertible/04-Camaro-Silver-Convertible-4.webp": "silver",
+        "/fleet/camaro-silver-convertible/05-Camaro-Silver-Convertible-3.webp": null
+      }
+    },
+    "mini-cooper-s": {
+      "photos": {
+        "/fleet/mini-cooper-s/01-Mini-Cooper-S1.webp": "pink",
+        "/fleet/mini-cooper-s/02-Mini-Cooper-S-2-1.webp": "pink",
+        "/fleet/mini-cooper-s/03-Mini-Cooper-S-3-1.webp": "pink",
+        "/fleet/mini-cooper-s/04-Mini-Cooper-S-4-1.webp": "pink",
+        "/fleet/mini-cooper-s/05-Mini-Cooper-S-5.webp": null
+      }
+    },
+    "honda-cr-v": {
+      "photos": {
+        "/fleet/honda-cr-v/01-Honda-CR-V-Hi-res.webp": "white",
+        "/fleet/honda-cr-v/02-hondas-cr-v.webp": "white",
+        "/fleet/honda-cr-v/03-Honda-CR-V-3.webp": null,
+        "/fleet/honda-cr-v/04-Honda-CR-V-4.webp": null,
+        "/fleet/honda-cr-v/05-Honda-CR-V-5.webp": null,
+        "/fleet/honda-cr-v/06-honda-cr-v-two.webp": "white",
+        "/fleet/honda-cr-v/07-Honda-CR-V-3-1.webp": null,
+        "/fleet/honda-cr-v/08-Honda-CR-V-4-1.webp": null,
+        "/fleet/honda-cr-v/09-Honda-CR-V-5-1.webp": null
+      }
+    },
+    "lamborghini-performante-g": {
+      "photos": {
+        "/fleet/lamborghini-performante-g/01-Lamborghini-Performante-Green-1-1.webp": "green",
+        "/fleet/lamborghini-performante-g/02-Lamborghini-Performante-Green-2-1.webp": "green",
+        "/fleet/lamborghini-performante-g/03-Lamborghini-Performante-Green-5-1.webp": "green",
+        "/fleet/lamborghini-performante-g/04-Lamborghini-Performante-Green-3.webp": "green",
+        "/fleet/lamborghini-performante-g/05-Lamborghini-Performante-Green-4.webp": null
+      }
+    },
+    "lamborghini-urus-perfomante": {
+      "photos": {
+        "/fleet/lamborghini-urus-perfomante/01-Lamborghini-Urus-Perfomante-1.webp": "yellow",
+        "/fleet/lamborghini-urus-perfomante/02-Lamborghini-Urus-Perfomante-2.webp": "yellow",
+        "/fleet/lamborghini-urus-perfomante/03-Lamborghini-Urus-Perfomante-3.webp": "yellow",
+        "/fleet/lamborghini-urus-perfomante/04-1M9A5434-2.jpg": null,
+        "/fleet/lamborghini-urus-perfomante/05-1M9A5432-2.jpg": null
+      }
+    },
+    "ferrari-f8": {
+      "photos": {
+        "/fleet/ferrari-f8/01-Ferrari-F8-red.webp": "red",
+        "/fleet/ferrari-f8/02-Ferrari-F8-Tributo-Red-2.webp": "red",
+        "/fleet/ferrari-f8/03-Ferrari-F8-Tributo-Red-3.webp": "red",
+        "/fleet/ferrari-f8/04-Ferrari-F8-Tributo-Red-3.webp": "red",
+        "/fleet/ferrari-f8/05-Ferrari-F8-Tributo-Red-4.webp": null
+      }
+    },
+    "bentley-bentayga-nardo": {
+      "photos": {
+        "/fleet/bentley-bentayga-nardo/01-Bentley-Bentayga-Nardo-1.webp": "light-gray",
+        "/fleet/bentley-bentayga-nardo/02-Bentley-Bentayga-Nardo-2.webp": "light-gray",
+        "/fleet/bentley-bentayga-nardo/03-Bentley-Bentayga-Nardo-3.webp": "light-gray",
+        "/fleet/bentley-bentayga-nardo/04-Bentley-Bentayga-Nardo-Gray-2.webp": null,
+        "/fleet/bentley-bentayga-nardo/05-Bentley-Bentayga-Nardo-Gray-5.webp": null
+      }
+    },
+    "range-rover-hse-p530-vogue": {
+      "photos": {
+        "/fleet/range-rover-hse-p530-vogue/01-Range-Rover-HSE-P530-1.webp": "white",
+        "/fleet/range-rover-hse-p530-vogue/02-Range-Rover-HSE-P530-Vogue-White-3.webp": "white",
+        "/fleet/range-rover-hse-p530-vogue/03-Range-Rover-HSE-P530-2.webp": "white",
+        "/fleet/range-rover-hse-p530-vogue/04-Range-Rover-HSE-P530-Vogue-White-5.webp": null,
+        "/fleet/range-rover-hse-p530-vogue/05-Range-Rover-HSE-P530-Vogue-White-4.webp": null
+      }
+    },
+    "land-rover-sport": {
+      "photos": {
+        "/fleet/land-rover-sport/01-Land-Rover-Sport-1.webp": "white",
+        "/fleet/land-rover-sport/02-Land-Rover-Sport-2020-2.webp": "white",
+        "/fleet/land-rover-sport/03-Land-Rover-Sport-2020-3-1.webp": "white",
+        "/fleet/land-rover-sport/04-Land-Rover-Sport-2020-4.webp": null,
+        "/fleet/land-rover-sport/05-Land-Rover-Sport-2020-5.webp": null
+      }
+    },
+    "mercedes-benz-g-63-brabus-kit": {
+      "photos": {
+        "/fleet/mercedes-benz-g-63-brabus-kit/01-brabus-2.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus-kit/02-Mercedes-Benz-G63-Yellow.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus-kit/03-Mercedes-Benz-G-63-Brabus-Kit-2020-3.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus-kit/04-Mercedes-Benz-G-63-Brabus-Kit-2020-4.webp": "yellow",
+        "/fleet/mercedes-benz-g-63-brabus-kit/05-Mercedes-Benz-G-63-Brabus-Kit-2020-5.webp": null
+      }
+    },
+    "lamborghini-huracan-evo-spyder": {
+      "photos": {
+        "/fleet/lamborghini-huracan-evo-spyder/01-Lamborghini-Huracan-Evo-Spyder-1.webp": "light-green",
+        "/fleet/lamborghini-huracan-evo-spyder/02-Lamborghini-Huracan-Evo-Spyder-5.webp": "light-green",
+        "/fleet/lamborghini-huracan-evo-spyder/03-Lamborghini-Huracan-Evo-Spyder-2.webp": "light-green",
+        "/fleet/lamborghini-huracan-evo-spyder/04-Lamborghini-Huracan-Evo-Spyder-3.webp": null,
+        "/fleet/lamborghini-huracan-evo-spyder/05-Lamborghini-Huracan-Evo-Spyder-4.webp": null
+      }
+    },
+    "range-rover-vogue": {
+      "photos": {
+        "/fleet/range-rover-vogue/01-Range-Rover-Vogue-1-1.webp": "black",
+        "/fleet/range-rover-vogue/02-Range-Rover-Vogue-2-1.webp": "black",
+        "/fleet/range-rover-vogue/03-Range-Rover-Vogue-3-1.webp": "black",
+        "/fleet/range-rover-vogue/04-Range-Rover-Vogue-4.webp": null,
+        "/fleet/range-rover-vogue/05-Range-Rover-Vogue-5.webp": null
+      }
+    }
+  }
+}

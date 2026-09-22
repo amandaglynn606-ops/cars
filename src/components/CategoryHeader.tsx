@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import type { ReactNode } from 'react'
-import { formatPrice } from '@/lib/format'
 
 /** Banner shared by the marque and body-type category pages. */
 export default function CategoryHeader({
@@ -30,18 +29,21 @@ export default function CategoryHeader({
       )}
 
       <div className={`container-lux ${image ? 'pt-16 pb-14' : 'pt-8'}`}>
-        <nav className="mb-7 flex items-center gap-2 text-xs text-muted">{breadcrumb}</nav>
-
-        <p className="eyebrow mb-5">{eyebrow}</p>
-        <h1 className="font-display display-lg">{title}</h1>
+        <p className="eyebrow mb-5">
+          <T>{eyebrow}</T>
+        </p>
+        <h1 className="font-display display-lg">
+          <T>{title}</T>
+        </h1>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-3 text-sm">
           <span className="text-bone/80">
-            {count} {count === 1 ? 'vehicle' : 'vehicles'}
+            {count} <T>{count === 1 ? 'vehicle' : 'vehicles'}</T>
           </span>
           {bounds && (
             <span className="text-muted">
-              From <span className="text-bone">{formatPrice(bounds.min)}</span> / day
+              <T>From </T>
+              <span className="text-bone">{<Price amount={bounds.min} />}</span> <T>/ day</T>
             </span>
           )}
         </div>
@@ -49,3 +51,5 @@ export default function CategoryHeader({
     </header>
   )
 }
+
+import { T, Price } from '@/components/RegionalProvider'

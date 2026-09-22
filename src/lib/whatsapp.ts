@@ -116,9 +116,9 @@ export function buildWhatsappUrl(enquiry: BookingEnquiry): string {
 }
 
 /** Short prefilled message for the floating "chat to us" button. */
-export function buildQuickChatUrl(car?: Car): string {
+export function buildQuickChatUrl(car?: Car, period: RentalPeriod = 'daily', colour = ''): string {
   const text = car
-    ? `Hi, I would like to enquire about renting the ${car.name}.`
-    : `Hi, I would like to enquire about renting a car.`
+    ? `Hi Zavi, I would like to enquire about renting the ${car.name}${colour ? ' in ' + colour : ''}${period === 'monthly' ? ' for 30 days with the 20% monthly offer' : ''}. Please confirm availability and a quote.`
+    : 'Hi Zavi, I would like to enquire about renting a car. Please help me with availability and a quote.'
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(text)}`
 }

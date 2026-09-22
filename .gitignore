@@ -4,6 +4,20 @@ out/
 build/
 .env.local
 .env*.local
+.env
+.env.*
+!.env.example
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+.local/
+public/uploads/
+test-results/
+
+# Superseded local image experiments; the site uses public/fleet originals.
+public/fleet-backgrounds/
+public/fleet-cutouts/
+public/fleet-retouched/
+public/fleet-scene/
+public/fleet-stock/
+public/fleet-studio/

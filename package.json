@@ -4,13 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3100",
+    "dev": "next dev --hostname 127.0.0.1 -p 43117",
     "build": "next build",
-    "start": "next start -p 3100",
-    "lint": "next lint",
-    "import:fleet": "node scripts/import-fleet.mjs",
+    "start": "next start --hostname 127.0.0.1 -p 43117",
+    "lint": "tsc --noEmit",
+    "import:fleet": "node scripts/review-import.mjs",
     "localise:images": "node scripts/localise-images.mjs",
-    "refresh:fleet": "npm run import:fleet && npm run localise:images"
+    "refresh:fleet": "node scripts/review-import.mjs",
+    "admin:init": "node scripts/init-admin.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:browser": "node scripts/test-browser.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -22,15 +25,25 @@
     "lenis": "^1.3.11",
     "next": "^15.5.4",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "sharp": "0.35.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "postcss": "^8.5.6",
+    "playwright": "^1.63.0",
+    "postcss": "^8.5.28",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "postcss": "$postcss"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   }
 }

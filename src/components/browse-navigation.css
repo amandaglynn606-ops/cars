@@ -1,0 +1,134 @@
+﻿.z-browse-nav > summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #d5cec3;
+  padding: 12px 0;
+}
+.z-browse-nav summary::-webkit-details-marker {
+  display: none;
+}
+.z-browse-nav > summary svg,
+.z-browse-region > summary svg {
+  transform: rotate(90deg);
+}
+.z-browse-nav[open] > summary,
+.z-browse-nav > summary:hover {
+  color: var(--z-bronze);
+}
+.z-browse-nav[open] > summary svg,
+.z-browse-region[open] > summary svg {
+  transform: rotate(-90deg);
+}
+.z-browse-panel {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  z-index: 46;
+  background: #11110f;
+  border-block: 1px solid #62503e;
+  box-shadow: 0 25px 50px #0009;
+  padding: 24px clamp(24px, 5vw, 80px) 30px;
+  max-height: calc(100dvh - 150px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.z-browse-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--z-line);
+}
+.z-browse-heading > a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.z-browse-region {
+  border-bottom: 1px solid var(--z-line);
+  padding: 0;
+}
+.z-browse-region > summary {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--z-text);
+}
+.z-browse-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 30px;
+  padding: 14px 0 20px;
+}
+.z-browse-nav .z-browse-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.7;
+  padding: 10px 0;
+  color: #ddd3c5;
+}
+.z-browse-nav .z-browse-links a:hover,
+.z-browse-nav .z-browse-links a[aria-current] {
+  color: var(--z-bronze);
+}
+.z-browse-links small {
+  color: var(--z-muted);
+  font-size: 10px;
+}
+.z-browse-nav .z-browse-region-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  color: var(--z-bronze);
+}
+.z-browse-mobile {
+  margin: 0 25px;
+  border-bottom: 1px solid var(--z-line);
+}
+.z-browse-mobile > summary {
+  padding: 22px 0;
+  justify-content: space-between;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.z-browse-mobile .z-browse-panel {
+  position: static;
+  max-height: none;
+  padding: 0 0 20px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.z-browse-mobile .z-browse-heading .z-kicker {
+  display: none;
+}
+.z-browse-mobile .z-browse-heading a {
+  font-size: 12px;
+}
+.z-browse-mobile .z-browse-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+@media (max-width: 380px) {
+  .z-browse-mobile .z-browse-links {
+    grid-template-columns: 1fr;
+  }
+}

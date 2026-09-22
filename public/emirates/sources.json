@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dubai",
+    "title": "Dubai skyline unsplash.jpg",
+    "author": "Robert Bock",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Dubai_skyline_unsplash.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Dubai_skyline_unsplash.jpg",
+    "changes": "Resized and converted to WebP. Display cropped to fit the banner; original colours retained."
+  },
+  {
+    "id": "abu-dhabi",
+    "title": "Sheikh-Zayed-Grand-Mosque-at-Night.jpg",
+    "author": "Crushinator",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+    "source": "https://en.wikipedia.org/wiki/File:Sheikh-Zayed-Grand-Mosque-at-Night.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/en/5/5b/Sheikh-Zayed-Grand-Mosque-at-Night.jpg",
+    "changes": "Original full-resolution photograph retained for the current emirate banner and overview. Responsive display crops and image-format optimisation are applied by the site; original colours retained. Earlier WebP derivatives remain archived locally."
+  },
+  {
+    "id": "sharjah",
+    "title": "AL NOORISLAND AND SHARJAH AL MAJAZ.jpg",
+    "author": "SHARON VISHAKHAM",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:AL_NOORISLAND_AND_SHARJAH_AL_MAJAZ.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/3d/AL_NOORISLAND_AND_SHARJAH_AL_MAJAZ.jpg",
+    "changes": "Original full-resolution photograph retained for the current emirate banner and overview. Responsive display crops and image-format optimisation are applied by the site; original colours retained. Earlier WebP derivatives remain archived locally."
+  },
+  {
+    "id": "ajman",
+    "title": "Ajman Fort 2024.jpg",
+    "author": "Peter in s",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ajman_Fort_2024.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Ajman_Fort_2024.jpg",
+    "changes": "Resized and converted to WebP. Display cropped to fit the banner; original colours retained."
+  },
+  {
+    "id": "umm-al-quwain",
+    "title": "Umm Al Quwain Fort today.jpg",
+    "author": "Alexandermcnabb",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Umm_Al_Quwain_Fort_today.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/80/Umm_Al_Quwain_Fort_today.jpg",
+    "changes": "Resized and converted to WebP. Display cropped to fit the banner; original colours retained."
+  },
+  {
+    "id": "ras-al-khaimah",
+    "title": "Dhayah Fort, Ras Al Khaimah.jpg",
+    "author": "Balaji Rai",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dhayah_Fort,_Ras_Al_Khaimah.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Dhayah_Fort%2C_Ras_Al_Khaimah.jpg",
+    "changes": "Resized and converted to WebP. Display cropped to fit the banner; original colours retained."
+  },
+  {
+    "id": "fujairah",
+    "title": "Fujairah Fort, Fujariah.jpg",
+    "author": "Hari K Kava",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fujairah_Fort,_Fujariah.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Fujairah_Fort%2C_Fujariah.jpg",
+    "changes": "Resized and converted to WebP. Display cropped to fit the banner; original colours retained."
+  }
+]

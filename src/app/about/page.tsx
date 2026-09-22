@@ -1,100 +1,109 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import Reveal from '@/components/Reveal'
+import Image from 'next/image'
 import { getAllCars, getBrands, getFeaturedCars } from '@/lib/fleet'
-import { siteConfig } from '@/lib/config'
-
-export const metadata: Metadata = {
-  title: 'About Us',
+import Icon from '@/components/Icon'
+export const metadata = {
+  title: 'About Zavi',
   description:
-    'A Dubai-based luxury and supercar rental company, delivering across the Emirates with no online payments and no hidden fees.',
+    'Learn how to compare cars and request a rental with Zavi, including availability, quotes and booking confirmation.',
+  alternates: { canonical: '/about' },
 }
-
-export default function AboutPage() {
-  const cars = getAllCars()
-  const brands = getBrands()
-  const hero = getFeaturedCars(1)[0]
-
-  const stats = [
-    { value: `${cars.length}+`, label: 'Vehicles in the fleet' },
-    { value: `${brands.length}`, label: 'Marques represented' },
-    { value: '24/7', label: 'WhatsApp support' },
-    { value: '0', label: 'Online payments taken' },
-  ]
-
+export default function Page() {
+  const cars = getAllCars(),
+    brands = getBrands(),
+    hero = getFeaturedCars(1)[0]
   return (
-    <div className="pt-36 pb-24 md:pt-44">
-      <div className="container-lux">
-        <header className="mb-16 max-w-3xl">
-          <p className="eyebrow mb-4">Who we are</p>
-          <h1 className="font-display text-[clamp(2.5rem,7vw,5rem)] leading-[0.98]">
-            Dubai&rsquo;s fleet, without the friction
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-bone/75">
-            We rent supercars and luxury vehicles to residents and visitors across the Emirates.
-            No checkout flows, no deposits taken by a website you have never used before &mdash;
-            just a real conversation with someone who knows the cars.
+    <div className="container-lux">
+      <header className="z-page-hero">
+        <p className="z-kicker">
+          <T>About Zavi</T>
+        </p>
+        <h1>
+          <T>Choosing your rental car</T>
+        </h1>
+        <p className="z-lead">
+          <T>Compare the fleet and understand the steps before booking.</T>
+        </p>
+      </header>
+      {hero && (
+        <div style={{ position: 'relative', aspectRatio: '2.3', margin: '40px 0' }}>
+          <Image
+            src={hero.featuredImage}
+            alt={hero.name}
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+      )}
+      <section className="z-section">
+        <header className="z-section-heading">
+          <div>
+            <p className="z-kicker">
+              {cars.length} <T>vehicles · </T>
+              {brands.length} <T>brands</T>
+            </p>
+            <h2>
+              <T>Compare cars.</T>
+              <br />
+              <span>
+                <T>Check the details.</T>
+              </span>
+            </h2>
+          </div>
+          <p>
+            <T>
+              Zavi lists rental cars in Dubai with photos, daily rates and available specifications.
+              You can compare vehicles and send a request for your preferred dates. A request does
+              not confirm a booking or take payment.
+            </T>
           </p>
         </header>
-
-        {hero && (
-          <Reveal className="relative mb-20 aspect-[21/9] overflow-hidden rounded-sm">
-            <Image
-              src={hero.images[0].src}
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink-950 to-transparent" />
-          </Reveal>
-        )}
-
-        <Reveal stagger className="grid gap-10 border-y border-white/10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="font-display text-5xl text-gold-500">{stat.value}</p>
-              <p className="mt-2.5 text-sm text-muted">{stat.label}</p>
-            </div>
-          ))}
-        </Reveal>
-
-        <div className="mt-24 grid gap-14 lg:grid-cols-2">
-          <Reveal>
-            <p className="eyebrow mb-4">How we work</p>
-            <h2 className="font-display text-[clamp(1.85rem,4vw,2.75rem)] leading-[1.05]">
-              One message, one specialist
-            </h2>
-          </Reveal>
-          <Reveal className="space-y-5 leading-[1.85] text-bone/75">
+        <div className="z-steps">
+          <div>
+            <span className="z-step-number">01</span>
+            <h3>
+              <T>Compare the listings</T>
+            </h3>
             <p>
-              Every enquiry that leaves this site arrives on our WhatsApp complete &mdash; the car,
-              the colour, your dates, your delivery address and any notes you left. Nobody has to
-              call you back to ask what you meant.
+              <T>
+                Browse a full catalogue of supercars, luxury saloons, convertibles and SUVs, with
+                colour previews and listed rates.
+              </T>
             </p>
+          </div>
+          <div>
+            <span className="z-step-number">02</span>
+            <h3>
+              <T>Share your requirements</T>
+            </h3>
             <p>
-              From there a specialist confirms availability, walks you through the deposit and
-              mileage terms, and arranges handover at your hotel, residence or terminal. Insurance
-              is included on every rental, and delivery inside{' '}
-              {siteConfig.locations[0].split(' ')[0]} is complimentary.
+              <T>
+                Choose your dates, preferred vehicle and a listed delivery location. Add your
+                arrival details or preferred colour if needed.
+              </T>
             </p>
+          </div>
+          <div>
+            <span className="z-step-number">03</span>
+            <h3>
+              <T>Confirm the terms</T>
+            </h3>
             <p>
-              We hold no card details and take no payment online. That is deliberate: it keeps your
-              details with you until you have spoken to a person.
+              <T>
+                Ask the team to confirm availability, the total price, mileage allowance, deposit,
+                insurance, driver requirements and cancellation terms before agreeing to a rental.
+              </T>
             </p>
-          </Reveal>
+          </div>
         </div>
-
-        <Reveal className="mt-24 text-center">
-          <Link
-            href="/fleet"
-            className="inline-block rounded-full border border-gold-500/45 px-10 py-4 text-xs tracking-[0.18em] uppercase text-gold-500 transition-colors duration-300 hover:bg-gold-500 hover:text-ink-950"
-          >
-            See the fleet
-          </Link>
-        </Reveal>
-      </div>
+        <Link className="z-button" href="/fleet" style={{ marginTop: 40 }}>
+          <T>Browse rental cars</T>
+          <Icon name="arrow" />
+        </Link>
+      </section>
     </div>
   )
 }
+
+import { T } from '@/components/RegionalProvider'

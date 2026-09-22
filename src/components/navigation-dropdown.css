@@ -1,0 +1,681 @@
+.z-nav-disclosure > summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 0;
+  min-height: 44px;
+  list-style: none;
+  cursor: pointer;
+  color: #d5cec3;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.z-nav-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.z-nav-disclosure > summary::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 4px;
+  height: 1px;
+  background: #c5a17c;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.25s;
+}
+.z-nav-disclosure > summary > svg {
+  transform: rotate(90deg);
+  transition: transform 0.25s;
+}
+.z-nav-disclosure[data-expanded='true'] > summary {
+  color: #e4c39e;
+}
+.z-nav-disclosure[data-expanded='true'] > summary::after,
+.z-nav-disclosure > summary:hover::after {
+  transform: scaleX(1);
+}
+.z-nav-disclosure[data-expanded='true'] > summary > svg {
+  transform: rotate(-90deg);
+}
+.z-nav-panel {
+  position: absolute;
+  inset-inline: 24px;
+  top: calc(100% + 1px);
+  z-index: 46;
+  max-height: calc(100dvh - var(--z-nav-bottom, 120px) - 20px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--z-bronze) #151411;
+  scrollbar-gutter: stable;
+  padding: 30px 36px 0;
+  color: #eee7dd;
+  background: radial-gradient(ellipse at 0 0, #32281e55, transparent 55%), #12120f;
+  border: 1px solid #64503a;
+  border-top: 2px solid #b9946a;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 24px 65px #0009;
+}
+.z-nav-panel[hidden],
+.z-nav-scrim[hidden],
+.z-nav-panel section[hidden] {
+  display: none;
+}
+.z-nav-disclosure[data-expanded='false'] .z-nav-panel {
+  pointer-events: none;
+  z-index: 44;
+}
+.z-nav-scrim {
+  position: fixed;
+  inset: var(--z-nav-bottom, 120px) 0 0;
+  z-index: 42;
+  background: #0008;
+  backdrop-filter: blur(5px);
+  animation: z-nav-shade 0.25s both;
+}
+.z-nav-scrim[data-expanded='false'] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s;
+  animation: none;
+}
+.z-nav-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ffffff14;
+}
+.z-nav-panel-heading > div {
+  flex: 1;
+}
+.z-nav-panel .z-kicker {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: #c5a17c;
+  margin: 0 0 9px;
+}
+.z-nav-panel-heading h2 {
+  font:
+    38px/1.15 var(--font-qiswah),
+    serif;
+  color: #f4eee4;
+}
+.z-header .z-nav-disclosure .z-nav-panel a {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: #dcd4c8;
+}
+.z-header .z-nav-disclosure .z-nav-panel a:hover,
+.z-header .z-nav-disclosure .z-nav-panel a[aria-current='page'] {
+  color: #f2d0a5;
+}
+.z-header .z-nav-disclosure .z-nav-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 12px 18px;
+  border: 1px solid #66513b;
+  border-radius: 3px;
+  color: #dfbd94;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.z-header .z-nav-disclosure .z-nav-view-all:hover {
+  background: #b58b5220;
+  border-color: #c5a17c;
+}
+.z-nav-panel-close {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  color: #c4b7a7;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.z-nav-panel-close:hover {
+  background: #ffffff0c;
+  transform: rotate(90deg);
+}
+.z-nav-panel a > svg {
+  flex-shrink: 0;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.z-nav-panel a:hover > svg {
+  transform: translateX(3px);
+}
+[dir='rtl'] .z-nav-panel a:hover > svg {
+  transform: translateX(-3px);
+}
+.z-nav-panel-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 0;
+  border-top: 1px solid #ffffff14;
+  color: #b4a796;
+  font-size: 10px;
+}
+.z-nav-foot-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c5a17c;
+  flex-shrink: 0;
+}
+.z-nav-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 24px 0;
+}
+.z-header .z-nav-disclosure .z-nav-brand-tile {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+  min-width: 0;
+  border: 1px solid #ffffff0c;
+  background: #ffffff02;
+  border-radius: 5px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.z-nav-brand-tile:hover {
+  background: linear-gradient(100deg, #ba905924, #ba905908) !important;
+  border-color: #8c6c45 !important;
+}
+.z-nav-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.z-nav-brand-mark img {
+  max-height: 38px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.z-nav-brand-tile:hover .z-nav-brand-mark img {
+  transform: scale(1.09);
+}
+.z-nav-brand-tile strong,
+.z-nav-car-grid strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.z-nav-brand-tile small,
+.z-nav-car-grid small {
+  display: block;
+  margin-top: 4px;
+  color: #b6a995;
+  font-size: 10px;
+}
+.z-nav-brand-tile > svg {
+  margin-inline-start: auto;
+  color: #b48e62;
+  opacity: 0;
+}
+.z-nav-brand-tile:hover > svg,
+.z-nav-brand-tile:focus-visible > svg {
+  opacity: 1;
+}
+.z-nav-destinations {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+  padding: 26px 0;
+}
+.z-nav-emirates {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-inline-end: 1px solid #ffffff14;
+  padding-inline-end: 22px;
+}
+.z-nav-emirates button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: start;
+  border: 1px solid transparent;
+  padding: 15px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #bdb2a2;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+.z-nav-emirates button > svg {
+  margin-inline-start: auto;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+.z-nav-emirates button:hover {
+  color: #edd1ac;
+  background: #ba90590a;
+}
+.z-nav-emirates button[aria-pressed='true'] {
+  background: linear-gradient(100deg, #a77c422d, #a77c420a);
+  border-color: #8c6c4555;
+  color: #efd0a7;
+}
+.z-nav-emirates button[aria-pressed='true'] > svg {
+  opacity: 1;
+}
+.z-nav-index {
+  font-size: 9px;
+  color: #a58b6c;
+}
+.z-nav-destination-content {
+  min-width: 0;
+}
+.z-nav-area-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0 16px;
+  gap: 20px;
+}
+.z-nav-area-heading h3 {
+  font:
+    30px/1.2 var(--font-qiswah),
+    serif;
+}
+.z-nav-area-heading > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.z-nav-area-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 22px;
+  max-height: 310px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--z-bronze) transparent;
+  scrollbar-gutter: stable;
+  padding-inline-end: 16px;
+}
+.z-header .z-nav-disclosure .z-nav-area-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 8px;
+  min-height: 44px;
+  border-bottom: 1px solid #ffffff09;
+  line-height: 1.6;
+  transition: background 0.2s;
+}
+.z-nav-area-links a:hover {
+  background: #b48e620b;
+}
+.z-nav-area-links a > svg {
+  opacity: 0.35;
+}
+.z-nav-occasion-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: 28px 0;
+}
+.z-nav-occasion-groups section {
+  padding-inline-end: 24px;
+  border-inline-end: 1px solid #ffffff12;
+}
+.z-nav-occasion-groups section:last-child {
+  border: 0;
+  padding: 0;
+}
+.z-nav-group-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ae865643;
+  border-radius: 50%;
+  color: #c4a17c;
+  background: #b48e620a;
+  flex-shrink: 0;
+}
+.z-nav-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  margin-bottom: 15px;
+}
+.z-nav-occasion-groups .z-nav-group-heading h3 {
+  margin: 0;
+  min-width: 0;
+}
+.z-nav-occasion-groups h3 {
+  font:
+    22px/1.4 var(--font-qiswah),
+    serif;
+  margin-bottom: 15px;
+  color: #e9d0af;
+}
+.z-header .z-nav-disclosure .z-nav-occasion-groups a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 9px 0;
+  line-height: 1.5;
+}
+.z-nav-occasion-groups a > svg {
+  opacity: 0.3;
+}
+.z-nav-fleet-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+  padding: 26px 0;
+}
+.z-nav-fleet-categories {
+  border-inline-end: 1px solid #ffffff14;
+  padding-inline-end: 22px;
+}
+.z-header .z-nav-disclosure .z-nav-fleet-categories a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 10px;
+  border-radius: 3px;
+  min-height: 42px;
+  transition: background 0.2s;
+}
+.z-nav-fleet-categories a:hover {
+  background: #b48e6215;
+}
+.z-nav-fleet-categories a > span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #b7a083;
+  font-size: 10px;
+}
+.z-nav-fleet-models {
+  min-width: 0;
+}
+.z-nav-list-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 20px;
+}
+.z-nav-list-heading > span {
+  font-size: 10px;
+  color: #a99b88;
+}
+.z-nav-car-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  max-height: 355px;
+  overflow: auto;
+  padding-inline-end: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--z-bronze) transparent;
+  scrollbar-gutter: stable;
+}
+.z-header .z-nav-disclosure .z-nav-car-grid > a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 5px;
+  border-bottom: 1px solid #ffffff0c;
+  transition: background 0.2s;
+}
+.z-nav-car-grid > a:hover {
+  background: #b48e620a;
+}
+.z-nav-car-photo {
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 54px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #25241f;
+}
+.z-nav-car-photo img {
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.z-nav-car-grid a:hover img {
+  transform: scale(1.08);
+}
+.z-nav-car-grid a > svg {
+  opacity: 0.35;
+  margin-inline-start: auto;
+}
+.z-nav-panel :is(a, button):focus-visible,
+.z-nav-disclosure > summary:focus-visible {
+  outline: 2px solid #d2b087;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.z-nav-disclosure-mobile {
+  margin: 0 25px;
+  border-bottom: 1px solid #ffffff14;
+}
+.z-nav-disclosure-mobile > summary {
+  padding: 21px 0;
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: none;
+  justify-content: space-between;
+}
+.z-nav-disclosure-mobile > summary::after {
+  display: none;
+}
+.z-nav-disclosure-mobile .z-nav-panel {
+  position: static;
+  padding: 0;
+  max-height: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+.z-nav-disclosure-mobile .z-nav-panel-heading {
+  padding: 6px 0 18px;
+  gap: 10px;
+}
+.z-nav-disclosure-mobile .z-nav-panel-heading > div,
+.z-nav-disclosure-mobile .z-nav-panel-close {
+  display: none;
+}
+.z-header .z-nav-disclosure-mobile .z-nav-view-all {
+  border: 0;
+  padding: 8px 0;
+}
+.z-nav-disclosure-mobile .z-nav-brand-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 16px 0;
+}
+.z-header .z-nav-disclosure-mobile .z-nav-brand-tile {
+  padding: 12px 8px;
+  gap: 9px;
+}
+.z-nav-disclosure-mobile .z-nav-brand-mark {
+  width: 32px;
+}
+.z-nav-disclosure-mobile .z-nav-brand-mark img {
+  max-width: 32px;
+  max-height: 30px;
+}
+.z-nav-disclosure-mobile .z-nav-brand-tile > svg {
+  display: none;
+}
+.z-nav-disclosure-mobile .z-nav-brand-tile strong {
+  font-size: 11px;
+}
+.z-nav-disclosure-mobile .z-nav-destinations,
+.z-nav-disclosure-mobile .z-nav-fleet-layout {
+  display: block;
+  padding: 18px 0;
+}
+.z-nav-disclosure-mobile .z-nav-emirates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 0 0 18px;
+  border: 0;
+}
+.z-nav-disclosure-mobile .z-nav-emirates button {
+  padding: 12px 8px;
+  gap: 7px;
+  font-size: 11px;
+  border-color: #ffffff12;
+}
+.z-nav-disclosure-mobile .z-nav-emirates button > svg {
+  display: none;
+}
+.z-nav-disclosure-mobile .z-nav-area-heading h3 {
+  font-size: 27px;
+}
+.z-nav-disclosure-mobile .z-nav-area-links {
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+  max-height: 340px;
+}
+.z-header .z-nav-disclosure-mobile .z-nav-area-links a {
+  font-size: 11px;
+  padding: 12px 0;
+}
+.z-nav-disclosure-mobile .z-nav-occasion-groups {
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 18px;
+  padding: 20px 0;
+}
+.z-nav-disclosure-mobile .z-nav-occasion-groups section {
+  border: 0;
+  padding: 0;
+}
+.z-nav-disclosure-mobile .z-nav-occasion-groups h3 {
+  font-size: 20px;
+}
+.z-header .z-nav-disclosure-mobile .z-nav-occasion-groups a {
+  font-size: 11px;
+}
+.z-nav-disclosure-mobile .z-nav-fleet-categories {
+  border: 0;
+  padding: 0 0 20px;
+}
+.z-nav-disclosure-mobile .z-nav-car-grid {
+  grid-template-columns: 1fr;
+  max-height: 325px;
+}
+.z-nav-disclosure-mobile .z-nav-panel-foot {
+  font-size: 9px;
+  line-height: 1.7;
+}
+.z-nav-dialog[open] {
+  animation: z-nav-drawer 0.28s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.z-nav-search-results {
+  animation: z-nav-search-in 0.2s ease-out both;
+}
+@keyframes z-nav-shade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes z-nav-search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes z-nav-drawer {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .z-nav-panel {
+    padding: 24px 24px 0;
+    inset-inline: 16px;
+  }
+  .z-nav-brand-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .z-nav-car-grid {
+    gap: 0 12px;
+  }
+  .z-nav-car-photo {
+    width: 58px;
+    height: 45px;
+  }
+  .z-nav-occasion-groups {
+    gap: 18px;
+  }
+  .z-nav-occasion-groups section {
+    padding-inline-end: 18px;
+  }
+}
+@media (max-width: 1100px) {
+  .z-nav-disclosure:not(.z-nav-disclosure-mobile) > summary {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .z-nav-disclosure *,
+  .z-nav-disclosure *::after,
+  .z-nav-dialog[open],
+  .z-nav-search-results {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.z-nav-fleet-categories a[data-preview-active='true'] {
+  background: #b48e621c;
+  color: #efd0a7 !important;
+  border-color: #b48e6255;
+}
+.z-nav-fleet-models .z-nav-car-grid {
+  min-height: 300px;
+  align-content: start;
+}

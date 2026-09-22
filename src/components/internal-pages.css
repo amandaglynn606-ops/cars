@@ -1,0 +1,75 @@
+.z-internal-page :is(h1, h2, h3) {
+  text-align: center;
+}
+.z-internal-page :is(.z-page-hero, .z-partner-hero, .z-destination-intro, .z-section-heading) {
+  text-align: center;
+}
+.z-internal-page
+  :is(
+    .z-lead,
+    .z-destination-lead,
+    .z-partner-hero-intro,
+    .z-section-heading > p,
+    .z-home-section-intro > p
+  ) {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  margin-inline: auto;
+}
+.z-internal-page
+  :is(.z-page-hero h1, .z-partner-hero h1, .z-destination-hero h1, .z-event-guide .z-page-hero h1) {
+  max-width: none;
+  width: 100%;
+}
+.z-internal-page .z-destination-hero {
+  grid-template-columns: 1fr;
+}
+.z-internal-page .z-destination-visual {
+  min-height: 360px;
+}
+.z-internal-page .z-hero-row,
+.z-internal-page .z-section-heading {
+  flex-direction: column;
+  align-items: center;
+}
+.z-internal-page .z-section-heading > div {
+  width: 100%;
+}
+.z-internal-page .z-partner-hero ul {
+  justify-content: center;
+}
+.z-internal-page
+  :is(
+    header > .z-kicker,
+    .z-destination-intro > .z-kicker,
+    .z-section-heading .z-kicker,
+    section > .z-kicker
+  ) {
+  text-align: center;
+}
+.z-internal-page
+  :is(
+    .z-destination-planning,
+    .z-event-planning,
+    .z-monthly-guide,
+    .z-occasion-guide,
+    .z-partner-process
+  )
+  article
+  > p {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+}
+.z-internal-page .z-detail-info > .z-kicker {
+  text-align: center;
+}
+
+.z-internal-page :is(h1, h2, h3) + p,
+.z-internal-page header > p,
+.z-internal-page .z-detail-info > .z-note {
+  text-align: center;
+  max-width: none;
+  width: 100%;
+}

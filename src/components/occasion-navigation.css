@@ -1,0 +1,114 @@
+﻿.z-occasion-nav > summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #d5cec3;
+  padding: 12px 0;
+}
+.z-occasion-nav > summary::-webkit-details-marker {
+  display: none;
+}
+.z-occasion-nav > summary svg {
+  transform: rotate(90deg);
+}
+.z-occasion-nav[open] > summary,
+.z-occasion-nav > summary:hover {
+  color: var(--z-bronze);
+}
+.z-occasion-nav[open] > summary svg {
+  transform: rotate(-90deg);
+}
+.z-occasion-nav-panel {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  z-index: 46;
+  background: #11110f;
+  border-block: 1px solid #62503e;
+  box-shadow: 0 25px 50px #0009;
+  padding: 28px clamp(24px, 5vw, 80px) 36px;
+  max-height: calc(100dvh - 150px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.z-occasion-nav-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--z-line);
+}
+.z-occasion-nav-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.z-occasion-nav-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  padding-top: 24px;
+}
+.z-occasion-nav-groups h2 {
+  font-size: 12px;
+  color: var(--z-bronze);
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+.z-occasion-nav .z-occasion-nav-groups a {
+  display: block;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+  padding: 9px 0;
+  color: #ddd3c5;
+}
+.z-occasion-nav .z-occasion-nav-groups a:hover,
+.z-occasion-nav .z-occasion-nav-groups a[aria-current] {
+  color: var(--z-bronze);
+}
+.z-occasion-nav-mobile {
+  margin: 0 25px;
+  border-bottom: 1px solid var(--z-line);
+}
+.z-occasion-nav-mobile > summary {
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+.z-occasion-nav-mobile .z-occasion-nav-panel {
+  position: static;
+  padding: 0 0 22px;
+  max-height: none;
+  box-shadow: none;
+  background: transparent;
+  border: 0;
+}
+.z-occasion-nav-mobile .z-occasion-nav-heading {
+  display: block;
+}
+.z-occasion-nav-mobile .z-occasion-nav-heading .z-kicker {
+  display: none;
+}
+.z-occasion-nav-mobile .z-occasion-nav-heading a {
+  font-size: 12px;
+  padding: 8px 0;
+}
+.z-occasion-nav-mobile .z-occasion-nav-groups {
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 18px;
+}
+@media (max-width: 380px) {
+  .z-occasion-nav-mobile .z-occasion-nav-groups {
+    grid-template-columns: 1fr;
+  }
+}

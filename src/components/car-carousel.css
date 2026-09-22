@@ -1,0 +1,124 @@
+.z-car-carousel {
+  min-width: 0;
+}
+.z-monthly-saving {
+  font-size: 10px;
+  color: #d2b181;
+  margin-bottom: 8px;
+}
+.z-carousel-toolbar,
+.z-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.z-carousel-toolbar {
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.z-carousel-toolbar > p {
+  color: var(--z-muted);
+  font-size: 12px;
+}
+.z-carousel-count {
+  color: var(--z-bronze);
+  font-size: 19px;
+  margin-inline-end: 10px;
+}
+.z-carousel-range {
+  color: var(--z-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  margin-inline-end: 14px;
+  white-space: nowrap;
+}
+.z-carousel-controls button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #766048;
+  border-radius: 50%;
+  color: #e4c299;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.z-carousel-controls button:hover:not(:disabled) {
+  background: #bd9568;
+  color: #10100e;
+}
+.z-carousel-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.z-carousel-controls .is-previous svg {
+  transform: rotate(180deg);
+}
+[dir='rtl'] .z-carousel-controls button svg {
+  transform: rotate(180deg);
+}
+[dir='rtl'] .z-carousel-controls .is-previous svg {
+  transform: none;
+}
+.z-carousel-track {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--z-bronze) #222018;
+  padding: 4px 2px 22px;
+}
+.z-carousel-track > .z-car-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+.z-carousel-track .z-car-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.z-carousel-track .z-car-bottom {
+  margin-top: auto;
+}
+.z-carousel-track:focus-visible {
+  outline: 1px solid var(--z-bronze);
+  outline-offset: 5px;
+}
+@media (max-width: 1100px) {
+  .z-carousel-track > .z-car-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 640px) {
+  .z-carousel-track {
+    gap: 16px;
+  }
+  .z-carousel-track > .z-car-card {
+    flex-basis: 90%;
+  }
+  .z-carousel-range {
+    display: none;
+  }
+  .z-carousel-controls button {
+    width: 44px;
+    height: 44px;
+  }
+  .z-carousel-toolbar > p {
+    max-width: 170px;
+    line-height: 1.6;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .z-carousel-controls button {
+    transition: none;
+  }
+}

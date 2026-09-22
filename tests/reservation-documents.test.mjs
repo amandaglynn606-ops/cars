@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { mkdtemp, rm, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import os from 'node:os'
-import { moduleURL } from './load-module.mjs'
+import { moduleURL, reservationStoreURL } from './load-module.mjs'
 const directory = await mkdtemp(path.join(os.tmpdir(), 'zavi-document-test-'))
 process.env.ZAVI_DATA_DIR = directory
 const catalogueURL = await moduleURL('src/lib/catalogue.ts')
@@ -13,6 +13,7 @@ const repoURL = await moduleURL('src/lib/db.ts', {
   './partnership': await moduleURL('src/lib/partnership.ts'),
 })
 const repo = await import(repoURL)
+const storeURL = await reservationStoreURL(repoURL)
 const documentURL = await moduleURL('src/lib/reservation-documents.ts')
 const docs = await import(documentURL)
 const httpURL = await moduleURL('src/lib/http.ts', {
@@ -21,6 +22,7 @@ const httpURL = await moduleURL('src/lib/http.ts', {
 const { POST } = await import(
   await moduleURL('src/app/api/reservations/route.ts', {
     '@/lib/db': repoURL,
+    '@/lib/reservation-store': storeURL,
     '@/lib/http': httpURL,
     '@/lib/reservation-documents': documentURL,
   })
@@ -34,6 +36,7 @@ const admin = await import(
   await moduleURL('src/app/api/admin/reservations/[id]/documents/[documentId]/route.ts', {
     '@/lib/auth': authURL,
     '@/lib/db': repoURL,
+    '@/lib/reservation-store': storeURL,
     '@/lib/http': httpURL,
     '@/lib/reservation-documents': documentURL,
   })
@@ -54,11 +57,11 @@ const payload = {
 const pdf = Buffer.from('%PDF-1.7\n1 0 obj\n<< /Type /Catalog >>\nendobj\n%%EOF')
 test('reservation API requires international phone numbers even when browser checks are bypassed', async () => {
   for (const phone of ['0501234567', '971501234567', '+0501234567', '+1', '+1234567890123456']) {
-    const response = await POST(request([], {phone}))
+    const response = await POST(request([], { phone }))
     assert.equal(response.status, 400)
     assert.match((await response.json()).error, /country code/)
   }
-  const response = await POST(request([], {phone:'+44 7700 900123'}))
+  const response = await POST(request([], { phone: '+44 7700 900123' }))
   assert.equal(response.status, 201)
 })
 function request(files = [], overrides = {}, origin = base) {

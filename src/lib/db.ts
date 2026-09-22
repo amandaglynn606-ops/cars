@@ -235,7 +235,7 @@ export function deleteVehicle(id: string) {
     throw e
   }
 }
-export function createReservation(value: unknown, documents: PreparedDocument[] = []) {
+export function prepareReservation(value: unknown): Reservation {
   if (!value || typeof value !== 'object') throw new Error('Reservation details are required.')
   const v = value as Record<string, unknown>
   for (const field of ['vehicleId', 'start', 'end', 'location', 'name', 'email', 'phone', 'notes'])
@@ -273,6 +273,12 @@ export function createReservation(value: unknown, documents: PreparedDocument[] 
     )
   if (!r.name.trim() || !/^\S+@\S+\.\S+$/.test(r.email))
     throw new Error('Enter your name and a valid email.')
+  if (r.location.length < 5 || /[\x00-\x1f<>]/.test(r.location))
+    throw new Error('Enter a delivery address with the emirate, neighbourhood and property.')
+  return r
+}
+export function createReservation(value: unknown, documents: PreparedDocument[] = []) {
+  const r = prepareReservation(value)
   const database = db()
   database.exec('BEGIN IMMEDIATE')
   try {

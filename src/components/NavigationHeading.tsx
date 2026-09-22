@@ -28,14 +28,6 @@ export default function NavigationHeading({
         <T>{link}</T>
         <Icon name="arrow" size={17} />
       </Link>
-      <button
-        type="button"
-        className="z-nav-panel-close"
-        aria-label={'Close ' + eyebrow.toLowerCase() + ' menu'}
-        onClick={close}
-      >
-        <Icon name="close" size={18} />
-      </button>
     </div>
   )
 }

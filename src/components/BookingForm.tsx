@@ -26,6 +26,7 @@ export default function BookingForm({
   initialLocation = '',
   initialNotes = '',
   initialPeriod = 'daily',
+  maxUploadBytes = 32 * 1024 * 1024,
 }: {
   cars: Car[]
   initialCar?: Car
@@ -35,6 +36,7 @@ export default function BookingForm({
   initialNotes?: string
   initialColour?: string
   initialPeriod?: RentalPeriod
+  maxUploadBytes?: number
 }) {
   const { t } = useRegional()
   const { contact, setContact } = useBookingContact()
@@ -84,6 +86,14 @@ export default function BookingForm({
     }
     if (files.length > 4 || files.some((file) => file.size > 8 * 1024 * 1024)) {
       setError('Attach up to 4 documents, no more than 8 MB each.')
+      return
+    }
+    if (files.reduce((size, file) => size + file.size, 0) > maxUploadBytes) {
+      setError(
+        'The combined document size must be no more than ' +
+          Math.floor(maxUploadBytes / 1024 / 1024) +
+          ' MB.',
+      )
       return
     }
     setBusy(true)
@@ -149,9 +159,9 @@ export default function BookingForm({
           </span>
         </div>
         {step === 1 ? (
-          <form onSubmit={next}>
+          <form onSubmit={next} className="z-book-contact-form">
             {!initialCar && (
-              <label className="z-field">
+              <label className="z-field z-book-vehicle-field">
                 <T>Your vehicle</T>
                 <input
                   list="booking-vehicles"
@@ -256,7 +266,12 @@ export default function BookingForm({
                 <span className="z-note">
                   <T>
                     Attach your driving licence and passport or Emirates ID if available. PDF, JPEG,
-                    PNG, WebP, HEIC, HEIF, AVIF or TIFF. Up to 4 files, 8 MB each.
+                    PNG, WebP, HEIC, HEIF, AVIF or TIFF. Up to 4 files.
+                  </T>{' '}
+                  <T>
+                    {maxUploadBytes < 8 * 1024 * 1024
+                      ? 'Combined size: up to 3 MB.'
+                      : 'Up to 8 MB per file.'}
                   </T>
                 </span>
                 <input

@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import BookingForm from '@/components/BookingForm'
+import SingleLineHeading from '@/components/SingleLineHeading'
 import { getAllCars, getCarBySlug } from '@/lib/fleet'
 import { rentalRequestContext } from '@/lib/home-rentals'
-import EnquiryFallback from '@/components/EnquiryFallback'
-import { buildQuickChatUrl } from '@/lib/whatsapp'
 export const metadata = { title: 'Request a Reservation', robots: { index: false, follow: true } }
 export default async function BookPage({
   searchParams,
@@ -25,9 +24,7 @@ export default async function BookPage({
         <p className="z-kicker">
           <T>Rental enquiry</T>
         </p>
-        <h1>
-          <T>Request a reservation</T>
-        </h1>
+        <SingleLineHeading text="Request a reservation" />
         <p className="z-lead">
           <T>
             Complete your reservation details. The team will confirm availability and your final
@@ -35,24 +32,16 @@ export default async function BookPage({
           </T>
         </p>
       </header>
-      {process.env.VERCEL === '1' ? (
-        <EnquiryFallback
-          href={buildQuickChatUrl(
-            p.car ? getCarBySlug(p.car) : undefined,
-            p.plan === 'monthly' ? 'monthly' : 'daily',
-          )}
-        />
-      ) : (
-        <BookingForm
-          cars={getAllCars()}
-          initialCar={p.car ? getCarBySlug(p.car) : undefined}
-          initialStart={p.start}
-          initialEnd={p.end}
-          initialLocation={p.location || context.location}
-          initialNotes={context.notes}
-          initialPeriod={p.plan === 'monthly' ? 'monthly' : 'daily'}
-        />
-      )}
+      <BookingForm
+        maxUploadBytes={(process.env.VERCEL === '1' ? 3 : 32) * 1024 * 1024}
+        cars={getAllCars()}
+        initialCar={p.car ? getCarBySlug(p.car) : undefined}
+        initialStart={p.start}
+        initialEnd={p.end}
+        initialLocation={p.location || context.location}
+        initialNotes={context.notes}
+        initialPeriod={p.plan === 'monthly' ? 'monthly' : 'daily'}
+      />
     </div>
   )
 }

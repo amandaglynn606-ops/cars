@@ -158,6 +158,15 @@
   object-fit: contain;
   transition: transform 0.5s;
 }
+.z-event-theme-dubai-concerts .z-event-artists {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.z-event-theme-dubai-concerts .z-event-artist-image {
+  aspect-ratio: 1920 / 550;
+}
+@media (max-width: 600px) {
+  .z-event-theme-dubai-concerts .z-event-artists { grid-template-columns: 1fr; }
+}
 .z-event-artist-image:hover img {
   transform: scale(1.025);
 }

@@ -11,7 +11,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   'date-night': {
     group: 'Romance & time together',
     description:
-      'Plan a Dubai date-night car rental for dinner, a show or a waterfront evening. Compare cars and confirm timing, parking and the return arrangement.',
+      'Plan a Dubai date-night car rental for dinner, a show or a waterfront evening. Explore cars and confirm timing, parking and the return arrangement.',
     image: {
       src: '/occasions/dubai-date-night.webp',
       caption: 'Dubai Marina-inspired dinner for two',
@@ -22,7 +22,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
     dubaiGuide:
       "For dinner in DIFC, ask the restaurant for its car entrance rather than navigating only to the building name. If you prefer Dubai Marina, agree the restaurant's valet or parking point before you arrive. For a Downtown show followed by dinner, keep both bookings in the same district when you want less time on the road.",
     carAdvice:
-      'A low sports car can be awkward with formal clothing. Compare door access, seat comfort and a closed-roof option as well as the exterior style.',
+      'A low sports car can be awkward with formal clothing. Explore door access, seat comfort and a closed-roof option as well as the exterior style.',
     locationSlug: 'dubai-marina',
   },
   'romantic-getaways': {
@@ -79,7 +79,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   honeymoons: {
     group: 'Romance & time together',
     description:
-      'Choose a honeymoon rental car in Dubai around airport bags, hotel stays and outings for two. Compare models and request a personalised rental quote.',
+      'Choose a honeymoon rental car in Dubai around airport bags, hotel stays and outings for two. Explore models and request a personalised rental quote.',
     image: {
       src: '/occasions/dubai-romantic-getaway.webp',
       caption: 'A Dubai-inspired seaside escape',
@@ -130,7 +130,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   weddings: {
     group: 'Celebrations & milestones',
     description:
-      'Plan wedding car rental in Dubai around ceremony times, passengers and photographs. Compare models and confirm decoration, driver and venue requirements.',
+      'Plan wedding car rental in Dubai around ceremony times, passengers and photographs. Explore models and confirm decoration, driver and venue requirements.',
     image: {
       src: '/occasions/dubai-wedding.webp',
       caption: 'A Dubai-inspired wedding-day arrival',
@@ -164,7 +164,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   anniversaries: {
     group: 'Romance & time together',
     description:
-      'Plan an anniversary car rental in Dubai for dinner, a hotel stay or a day out. Compare comfortable models and arrange the full rental period.',
+      'Plan an anniversary car rental in Dubai for dinner, a hotel stay or a day out. Explore comfortable models and arrange the full rental period.',
     image: {
       src: '/occasions/dubai-date-night.webp',
       caption: 'Dubai Marina-inspired dinner for two',
@@ -260,13 +260,13 @@ export const occasionGuides: Record<string, OccasionGuide> = {
     dubaiGuide:
       'Dubai International (DXB) and Al Maktoum International (DWC) require different arrangements. Provide the airport, terminal, flight and a working contact number. Ask where a rental handover is permitted after baggage collection; do not assume a car can wait at the terminal door. If you need to be driven, ask for a separately confirmed service.',
     carAdvice:
-      'Compare luggage capacity with all passengers seated. Large suitcases can make a sedan or SUV more suitable than a sports car, even for two travellers.',
+      'Explore luggage capacity with all passengers seated. Large suitcases can make a sedan or SUV more suitable than a sports car, even for two travellers.',
     locationSlug: 'dubai',
   },
   'music-videos': {
     group: 'Work & productions',
     description:
-      'Request a car for a Dubai music-video production with a clear shoot brief, location permissions and approved vehicle use. Compare actual vehicle photos.',
+      'Request a car for a Dubai music-video production with a clear shoot brief, location permissions and approved vehicle use. Explore actual vehicle photos.',
     image: {
       src: '/occasions/dubai-production.webp',
       caption: 'A Dubai-inspired production setup',
@@ -300,7 +300,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   'test-drives': {
     group: 'Work & productions',
     description:
-      'Try a model through a paid Dubai trial rental. Compare the driving position, controls and luggage space under ordinary road-rental terms.',
+      'Try a model through a paid Dubai trial rental. Explore the driving position, controls and luggage space under ordinary road-rental terms.',
     image: {
       src: '/destinations/emirates-hills.webp',
       caption: 'Emirates Hills and the Dubai skyline',
@@ -317,7 +317,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   staycations: {
     group: 'Stays & days out',
     description:
-      'Plan a Dubai staycation rental around hotel check-in, luggage and outings. Compare suitable vehicles and confirm parking and the return arrangement.',
+      'Plan a Dubai staycation rental around hotel check-in, luggage and outings. Explore suitable vehicles and confirm parking and the return arrangement.',
     image: {
       src: '/occasions/dubai-romantic-getaway.webp',
       caption: 'A Dubai-inspired seaside escape',
@@ -351,7 +351,7 @@ export const occasionGuides: Record<string, OccasionGuide> = {
   'hotel-guests': {
     group: 'Stays & days out',
     description:
-      'Arrange a rental car for your Dubai hotel stay with a confirmed guest entrance, luggage space and delivery request. Compare models for your itinerary.',
+      'Arrange a rental car for your Dubai hotel stay with a confirmed guest entrance, luggage space and delivery request. Explore models for your itinerary.',
     image: {
       src: '/destinations/palm-coast.webp',
       caption: 'Palm Jumeirah, Dubai',

@@ -461,7 +461,7 @@ export default function AdminPanel({
                   <p className="z-note">
                     When a daily rate is set, the public 30-day offer is calculated automatically at
                     20% less than 30 daily rentals. The original 30-day amount is that daily-rate
-                    comparison. Monthly fields are read-only while this offer applies.
+                    equivalent. Monthly fields are read-only while this offer applies.
                   </p>
                 </fieldset>
                 <fieldset>

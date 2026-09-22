@@ -151,7 +151,6 @@ export default async function VehicleDetail({
             )}
             <ReserveVehicle
               car={car}
-              onlineReservations={process.env.VERCEL !== '1'}
               {...query}
               plan={monthly ? 'monthly' : undefined}
             >
@@ -235,7 +234,7 @@ export default async function VehicleDetail({
                 <T>Related vehicles</T>
               </p>
               <h2>
-                <T>Compare other cars</T>
+                <T>Explore other cars</T>
               </h2>
             </div>
           </header>

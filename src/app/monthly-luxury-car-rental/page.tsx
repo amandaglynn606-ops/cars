@@ -9,7 +9,7 @@ import './monthly.css'
 export const metadata = {
   title: 'Monthly Luxury Car Rental in Dubai | 30-Day Offers',
   description:
-    'Compare monthly luxury car rentals in Dubai. Save 20% against 30 daily rentals, browse every available model and request a quote for delivery and mileage.',
+    'Explore monthly luxury car rentals in Dubai. Save 20% against 30 daily rentals, browse every available model and request a quote for delivery and mileage.',
   alternates: { canonical: '/monthly-luxury-car-rental' },
 }
 
@@ -23,7 +23,7 @@ export default function MonthlyRentalsPage() {
         </h1>
         <p className="z-lead">
           <T>
-            Your Dubai stay, with a car for the whole month. Compare our collection with 20% off the
+            Your Dubai stay, with a car for the whole month. Explore our collection with 20% off the
             equivalent of 30 daily rentals.
           </T>
         </p>
@@ -50,7 +50,7 @@ export default function MonthlyRentalsPage() {
             </h3>
             <p>
               <T>
-                For a relocation, extended holiday or a longer work visit, compare seating, luggage
+                For a relocation, extended holiday or a longer work visit, review seating, luggage
                 space and the model you want to drive. Select a car to see its colours and 30-day
                 price.
               </T>

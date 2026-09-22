@@ -27,7 +27,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       "Give the full hotel or residential building and the entrance recommended by your host. If the first outing is a timed museum visit, complete the handover beforehand and check the attraction's own parking information.",
     planning:
-      'For a beach stay, ask about overnight parking and avoid leaving wet equipment against the interior. Compare a coupe for two travelling light with a sedan or SUV for suitcases and family trips.',
+      'For a beach stay, ask about overnight parking and avoid leaving wet equipment against the interior. Explore a coupe for two travelling light with a sedan or SUV for suitcases and family trips.',
     question: 'Can I collect the car at a museum instead of my hotel?',
     answer:
       'Request a specific permitted car park or meeting area. Admission areas and pedestrian entrances are not automatically suitable for a vehicle inspection and rental handover.',
@@ -43,7 +43,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Include the tower name, street approach and visitor-parking instructions from reception. Confirm whether a handover can take place in a guest parking area or needs an agreed meeting point outside the building.',
     planning:
-      'If the car will stay overnight, check parking access and any height restriction before selecting a large SUV. For daily office journeys, compare comfort, luggage space and the mileage allowance across the full rental period.',
+      'If the car will stay overnight, check parking access and any height restriction before selecting a large SUV. For daily office journeys, review comfort, luggage space and the mileage allowance across the full rental period.',
     question: "Can a car be delivered to my apartment's parking bay?",
     answer:
       'Ask building management about access and tell the team the requirements. Delivery inside a private garage is subject to approval; the team can discuss another suitable handover point.',
@@ -59,7 +59,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'State the accommodation name and its road-accessible guest entrance. The Corniche stretches along several destinations; a beach gate or pedestrian promenade is not a complete delivery address.',
     planning:
-      'Plan where the car will be parked while you walk or visit the beach. Compare a sedan for a couple with an SUV for family belongings, and agree the return window before an onward airport journey.',
+      'Plan where the car will be parked while you walk or visit the beach. Explore a sedan for a couple with an SUV for family belongings, and agree the return window before an onward airport journey.',
     question: 'Can I return the car after an evening walk on the Corniche?',
     answer:
       'Give the proposed time and a permitted meeting point. The team must confirm collection hours, availability and any timing charge rather than relying on an open-ended waterfront handover.',
@@ -107,7 +107,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Send the development or building name, street and visitor access instructions. For a campus-related visit, identify the institution and approved gate rather than using University City as a general meeting point.',
     planning:
-      'Compare a sedan for repeated local journeys with an SUV when family members and bags travel together. Include onward trips into Dubai in the mileage discussion and leave enough time for the first inspection.',
+      'Explore a sedan for repeated local journeys with an SUV when family members and bags travel together. Include onward trips into Dubai in the mileage discussion and leave enough time for the first inspection.',
     question: 'Can I arrange a handover before a university appointment?',
     answer:
       'Request an earlier meeting time and an approved road-accessible location. Campus access must be arranged with the institution, and vehicle availability and delivery timing require confirmation.',
@@ -155,7 +155,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       "Provide the resort's full name, guest entrance and arrival date. If you plan a dive or boat activity, confirm its separate meeting point with the operator and arrange the car handover away from equipment-loading areas.",
     planning:
-      'Compare boot space before selecting a sports car for a long stay. Keep wet beach or dive equipment contained and check any permitted travel and mileage for journeys back towards Dubai.',
+      'Explore boot space before selecting a sports car for a long stay. Keep wet beach or dive equipment contained and check any permitted travel and mileage for journeys back towards Dubai.',
     question: 'Can I return the car at a different Al Aqah resort?',
     answer:
       'Request both property names and the intended times before booking. The team will confirm whether the change can be arranged and whether delivery or collection charges differ.',
@@ -251,7 +251,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Include the building number or name, the street and visitor-parking instructions. If access is through a service road or a different entrance from the map pin, describe the approach recommended by your host.',
     planning:
-      'Compare a sedan for local journeys with an SUV for extra passengers and bags. Plan the mileage for the whole stay and check overnight parking before selecting a larger vehicle.',
+      'Explore a sedan for local journeys with an SUV for extra passengers and bags. Plan the mileage for the whole stay and check overnight parking before selecting a larger vehicle.',
     question: 'Can the handover be arranged outside my apartment building?',
     answer:
       'Request a legal stopping or visitor-parking area and a time when the intended driver is present. The team confirms the precise point and must have space for the inspection.',
@@ -299,7 +299,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Include the street, villa or building identifier and an available contact. Check whether the driver should meet outside the property or at a nearby legal parking area.',
     planning:
-      'A sedan can suit a small party making local journeys; compare SUVs for more passengers or bags. Keep the car on approved roads and confirm where it will be parked overnight.',
+      'A sedan can suit a small party making local journeys; review SUVs for more passengers or bags. Keep the car on approved roads and confirm where it will be parked overnight.',
     question: 'What address details are useful for a villa handover?',
     answer:
       'Provide the street and villa number, a map pin for the entrance and any instructions from the resident. The team will agree the final point after reviewing the request.',
@@ -347,7 +347,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Send the resort name, arrival date and guest entrance. If the rental begins or ends in another emirate, include that address and the expected timing in the same enquiry.',
     planning:
-      'Compare a comfortable sedan with an SUV for family luggage. Agree the complete mileage and rental period, including the return journey after checkout; hotel parking and resort amenities are separate.',
+      'Explore a comfortable sedan with an SUV for family luggage. Agree the complete mileage and rental period, including the return journey after checkout; hotel parking and resort amenities are separate.',
     question: 'Can I request delivery to any Al Marjan Island resort?',
     answer:
       'You may request your named property, but the team needs to confirm access, vehicle availability and delivery timing. An island-wide label is not a guarantee for every hotel or time.',
@@ -363,7 +363,7 @@ export const regionalLocations: LocationPage[] = [
     arrival:
       'Specify the hotel or residence and the entrance confirmed by your host. A golf-club arrival, marina visit and villa handover can have different access instructions even within the same area.',
     planning:
-      'Ask about luggage capacity for golf bags or family suitcases. Do not assume sporting equipment will fit a convertible; compare the dimensions and usable space of the car you intend to book.',
+      'Ask about luggage capacity for golf bags or family suitcases. Do not assume sporting equipment will fit a convertible; review the dimensions and usable space of the car you intend to book.',
     question: 'Can the car fit golf equipment as well as suitcases?',
     answer:
       'Tell the team how many bags and passengers you have. The exact model and boot configuration matter, and the team must confirm fit rather than relying on the vehicle category alone.',
@@ -415,7 +415,7 @@ regionalLocations.push(
       arrival:
         'State Sharjah, the tower name and the street entrance so collection is routed to the correct building.',
       planning:
-        'Allow flexibility for cross-emirate journeys and compare the monthly mileage allowance if you will commute regularly.',
+        'Allow flexibility for cross-emirate journeys and review the monthly mileage allowance if you will commute regularly.',
       question: 'What address should I give for delivery in Al Nahda?',
       answer:
         'State Sharjah, the tower name and the street entrance so collection is routed to the correct building. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -495,7 +495,7 @@ regionalLocations.push(
       arrival:
         'Include the villa number, street and gate, with a contact who can meet the handover team.',
       planning:
-        'Compare passenger seats and child-seat requirements before selecting a car; any requested accessories need separate confirmation.',
+        'Explore passenger seats and child-seat requirements before selecting a car; any requested accessories need separate confirmation.',
       question: 'What address should I give for delivery in Al Jazzat?',
       answer:
         'Include the villa number, street and gate, with a contact who can meet the handover team. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -558,7 +558,7 @@ regionalLocations.push(
         'A car in Mohammed Bin Zayed City can cover a residential stay and appointments across Abu Dhabi. The zone and street identify the destination more precisely than the city name.',
       arrival: 'Send the zone, building or villa number and a pin matching the road entrance.',
       planning:
-        'For an extended work stay, compare the 30-day allowance and ask about maintenance arrangements before agreeing to the rental.',
+        'For an extended work stay, review the 30-day allowance and ask about maintenance arrangements before agreeing to the rental.',
       question: 'What address should I give for delivery in Mohammed Bin Zayed City?',
       answer:
         'Send the zone, building or villa number and a pin matching the road entrance. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -638,7 +638,7 @@ regionalLocations.push(
       arrival:
         'Share the cluster letter, tower name and vehicle entrance, including any visitor-parking restriction.',
       planning:
-        'A sedan may suit a commuting stay; compare SUV boot space if you have family bags and check your allocated bay dimensions.',
+        'A sedan may suit a commuting stay; review SUV boot space if you have family bags and check your allocated bay dimensions.',
       question: 'What address should I give for delivery in Jumeirah Lake Towers?',
       answer:
         'Share the cluster letter, tower name and vehicle entrance, including any visitor-parking restriction. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -654,7 +654,7 @@ regionalLocations.push(
       arrival:
         'Include the building or villa number, street and access instructions from your host.',
       planning:
-        'For a longer stay, compare monthly prices and the total distance of planned commutes before confirming the kilometre allowance.',
+        'For a longer stay, review monthly prices and the total distance of planned commutes before confirming the kilometre allowance.',
       question: 'What address should I give for delivery in Jumeirah Village Circle?',
       answer:
         'Include the building or villa number, street and access instructions from your host. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -686,7 +686,7 @@ regionalLocations.push(
       arrival:
         'Give the hotel or building name and the road entrance approved for vehicle collection.',
       planning:
-        'Keep the handover separate from pedestrian sightseeing stops, and compare a sedan or SUV according to your passenger and bag requirements.',
+        'Keep the handover separate from pedestrian sightseeing stops, and review a sedan or SUV according to your passenger and bag requirements.',
       question: 'What address should I give for delivery in Bur Dubai?',
       answer:
         'Give the hotel or building name and the road entrance approved for vehicle collection. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -702,7 +702,7 @@ regionalLocations.push(
       arrival:
         'Share the villa or building number, street and the person who will meet the delivery team.',
       planning:
-        'Ask about child-seat availability separately and allow boot space for pushchairs and luggage when comparing models.',
+        'Ask about child-seat availability separately and allow boot space for pushchairs and luggage when reviewing models.',
       question: 'What address should I give for delivery in Mirdif?',
       answer:
         'Share the villa or building number, street and the person who will meet the delivery team. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -718,7 +718,7 @@ regionalLocations.push(
       arrival:
         'Include the Al Rawda section, street and property number so the handover address is unambiguous.',
       planning:
-        'Compare comfort for longer journeys and agree the mileage allowance for any repeated trips to Sharjah or Dubai.',
+        'Explore comfort for longer journeys and agree the mileage allowance for any repeated trips to Sharjah or Dubai.',
       question: 'What address should I give for delivery in Al Rawda?',
       answer:
         'Include the Al Rawda section, street and property number so the handover address is unambiguous. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -750,7 +750,7 @@ regionalLocations.push(
       arrival:
         'State Ajman, the district section and the tower or building; the same neighbourhood name appears in other emirates.',
       planning:
-        'Confirm your building parking arrangements and compare the full rental period, including any late collection or return request.',
+        'Confirm your building parking arrangements and review the full rental period, including any late collection or return request.',
       question: 'What address should I give for delivery in Al Rashidiya?',
       answer:
         'State Ajman, the district section and the tower or building; the same neighbourhood name appears in other emirates. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -829,7 +829,7 @@ regionalLocations.push(
       arrival:
         'State Umm Al Quwain and the street and villa number, since similar neighbourhood names are used elsewhere.',
       planning:
-        'Compare a comfortable sedan with an SUV based on passenger and luggage needs, and include inter-emirate journeys in the quote.',
+        'Explore a comfortable sedan with an SUV based on passenger and luggage needs, and include inter-emirate journeys in the quote.',
       question: 'What address should I give for delivery in Al Raudah?',
       answer:
         'State Umm Al Quwain and the street and villa number, since similar neighbourhood names are used elsewhere. Delivery timing and charges depend on the exact location and require confirmation.',
@@ -892,7 +892,7 @@ regionalLocations.push(
       arrival:
         'Specify Al Dhait North or South where applicable, plus the street and villa number.',
       planning:
-        'For repeated family journeys, compare the monthly option and agree the required seats and any accessories before booking.',
+        'For repeated family journeys, review the monthly option and agree the required seats and any accessories before booking.',
       question: 'What address should I give for delivery in Al Dhait?',
       answer:
         'Specify Al Dhait North or South where applicable, plus the street and villa number. Delivery timing and charges depend on the exact location and require confirmation.',

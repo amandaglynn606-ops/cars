@@ -123,8 +123,7 @@ export default function NavigationDropdown({
       onPointerLeave={(event) => {
         if (!mobile && event.pointerType === 'mouse') {
           cancelTimer()
-          if (!root.current?.contains(document.activeElement))
-            timer.current = setTimeout(close, 180)
+          timer.current = setTimeout(close, 180)
         }
       }}
       onBlur={(event) => {
@@ -167,6 +166,12 @@ export default function NavigationDropdown({
           data-expanded={expanded}
           aria-hidden="true"
           onPointerDown={close}
+          onPointerEnter={(event) => {
+            if (event.pointerType === 'mouse') {
+              cancelTimer()
+              timer.current = setTimeout(close, 180)
+            }
+          }}
         />
       )}
       <div
@@ -177,6 +182,7 @@ export default function NavigationDropdown({
         inert={!expanded}
         role="region"
         aria-label={label}
+        onPointerEnter={cancelTimer}
         onFocusCapture={() => motion.current?.progress(1)}
       >
         {children(close)}

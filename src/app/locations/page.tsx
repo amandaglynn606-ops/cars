@@ -9,7 +9,7 @@ import './locations.css'
 export const metadata = {
   title: 'Luxury Car Rental Locations Across the UAE',
   description:
-    'Explore rental locations by emirate, from Dubai neighbourhoods to UAE coastal stays. Compare cars and check delivery arrangements for your address.',
+    'Explore rental locations by emirate, from Dubai neighbourhoods to UAE coastal stays. Explore cars and check delivery arrangements for your address.',
   alternates: { canonical: '/locations' },
 }
 export default function Page() {
@@ -26,7 +26,7 @@ export default function Page() {
         <p>
           <T>
             Explore the listed locations by emirate. Choose your area to plan a meeting point,
-            compare cars and request delivery. Availability, timing and charges are confirmed for
+            review cars and request delivery. Availability, timing and charges are confirmed for
             your address.
           </T>
         </p>

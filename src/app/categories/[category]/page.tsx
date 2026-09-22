@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   return {
     title: name ? name + ' Car Rental in Dubai' : 'Collection not found',
     description: name
-      ? `Browse the ${name} rental category in Dubai. Compare vehicles, listed daily rates and photos, then choose your rental dates.`
+      ? `Browse the ${name} rental category in Dubai. Explore vehicles, listed daily rates and photos, then choose your rental dates.`
       : undefined,
     alternates: { canonical: '/categories/' + category },
   }

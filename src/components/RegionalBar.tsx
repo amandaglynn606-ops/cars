@@ -50,15 +50,6 @@ export default function RegionalBar() {
           </label>
         </div>
       </div>
-      {currency !== 'AED' && (
-        <p className="z-conversion-note">
-          <T>Estimated conversion. Final quote in AED.</T> <T>Rates dated</T> {exchange.date}
-          {' · '}
-          <a href="https://www.exchangerate-api.com" rel="noreferrer">
-            ExchangeRate-API
-          </a>
-        </p>
-      )}
       {error && (
         <p role="alert" className="z-conversion-note">
           {t(error)}

@@ -189,7 +189,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         caption: 'Inside Coca-Cola Arena · archive Maroon 5 concert photograph',
       },
       {
-        src: '/verified-places/dubai-tj-kz.webp',
+        src: '/verified-places/dubai-tj-kz-hd.webp',
         alt: 'TJ Monterde and KZ Tandingan concert artwork for Coca-Cola Arena',
         caption: '11 October 2026 · In Between Middle East Tour · official artwork',
       },
@@ -199,7 +199,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'Najwa Karam',
         date: 'Friday, 2 October 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-najwa-karam.webp',
+        image: '/verified-places/dubai-najwa-karam-hd.webp',
         description:
           'A headline Arabic music night on the arena’s October calendar. Confirm the show’s doors and seating category directly with the venue.',
         ticket: 'https://coca-cola-arena.com/music/2050/najwa-karam',
@@ -208,7 +208,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'TJ Monterde & KZ Tandingan',
         date: 'Sunday, 11 October 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-tj-kz.webp',
+        image: '/verified-places/dubai-tj-kz-hd.webp',
         description:
           'The In Between Middle East Tour brings the Filipino artists to Dubai. Choose your car around the number of guests and your full evening itinerary.',
         ticket: dubai,
@@ -217,7 +217,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'Nancy Ajram',
         date: 'Saturday, 24 October 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-nancy-ajram.webp',
+        image: '/verified-places/dubai-nancy-ajram-hd.webp',
         description:
           'Nancy Ajram Live is listed for 24 October. Arrange collection before dinner or the concert and agree the vehicle return around the show.',
         ticket: 'https://coca-cola-arena.com/music/2059/nancy-ajram-live',
@@ -226,7 +226,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'Shaan',
         date: 'Sunday, 25 October 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-shaan.webp',
+        image: '/verified-places/dubai-shaan-hd.webp',
         description:
           'The All of Me Tour comes to Dubai on 25 October. Buy admission through the organiser and request your rental separately.',
         ticket: 'https://coca-cola-arena.com/music/2125/shaan-all-of-me-tour',
@@ -235,7 +235,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'JONY',
         date: 'Wednesday, 4 November 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-jony.webp',
+        image: '/verified-places/dubai-jony-hd.webp',
         description:
           'JONY appears on the November programme. Confirm any age limits, doors and show timings with the arena before finalising your collection time.',
         ticket: dubai,
@@ -244,7 +244,7 @@ export const eventExperiences: Record<string, EventExperience> = {
         name: 'Amr Diab',
         date: 'Saturday, 7 November 2026',
         venue: 'Coca-Cola Arena · City Walk',
-        image: '/verified-places/dubai-amr-diab.webp',
+        image: '/verified-places/dubai-amr-diab-hd.webp',
         description:
           'Amr Diab’s November concert is listed by Coca-Cola Arena. Plan for event traffic and a late exit when agreeing the rental period.',
         ticket: dubai,

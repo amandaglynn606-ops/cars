@@ -5,7 +5,7 @@ export const eventGuides: Record<
   'abu-dhabi-grand-prix': {
     title: 'Luxury car rental for the Abu Dhabi F1 Grand Prix',
     intro:
-      'Plan your Abu Dhabi Grand Prix weekend with a luxury car for the drive to Yas Island, your hotel and the rest of your UAE stay. Compare self-drive models and request collection before the first session or concert you plan to attend.',
+      'Plan your Abu Dhabi Grand Prix weekend with a luxury car for the drive to Yas Island, your hotel and the rest of your UAE stay. Explore self-drive models and request collection before the first session or concert you plan to attend.',
     sections: [
       [
         'Driving from Dubai to Yas Island',
@@ -13,7 +13,7 @@ export const eventGuides: Record<
       ],
       [
         'Choose around your group',
-        'A luxury sedan can suit two guests and weekend bags; an SUV may offer more room for a group. Compare the actual seat count and boot space of each model. A sports car is an option for a smaller party travelling light, subject to age and insurance eligibility.',
+        'A luxury sedan can suit two guests and weekend bags; an SUV may offer more room for a group. Explore the actual seat count and boot space of each model. A sports car is an option for a smaller party travelling light, subject to age and insurance eligibility.',
       ],
       [
         'Circuit parking and after-race concerts',
@@ -46,7 +46,7 @@ export const eventGuides: Record<
       ],
       [
         'An evening for two or a group',
-        'Compare a coupe or convertible for two travelling light with a sedan or SUV for friends and family. Check the listed seats and luggage space. If several guests need transport, ask about separate vehicles rather than exceeding a car’s permitted occupancy.',
+        'Explore a coupe or convertible for two travelling light with a sedan or SUV for friends and family. Check the listed seats and luggage space. If several guests need transport, ask about separate vehicles rather than exceeding a car’s permitted occupancy.',
       ],
       [
         'Collection and the journey home',
@@ -71,7 +71,7 @@ export const eventGuides: Record<
   'abu-dhabi-concerts': {
     title: 'Luxury car rental for Abu Dhabi concerts',
     intro:
-      'Choose a car for a concert at Etihad Arena or another Abu Dhabi venue, with collection and return planned around your show and accommodation. Compare models for a local evening or a longer visit from Dubai.',
+      'Choose a car for a concert at Etihad Arena or another Abu Dhabi venue, with collection and return planned around your show and accommodation. Explore models for a local evening or a longer visit from Dubai.',
     sections: [
       [
         'An Etihad Arena evening',
@@ -83,7 +83,7 @@ export const eventGuides: Record<
       ],
       [
         'Room for the whole stay',
-        'An overnight visit may need more luggage space than a single evening out. Compare sedan comfort, SUV space and the passenger limit before choosing. If the driver needs to rest after a late show, plan accommodation and the return date accordingly.',
+        'An overnight visit may need more luggage space than a single evening out. Explore sedan comfort, SUV space and the passenger limit before choosing. If the driver needs to rest after a late show, plan accommodation and the return date accordingly.',
       ],
     ],
     questions: [
@@ -112,7 +112,7 @@ export const eventGuides: Record<
       ],
       [
         'A car for race-day dressing',
-        'A sedan or SUV can provide practical entry and room for formalwear and personal bags. Check the seating and boot dimensions for your group. Consider ease of entry as well as styling when comparing lower sports cars with taller vehicles.',
+        'A sedan or SUV can provide practical entry and room for formalwear and personal bags. Check the seating and boot dimensions for your group. Consider ease of entry as well as styling when reviewing lower sports cars with taller vehicles.',
       ],
       [
         'From race day to the evening',
@@ -130,7 +130,7 @@ export const eventGuides: Record<
       ],
       [
         'Which car should I choose for Dubai World Cup?',
-        'Compare passenger count, luggage space and ease of entry for your guests. A luxury sedan or SUV may suit formalwear and a group, while a coupe can suit two guests travelling light.',
+        'Explore passenger count, luggage space and ease of entry for your guests. A luxury sedan or SUV may suit formalwear and a group, while a coupe can suit two guests travelling light.',
       ],
     ],
   },

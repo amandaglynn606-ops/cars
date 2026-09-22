@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
-import { moduleURL } from './load-module.mjs'
+import { moduleURL, reservationStoreURL } from './load-module.mjs'
 
 process.env.VERCEL = '1'
 process.env.NEXT_PUBLIC_SITE_URL = 'https://dubailuxurycarrentals.ae'
@@ -16,6 +16,7 @@ const repoURL = await moduleURL('src/lib/db.ts', {
   './partnership': await moduleURL('src/lib/partnership.ts'),
 })
 const repo = await import(repoURL)
+const storeURL = await reservationStoreURL(repoURL)
 const fleet = await import(
   await moduleURL('src/lib/fleet.ts', {
     './db': repoURL,
@@ -51,6 +52,7 @@ test('Vercel rejects submissions before reading documents or claiming they were 
     const { POST } = await import(
       await moduleURL('src/app/api/' + name + '/route.ts', {
         '@/lib/db': repoURL,
+        '@/lib/reservation-store': storeURL,
         '@/lib/http': httpURL,
         ...extra,
       })
@@ -76,7 +78,10 @@ test('Vercel rejects submissions before reading documents or claiming they were 
 
 test('Vercel availability fails explicitly instead of reporting an empty booking calendar', async () => {
   const { GET } = await import(
-    await moduleURL('src/app/api/availability/route.ts', { '@/lib/db': repoURL })
+    await moduleURL('src/app/api/availability/route.ts', {
+      '@/lib/db': repoURL,
+      '@/lib/reservation-store': storeURL,
+    })
   )
   const response = await GET()
   assert.equal(response.status, 503)

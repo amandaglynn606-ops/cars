@@ -20,8 +20,8 @@ export default function DirectoryPage({ type }: { type: 'brand' | 'category' }) 
         <p className="z-lead">
           <T>
             {type === 'brand'
-              ? 'Choose a brand to compare its listed models, photos and rental rates.'
-              : 'Choose a category to browse its cars and compare daily rates.'}
+              ? 'Choose a brand to review its listed models, photos and rental rates.'
+              : 'Choose a category to browse its cars and review daily rates.'}
           </T>
         </p>
       </header>

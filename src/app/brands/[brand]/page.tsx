@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   return {
     title: name ? name + ' Rental in Dubai' : 'Marque not found',
     description: name
-      ? `Compare ${name} rental models in Dubai. View listed daily rates, photos and specifications, then send a request for your dates.`
+      ? `Explore ${name} rental models in Dubai. View listed daily rates, photos and specifications, then send a request for your dates.`
       : undefined,
     alternates: { canonical: '/brands/' + brand },
   }

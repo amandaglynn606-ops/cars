@@ -4,6 +4,7 @@ import { rentalEvents } from '@/lib/home-rentals'
 import { eventGuides, eventHref } from '@/lib/event-guides'
 import { T } from '@/components/RegionalProvider'
 import Icon from '@/components/Icon'
+import SingleLineHeading from '@/components/SingleLineHeading'
 import './events.css'
 export const metadata = {
   title: 'Luxury Car Rental for UAE Events',
@@ -15,9 +16,7 @@ export default function EventsPage() {
   return (
     <div className="container-lux z-event-guide">
       <header className="z-page-hero z-collection-hero">
-        <h1>
-          <T>Luxury car rental for UAE events</T>
-        </h1>
+        <SingleLineHeading text="Luxury car rental for UAE events" />
         <p className="z-lead">
           <T>
             Choose the event you are planning for, then find the car and handover arrangements that
@@ -33,6 +32,7 @@ export default function EventsPage() {
                 src={event.image}
                 alt={event.imageAlt}
                 fill
+                quality={90}
                 sizes="(max-width:700px) 100vw,50vw"
               />
             </Link>

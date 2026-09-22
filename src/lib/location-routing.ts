@@ -25,4 +25,4 @@ export const locationDescription = (page: LocationPage) =>
   'Plan luxury car rental in ' +
   page.name +
   (page.name !== page.region ? ', ' + page.region : '') +
-  '. Compare models and rates, check local handover details and request your dates.'
+  '. Explore models and rates, check local handover details and request your dates.'

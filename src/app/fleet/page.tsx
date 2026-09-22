@@ -5,7 +5,7 @@ import { getAllCars } from '@/lib/fleet'
 export const metadata: Metadata = {
   title: 'The Zavi Fleet',
   description:
-    'Explore the Zavi fleet. Compare luxury cars, supercars and SUVs by brand, model, category and daily rental price.',
+    'Explore the Zavi fleet. Explore luxury cars, supercars and SUVs by brand, model, category and daily rental price.',
   alternates: { canonical: '/fleet' },
 }
 export default function FleetPage() {

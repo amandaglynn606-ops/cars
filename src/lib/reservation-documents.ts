@@ -14,6 +14,15 @@ export const MAX_DOCUMENT_SIZE = 8 * 1024 * 1024
 export const MAX_DOCUMENTS = 4
 export const DOCUMENT_RETENTION_MS = 30 * 86400000
 function key() {
+  if (process.env.ZAVI_DOCUMENT_KEY) {
+    if (!/^[a-f0-9]{64}$/i.test(process.env.ZAVI_DOCUMENT_KEY))
+      throw new Error('Document storage is unavailable.')
+    return Buffer.from(process.env.ZAVI_DOCUMENT_KEY, 'hex')
+  }
+  if (process.env.VERCEL === '1')
+    throw new Error(
+      'Document uploads are temporarily unavailable. Submit without attachments and contact the team.',
+    )
   const folder = process.env.ZAVI_DATA_DIR || path.join(process.cwd(), '.local')
   mkdirSync(folder, { recursive: true })
   const file = path.join(folder, 'reservation-documents.key')

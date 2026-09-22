@@ -5,7 +5,7 @@ import Icon from '@/components/Icon'
 export const metadata = {
   title: 'About Zavi',
   description:
-    'Learn how to compare cars and request a rental with Zavi, including availability, quotes and booking confirmation.',
+    'Learn how to review cars and request a rental with Zavi, including availability, quotes and booking confirmation.',
   alternates: { canonical: '/about' },
 }
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
           <T>Choosing your rental car</T>
         </h1>
         <p className="z-lead">
-          <T>Compare the fleet and understand the steps before booking.</T>
+          <T>Explore the fleet and understand the steps before booking.</T>
         </p>
       </header>
       {hero && (
@@ -44,7 +44,7 @@ export default function Page() {
               {brands.length} <T>brands</T>
             </p>
             <h2>
-              <T>Compare cars.</T>
+              <T>Explore cars.</T>
               <br />
               <span>
                 <T>Check the details.</T>
@@ -54,7 +54,7 @@ export default function Page() {
           <p>
             <T>
               Zavi lists rental cars in Dubai with photos, daily rates and available specifications.
-              You can compare vehicles and send a request for your preferred dates. A request does
+              You can review vehicles and send a request for your preferred dates. A request does
               not confirm a booking or take payment.
             </T>
           </p>
@@ -63,7 +63,7 @@ export default function Page() {
           <div>
             <span className="z-step-number">01</span>
             <h3>
-              <T>Compare the listings</T>
+              <T>Explore the listings</T>
             </h3>
             <p>
               <T>

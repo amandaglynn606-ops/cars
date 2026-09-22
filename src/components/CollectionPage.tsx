@@ -18,7 +18,7 @@ export default function CollectionPage({
                 <T>{name}</T>
               </h1>
               <p className="z-lead">
-                <T>Compare models, photos and listed rental rates.</T>
+                <T>Explore models, photos and listed rental rates.</T>
               </p>
             </div>
             <span>

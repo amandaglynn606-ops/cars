@@ -143,7 +143,7 @@ export default function FleetNavigation({
             </div>
             <div className="z-nav-panel-foot">
               <span className="z-nav-foot-dot" />
-              <T>Compare models, colours and listed rental rates.</T>
+              <T>Explore models, colours and listed rental rates.</T>
             </div>
           </>
         )

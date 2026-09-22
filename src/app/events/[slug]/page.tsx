@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import SingleLineHeading from '@/components/SingleLineHeading'
 import { notFound } from 'next/navigation'
 import { rentalEvents } from '@/lib/home-rentals'
 import { eventGuides, eventHref } from '@/lib/event-guides'
@@ -109,9 +110,7 @@ export default async function EventRentalPage({ params }: { params: Promise<{ sl
             <T>{event.category}</T>
             <span />
           </p>
-          <h1>
-            <T>{guide.title}</T>
-          </h1>
+          <SingleLineHeading text={guide.title} />
           <p className="z-event-subtitle">
             <T>{experience.subtitle}</T>
           </p>
@@ -199,7 +198,12 @@ export default async function EventRentalPage({ params }: { params: Promise<{ sl
                       src={artist.image}
                       alt={artist.name + ' — official event artwork'}
                       fill
-                      sizes="(max-width:600px) 90vw,(max-width:1000px) 42vw,300px"
+                      sizes={
+                        event.slug === 'dubai-concerts'
+                          ? '(max-width:600px) 100vw,50vw'
+                          : '(max-width:600px) 90vw,(max-width:1000px) 42vw,33vw'
+                      }
+                      quality={90}
                     />
                   </a>
                   <div className="z-event-artist-copy">
@@ -314,7 +318,7 @@ export default async function EventRentalPage({ params }: { params: Promise<{ sl
             </h2>
             <p>
               <T>
-                Compare models and listed daily rates, then request your dates. Availability,
+                Explore models and listed daily rates, then request your dates. Availability,
                 insurance, mileage and delivery charges are confirmed with your quote.
               </T>
             </p>

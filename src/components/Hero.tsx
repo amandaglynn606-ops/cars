@@ -67,7 +67,7 @@ export default function Hero({ cars, total }: { cars: Car[]; total?: number }) {
           </span>
         </h1>
         <p className="z-hero-intro">
-          <T>Compare cars, photos and daily rental rates.</T>
+          <T>Explore cars, photos and daily rental rates.</T>
           <br />
           <T>Choose your dates and send a reservation request.</T>
         </p>

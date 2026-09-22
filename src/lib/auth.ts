@@ -5,6 +5,19 @@ import { scryptSync, timingSafeEqual, createHmac, randomBytes } from 'node:crypt
 import { cookies } from 'next/headers'
 type AuthConfig = { salt: string; hash: string; secret: string }
 const config = (): AuthConfig | null => {
+  if (process.env.ZAVI_ADMIN_AUTH) {
+    try {
+      const value = JSON.parse(process.env.ZAVI_ADMIN_AUTH) as AuthConfig
+      return /^[a-f0-9]{64}$/i.test(value.salt) &&
+        /^[a-f0-9]{128}$/i.test(value.hash) &&
+        /^[a-f0-9]{96}$/i.test(value.secret)
+        ? value
+        : null
+    } catch {
+      return null
+    }
+  }
+  if (process.env.VERCEL === '1') return null
   const file = path.join(process.cwd(), '.local', 'admin-auth.json')
   return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : null
 }

@@ -14,7 +14,7 @@ import './home.css'
 export const metadata = {
   title: 'Luxury Car Rental Dubai | Daily & Monthly Rentals | Zavi',
   description:
-    'Explore luxury cars in Dubai by brand. Compare daily rates, save 20% on a 30-day rental and plan a car for UAE events. Request availability and delivery.',
+    'Explore luxury cars in Dubai by brand. Explore daily rates, save 20% on a 30-day rental and plan a car for UAE events. Request availability and delivery.',
   alternates: { canonical: '/' },
 }
 const brandOrder = [
@@ -163,7 +163,7 @@ export default function Home() {
             number="02"
             eyebrow="The Zavi selection"
             title="Hot rentals"
-            description="Featured cars from the catalogue. Compare their listed rates and request a quote for your dates."
+            description="Featured cars from the catalogue. Explore their listed rates and request a quote for your dates."
             href="/fleet"
             linkLabel={`View all ${cars.length} vehicles`}
           />

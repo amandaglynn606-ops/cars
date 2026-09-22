@@ -206,7 +206,7 @@ export default function LandingDetail({
         </div>
         <p className="z-note">
           <T>
-            Compare these available catalogue models and their listed rates. Availability for your
+            Explore these available catalogue models and their listed rates. Availability for your
             dates and suitability for the intended use require confirmation.
           </T>
         </p>

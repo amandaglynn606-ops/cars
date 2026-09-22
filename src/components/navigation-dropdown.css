@@ -132,22 +132,6 @@
   background: #b58b5220;
   border-color: #c5a17c;
 }
-.z-nav-panel-close {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid #ffffff20;
-  border-radius: 50%;
-  color: #c4b7a7;
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
-.z-nav-panel-close:hover {
-  background: #ffffff0c;
-  transform: rotate(90deg);
-}
 .z-nav-panel a > svg {
   flex-shrink: 0;
   transition:
@@ -508,8 +492,7 @@
   padding: 6px 0 18px;
   gap: 10px;
 }
-.z-nav-disclosure-mobile .z-nav-panel-heading > div,
-.z-nav-disclosure-mobile .z-nav-panel-close {
+.z-nav-disclosure-mobile .z-nav-panel-heading > div {
   display: none;
 }
 .z-header .z-nav-disclosure-mobile .z-nav-view-all {
